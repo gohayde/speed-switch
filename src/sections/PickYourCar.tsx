@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, MapPin } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const categories = [
   { label: 'Sports Cars', icon: '🏎️' },

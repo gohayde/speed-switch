@@ -1,17 +1,6 @@
-const brands = [
-  { name: 'Mercedes-Benz', src: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg' },
-  { name: 'Audi', src: 'https://upload.wikimedia.org/wikipedia/commons/9/92/Audi-Logo_2016.svg' },
-  { name: 'BMW', src: 'https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg' },
-  { name: 'Bentley', src: 'https://upload.wikimedia.org/wikipedia/commons/3/thirty/Bentley_logo.svg' },
-  { name: 'Cadillac', src: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Cadillac_logo.svg' },
-  { name: 'Rolls-Royce', src: 'https://upload.wikimedia.org/wikipedia/commons/3/thirty/Rolls_Royce_Silver_Shadow_Silver_Spirit.svg' },
-  { name: 'Dodge', src: 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Dodge_logo.svg' },
-  { name: 'Nissan', src: 'https://upload.wikimedia.org/wikipedia/commons/2/twenty/Nissan_2020_logo.svg' },
-  { name: 'Land Rover', src: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Land_Rover_logo.svg' },
-  { name: 'Lamborghini', src: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Lamborghini_Logo.svg' },
-];
+import type { ReactNode } from 'react';
 
-// Use text-based brand names since SVG sources vary wildly — clean typographic treatment
+
 const brandNames = [
   'Mercedes-Benz',
   'Audi',
@@ -36,7 +25,7 @@ function BrandItem({ name }: { name: string }) {
 
 function BrandIcon({ name }: { name: string }) {
   const style = "w-12 h-8 object-contain opacity-50 grayscale";
-  const icons: Record<string, React.ReactNode> = {
+  const icons: Record<string, ReactNode> = {
     'Mercedes-Benz': (
       <svg className={style} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="50" cy="50" r="46" stroke="#1A1A1A" strokeWidth="4" fill="none"/>
