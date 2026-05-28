@@ -2,15 +2,15 @@
 
 :root {
   font-family: 'Manrope', Arial, sans-serif;
-  color: #1a1a1a;
-  background: #f8f7f3;
+  color: oklch(17% 0.009 82);
+  background: oklch(97.5% 0.007 82);
   font-synthesis: none;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
-  --gold: #cfa64a;
-  --gold-light: #cfa64a;
-  --ink: #1a1a1a;
-  --muted: #777b82;
+  --gold: oklch(72% 0.13 76);
+  --gold-light: oklch(80% 0.10 76);
+  --ink: oklch(17% 0.009 82);
+  --muted: oklch(54% 0.008 255);
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -39,7 +39,7 @@ a {
   min-height: 100vh;
   overflow: hidden;
   isolation: isolate;
-  background: #f8f7f3;
+  background: oklch(97.5% 0.007 82);
 }
 
 .hero-bg {
@@ -96,7 +96,7 @@ a {
   width: 10px;
   height: 43px;
   border-radius: 1px;
-  background: #cfa64a;
+  background: oklch(72% 0.13 76);
 }
 
 .brand-mark span:first-child {
@@ -130,7 +130,7 @@ a {
 }
 
 .main-nav a:hover {
-  color: #cfa64a;
+  color: oklch(72% 0.13 76);
 }
 
 .main-nav a.active::after {
@@ -160,7 +160,7 @@ a {
   padding: 0;
   color: #030303;
   background: transparent;
-  border: 2px solid #1a1a1a;
+  border: 2px solid oklch(17% 0.009 82);
   border-radius: 999px;
 }
 
@@ -173,10 +173,10 @@ a {
   min-height: 63px;
   padding: 0 29px;
   border-radius: 8px;
-  color: #1a1a1a;
+  color: oklch(17% 0.009 82);
   font-weight: 700;
   font-size: 17px;
-  background: #cfa64a;
+  background: oklch(72% 0.13 76);
   box-shadow: 0 14px 28px rgba(207, 166, 74, 0.22);
   transition: transform 180ms var(--ease), box-shadow 180ms var(--ease), filter 180ms var(--ease);
 }
@@ -195,8 +195,8 @@ a {
 
 .profile-button:hover {
   transform: translateY(-1px);
-  border-color: #cfa64a;
-  color: #cfa64a;
+  border-color: oklch(72% 0.13 76);
+  color: oklch(72% 0.13 76);
 }
 
 .hero-content {
@@ -262,7 +262,7 @@ a {
   min-height: 68px;
   padding: 0 18px 0 0;
   text-align: left;
-  color: #1a1a1a;
+  color: oklch(17% 0.009 82);
   background: transparent;
   border: 0;
   border-right: 1px solid rgba(26, 26, 26, 0.1);
@@ -318,8 +318,8 @@ a {
   padding: 11px 10px 13px;
   border: 0;
   border-radius: 8px;
-  color: #1a1a1a;
-  background: #cfa64a;
+  color: oklch(17% 0.009 82);
+  background: oklch(72% 0.13 76);
   box-shadow: 0 13px 24px rgba(207, 166, 74, 0.3);
   font-size: 17px;
   font-weight: 800;

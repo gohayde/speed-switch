@@ -66,7 +66,7 @@ function WhatsAppIcon() {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#111010] text-white">
+    <footer className="text-white" style={{ background: 'oklch(12% 0.007 82)' }}>
       <div className="max-w-[1160px] mx-auto px-6 pt-20 pb-10">
 
         {/* Top row */}

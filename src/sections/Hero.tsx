@@ -57,7 +57,7 @@ function SearchField({ icon: Icon, label, value }: { icon: React.ElementType; la
 
 export default function Hero() {
   return (
-    <main className="relative min-h-screen overflow-hidden isolate bg-[#F8F7F3]">
+    <main className="relative min-h-screen overflow-hidden isolate" style={{ background: 'oklch(97.5% 0.007 82)' }}>
       <img className="absolute inset-0 w-full h-full object-cover object-[center_bottom] -z-[4]"
         src="/assets/hero-bg.png" alt="" aria-hidden />
       <div className="absolute inset-0 -z-[3] pointer-events-none"

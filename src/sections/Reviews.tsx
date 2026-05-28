@@ -84,18 +84,18 @@ export default function Reviews() {
   ];
 
   return (
-    <section className="bg-[#F5F0E8] py-28 px-6 overflow-hidden">
+    <section className="pt-20 pb-24 px-6 overflow-hidden" style={{ background: 'oklch(95.5% 0.011 82)' }}>
       <div ref={ref} className="max-w-[1160px] mx-auto">
 
         {/* Header row */}
         <div className="flex items-end justify-between mb-14 flex-wrap gap-6">
           <div>
-            <p className="text-[11px] font-semibold tracking-[0.2em] text-[#CFA64A] uppercase mb-3">
+            <p className="text-[11px] font-semibold tracking-[0.16em] text-[#1A1A1A]/40 uppercase mb-4" style={{ fontVariant: 'small-caps' }}>
               Client Reviews
             </p>
             <h2
               className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-5"
-              style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(36px,4vw,68px)' }}>
+              style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(38px,3.6vw,58px)' }}>
               What Our Clients<br />Are Saying
             </h2>
             <GoogleBadge />

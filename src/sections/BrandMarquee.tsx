@@ -79,7 +79,7 @@ function BrandIcon({ name }: { name: string }) {
     'Nissan': (
       <svg className={style} viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="50" cy="25" rx="46" ry="22" stroke="#1A1A1A" strokeWidth="3" fill="none"/>
-        <rect x="4" y="21" width="92" height="8" fill="#F8F7F3"/>
+        <rect x="4" y="21" width="92" height="8" fill="oklch(97.5% 0.007 82)"/>
         <line x1="4" y1="21" x2="96" y2="21" stroke="#1A1A1A" strokeWidth="3"/>
         <line x1="4" y1="29" x2="96" y2="29" stroke="#1A1A1A" strokeWidth="3"/>
         <text x="50" y="30" textAnchor="middle" fontSize="10" fontWeight="700" fill="#1A1A1A" fontFamily="sans-serif" letterSpacing="2">NISSAN</text>
@@ -107,7 +107,7 @@ export default function BrandMarquee() {
   const doubled = [...brandNames, ...brandNames];
 
   return (
-    <section className="relative bg-[#F8F7F3] border-y border-black/[0.07] py-5 overflow-hidden">
+    <section className="relative border-y border-black/[0.07] py-7 overflow-hidden" style={{ background: 'oklch(97.5% 0.007 82)' }}>
       <p className="text-center text-[11px] font-semibold tracking-[0.18em] text-[#AAADB3] uppercase mb-4">
         Premium Brands In Our Fleet
       </p>

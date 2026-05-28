@@ -60,7 +60,7 @@ export default function PickYourCar() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="relative bg-[#F5F0E8] py-20 overflow-hidden">
+    <section className="relative pt-36 pb-24 overflow-hidden" style={{ background: 'oklch(95.5% 0.011 82)' }}>
       {/* Warm radial glow top-right */}
       <div className="absolute top-0 right-0 w-[600px] h-[500px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle at 80% 10%, rgba(207,166,74,0.13), transparent 65%)' }} />

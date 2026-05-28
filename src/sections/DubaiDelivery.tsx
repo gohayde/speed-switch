@@ -24,9 +24,9 @@ export default function DubaiDelivery() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="bg-[#1A1A1A] py-28 px-6 overflow-hidden relative">
+    <section className="pt-32 pb-36 px-6 overflow-hidden relative" style={{ background: 'oklch(15% 0.010 82)' }}>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(207,166,74,0.07), transparent 65%)' }} />
+        style={{ background: 'radial-gradient(circle, oklch(72% 0.13 76 / 0.09), transparent 65%)' }} />
 
       <div ref={ref} className="max-w-[1160px] mx-auto relative z-10">
         <div className="grid grid-cols-2 gap-20 items-center max-[900px]:grid-cols-1 max-[900px]:gap-12">
@@ -36,15 +36,16 @@ export default function DubaiDelivery() {
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}>
-            <p className="text-[11px] font-semibold tracking-[0.2em] text-[#CFA64A] uppercase mb-4">
-              Delivery Coverage
-            </p>
+            <div className="flex items-baseline gap-4 mb-5">
+              <span className="text-[11px] font-bold tracking-[0.25em] text-[#CFA64A]/60 uppercase font-[family-name:'Space_Grotesk',Arial,sans-serif]">01</span>
+              <span className="text-[11px] font-bold tracking-[0.22em] text-white/40 uppercase">Delivery Coverage</span>
+            </div>
             <h2
-              className="font-bold uppercase text-white leading-[0.88] m-0 mb-6"
-              style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(36px,3.8vw,62px)' }}>
+              className="font-bold uppercase text-white leading-[0.84] m-0 mb-6"
+              style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(52px,5.2vw,84px)' }}>
               We Come<br />To You
             </h2>
-            <p className="text-[#777B82] text-[16px] leading-relaxed mb-8 max-w-[420px]">
+            <p className="text-[#777B82] text-[16px] leading-relaxed mb-8 max-w-[65ch]">
               Across every district in Dubai, we deliver your chosen vehicle directly to your door. Tourists and residents alike: no queues, no counters, just your car exactly where you need it.
             </p>
 

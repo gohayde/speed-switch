@@ -51,7 +51,7 @@ export default function WhyRent() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="bg-[#F8F7F3] py-28 px-6 overflow-hidden">
+    <section className="pt-24 pb-20 px-6 overflow-hidden" style={{ background: 'oklch(97.5% 0.007 82)' }}>
       <div className="max-w-[1160px] mx-auto">
         <div className="grid grid-cols-2 gap-20 items-center max-[960px]:grid-cols-1 max-[960px]:gap-14">
 
@@ -83,7 +83,7 @@ export default function WhyRent() {
               </div>
             </div>
             {/* Floating stat */}
-            <div className="absolute -bottom-5 -right-5 bg-[#1A1A1A] text-white rounded-[14px] px-5 py-4 shadow-[0_12px_32px_rgba(26,26,26,0.22)] max-[560px]:hidden">
+            <div className="absolute -bottom-5 -right-5 text-white rounded-[14px] px-5 py-4 shadow-[0_12px_32px_rgba(26,26,26,0.22)] max-[560px]:hidden" style={{ background: 'oklch(17% 0.009 82)' }}>
               <p className="text-[26px] font-bold leading-none text-[#CFA64A]" style={{ fontFamily: "'Space Grotesk', Arial, sans-serif" }}>4.9</p>
               <p className="text-[11px] text-[#777B82] font-medium mt-1">Google Rating</p>
             </div>
@@ -96,15 +96,16 @@ export default function WhyRent() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
               className="mb-10">
-              <p className="text-[11px] font-semibold tracking-[0.2em] text-[#CFA64A] uppercase mb-3">
-                Why Speed Switch
-              </p>
+              <div className="flex items-center gap-3 mb-5">
+                <span className="block h-px w-8 bg-[#CFA64A]" />
+                <span className="text-[12px] font-bold tracking-[0.18em] text-[#CFA64A] uppercase">Why Speed Switch</span>
+              </div>
               <h2
-                className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-5"
-                style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(36px,3.8vw,62px)' }}>
+                className="font-bold uppercase text-[#1A1A1A] leading-[0.86] m-0 mb-5"
+                style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(40px,4.2vw,68px)' }}>
                 The Rental You<br />Can Rely On
               </h2>
-              <p className="text-[#777B82] text-[16px] leading-relaxed max-w-[460px]">
+              <p className="text-[#777B82] text-[16px] leading-relaxed max-w-[65ch]">
                 Fast delivery, a clean premium fleet, flexible terms, and a team reachable on WhatsApp day or night. Everything a Dubai rental should be.
               </p>
             </motion.div>
@@ -113,16 +114,19 @@ export default function WhyRent() {
               variants={container}
               initial="hidden"
               animate={inView ? 'show' : 'hidden'}
-              className="grid grid-cols-2 gap-5 mb-9 max-[480px]:grid-cols-1">
-              {benefits.map(({ icon: Icon, title, body }) => (
-                <motion.div key={title} variants={item} className="flex flex-col gap-3">
-                  <div className="w-9 h-9 rounded-[8px] bg-[rgba(207,166,74,0.1)] flex items-center justify-center shrink-0">
-                    <Icon size={17} strokeWidth={1.8} className="text-[#CFA64A]" />
-                  </div>
+              className="mb-9 divide-y divide-black/[0.07]">
+              {benefits.map(({ icon: Icon, title, body }, i) => (
+                <motion.div key={title} variants={item}
+                  className="grid items-start py-5 gap-x-5 gap-y-1"
+                  style={{ gridTemplateColumns: '2.4rem 1fr auto' }}>
+                  <span className="text-[13px] font-bold tabular-nums text-[#CFA64A] leading-none pt-[3px] opacity-70">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
                   <div>
                     <p className="font-bold text-[15px] text-[#1A1A1A] leading-tight mb-1">{title}</p>
-                    <p className="text-[#777B82] text-[13px] leading-relaxed m-0">{body}</p>
+                    <p className="text-[#777B82] text-[13px] leading-relaxed m-0 max-w-[52ch]">{body}</p>
                   </div>
+                  <Icon size={15} strokeWidth={1.6} className="text-[#CFA64A] opacity-40 mt-[3px]" />
                 </motion.div>
               ))}
             </motion.div>

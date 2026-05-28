@@ -5,13 +5,18 @@
   --font-sans: 'Manrope', Arial, sans-serif;
   --font-display: 'Space Grotesk', 'Manrope', Arial, sans-serif;
 
-  --color-gold: #CFA64A;
-  --color-gold-light: #DFB96A;
-  --color-gold-dim: rgba(207,166,74,0.15);
-  --color-ink: #1A1A1A;
-  --color-muted: #777B82;
-  --color-base: #F8F7F3;
-  --color-surface: rgba(255,255,255,0.88);
+  /* OKLCH palette — gold hue axis 76°, warm tilt throughout */
+  --color-gold:       oklch(72% 0.13 76);
+  --color-gold-light: oklch(80% 0.10 76);
+  --color-gold-dim:   oklch(72% 0.13 76 / 0.15);
+  --color-ink:        oklch(17% 0.009 82);
+  --color-muted:      oklch(54% 0.008 255);
+  --color-faint:      oklch(71% 0.007 255);
+  --color-base:       oklch(97.5% 0.007 82);
+  --color-warm:       oklch(95.5% 0.011 82);
+  --color-dark:       oklch(17% 0.009 82);
+  --color-deep:       oklch(12% 0.007 82);
+  --color-surface:    oklch(100% 0 0 / 0.88);
 
   --ease-premium: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -27,8 +32,8 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: #F8F7F3;
-  color: #1A1A1A;
+  background: oklch(97.5% 0.007 82);
+  color: oklch(17% 0.009 82);
   font-family: 'Manrope', Arial, sans-serif;
   font-synthesis: none;
   text-rendering: geometricPrecision;

@@ -6,10 +6,10 @@ const FLEET_LINK = '#fleet';
 
 export default function FinalCTA() {
   return (
-    <section className="relative bg-[#1A1A1A] py-32 px-6 overflow-hidden">
+    <section className="relative pt-40 pb-44 px-6 overflow-hidden" style={{ background: 'oklch(13% 0.010 82)' }}>
       <div className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 50% 60%, rgba(207,166,74,0.10), transparent 65%)' }} />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-white/10" />
+        style={{ background: 'radial-gradient(ellipse at 50% 60%, oklch(72% 0.13 76 / 0.10), transparent 65%)' }} />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20" style={{ background: 'oklch(100% 0 0 / 0.10)' }} />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -18,15 +18,12 @@ export default function FinalCTA() {
         transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
         className="relative z-10 max-w-[860px] mx-auto text-center">
 
-        <p className="text-[11px] font-semibold tracking-[0.2em] text-[#CFA64A] uppercase mb-5">
-          Ready to Drive
-        </p>
         <h2
-          className="font-bold uppercase text-white leading-[0.88] mb-7"
-          style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(44px,5.5vw,92px)' }}>
+          className="font-bold uppercase text-white leading-[0.86] mb-7"
+          style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(50px,5.5vw,92px)' }}>
           Your Car.<br />Your Door.<br />Today.
         </h2>
-        <p className="text-[#777B82] text-[17px] leading-relaxed mb-4 max-w-[520px] mx-auto">
+        <p className="text-[#777B82] text-[17px] leading-relaxed mb-4 max-w-[65ch] mx-auto">
           Message us now and we respond fast. Premium cars delivered across all of Dubai, with clear pricing and zero hassle.
         </p>
         <p className="text-[#555] text-[13px] font-medium tracking-wider uppercase mb-10">
@@ -52,22 +49,18 @@ export default function FinalCTA() {
           </a>
         </div>
 
-        {/* Stats strip */}
-        <div className="flex justify-center gap-16 mt-20 pt-10 border-t border-white/[0.06] flex-wrap gap-y-8">
+        {/* Proof bar */}
+        <div className="mt-20 pt-8 border-t flex flex-wrap items-center justify-center gap-x-6 gap-y-3" style={{ borderColor: 'oklch(100% 0 0 / 0.07)' }}>
           {[
-            { value: '200+', label: 'Vehicles Available' },
-            { value: '4.9★', label: 'Google Rating' },
-            { value: '24/7', label: 'WhatsApp Support' },
-            { value: '30min', label: 'Avg. Delivery Time' },
-          ].map(({ value, label }) => (
-            <div key={label} className="text-center">
-              <p
-                className="font-bold text-white leading-none mb-1"
-                style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(28px,3vw,44px)' }}>
-                {value}
-              </p>
-              <p className="text-[#555] text-[12px] font-medium tracking-wider uppercase">{label}</p>
-            </div>
+            'Fleet of 200+ vehicles across every category',
+            '4.9 on Google',
+            'Delivery in under 30 minutes',
+            'WhatsApp reply in under 5 minutes',
+          ].map((fact, i) => (
+            <span key={fact} className="flex items-center gap-6">
+              {i > 0 && <span className="w-px h-3 opacity-20" style={{ background: 'oklch(72% 0.13 76)' }} aria-hidden />}
+              <span className="text-[13px] font-medium" style={{ color: 'oklch(71% 0.007 255)' }}>{fact}</span>
+            </span>
           ))}
         </div>
       </motion.div>

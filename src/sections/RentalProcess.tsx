@@ -36,41 +36,44 @@ export default function RentalProcess() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="bg-[#F8F7F3] py-28 px-6">
+    <section className="pt-20 pb-28 px-6" style={{ background: 'oklch(97.5% 0.007 82)' }}>
       <div className="max-w-[1160px] mx-auto">
         <div className="text-center mb-20">
-          <p className="text-[11px] font-semibold tracking-[0.2em] text-[#CFA64A] uppercase mb-3">
+          <p className="text-[11px] font-light tracking-[0.28em] text-[#999] uppercase mb-4">
             How It Works
           </p>
           <h2
-            className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-5"
-            style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(36px,4vw,68px)' }}>
+            className="font-bold uppercase text-[#1A1A1A] leading-[0.9] m-0 mb-5"
+            style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(32px,3.2vw,52px)' }}>
             Renting in Four<br />Simple Steps
           </h2>
-          <p className="text-[#777B82] text-[16px] leading-relaxed max-w-[480px] mx-auto">
+          <p className="text-[#777B82] text-[16px] leading-relaxed max-w-[65ch] mx-auto">
             No forms. No counters. Just WhatsApp, your documents, and we handle the rest.
           </p>
         </div>
 
-        <div ref={ref} className="grid grid-cols-4 gap-0 relative mb-14 max-[900px]:grid-cols-2 max-[560px]:grid-cols-1">
-          {/* Connector line (desktop only) */}
-          <div className="absolute top-[52px] left-[12.5%] right-[12.5%] h-px bg-black/[0.08] max-[900px]:hidden" />
-
+        <div ref={ref} className="grid grid-cols-4 gap-0 mb-14 max-[900px]:grid-cols-2 max-[560px]:grid-cols-1">
           {steps.map(({ number, icon: Icon, title, body }, i) => (
             <motion.div
               key={number}
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.55, delay: i * 0.1, ease: [0.2, 0.8, 0.2, 1] }}
-              className="relative flex flex-col items-center text-center px-8 pt-2 max-[560px]:flex-row max-[560px]:text-left max-[560px]:px-0 max-[560px]:gap-5 max-[560px]:items-start max-[560px]:pb-8">
-              <div className="relative z-10 w-[104px] h-[104px] rounded-full bg-white border border-black/[0.09] flex flex-col items-center justify-center mb-7 shadow-[0_4px_16px_rgba(26,26,26,0.06)] shrink-0 max-[560px]:w-[72px] max-[560px]:h-[72px] max-[560px]:mb-0">
-                <Icon size={24} strokeWidth={1.6} className="text-[#CFA64A] mb-1 max-[560px]:mb-0.5" />
-                <span className="text-[10px] font-bold text-[#AAADB3] tracking-wider">{number}</span>
+              className="relative pl-6 pr-8 pt-0 pb-10 max-[900px]:pb-8 max-[560px]:pb-6">
+              {/* Bold vertical track */}
+              <div className="absolute left-0 top-0 bottom-0 w-px"
+                style={{ background: i === 0 ? '#CFA64A' : 'rgba(26,26,26,0.1)' }} />
+              {/* Step number — large, typographic */}
+              <div className="flex items-baseline gap-3 mb-5">
+                <span
+                  className="font-bold leading-none text-[#CFA64A] select-none"
+                  style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(42px,3.8vw,58px)', opacity: 0.18 }}>
+                  {number}
+                </span>
+                <Icon size={16} strokeWidth={1.6} className="text-[#CFA64A] mb-1 shrink-0" />
               </div>
-              <div>
-                <h3 className="font-bold text-[17px] text-[#1A1A1A] mb-2 leading-tight max-[560px]:mt-2">{title}</h3>
-                <p className="text-[#777B82] text-[14px] leading-relaxed m-0 max-w-[200px] max-[560px]:max-w-none">{body}</p>
-              </div>
+              <h3 className="font-bold text-[17px] text-[#1A1A1A] mb-2 leading-tight">{title}</h3>
+              <p className="text-[#777B82] text-[14px] leading-relaxed m-0 max-w-[52ch]">{body}</p>
             </motion.div>
           ))}
         </div>
