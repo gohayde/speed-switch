@@ -36,7 +36,7 @@ export default function RentalProcess() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="pt-20 pb-28 px-6" style={{ background: 'oklch(97.5% 0.007 82)' }}>
+    <section id="process" className="pt-20 pb-28 px-6" style={{ background: 'oklch(97.5% 0.007 82)' }}>
       <div className="max-w-[1160px] mx-auto">
         <div className="text-center mb-20">
           <p className="text-[11px] font-light tracking-[0.28em] text-[#999] uppercase mb-4">

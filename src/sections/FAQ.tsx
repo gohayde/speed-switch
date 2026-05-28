@@ -81,7 +81,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export default function FAQ() {
   return (
-    <section className="pt-20 pb-32 px-6" style={{ background: 'oklch(97.5% 0.007 82)' }}>
+    <section id="faq" className="pt-20 pb-32 px-6" style={{ background: 'oklch(97.5% 0.007 82)' }}>
       <div className="max-w-[860px] mx-auto">
         <div className="text-center mb-14">
           <span className="inline-block text-[11px] font-bold tracking-[0.3em] text-[#CFA64A]/50 uppercase mb-6 font-[family-name:'Space_Grotesk',Arial,sans-serif]">§ FAQ</span>

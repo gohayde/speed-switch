@@ -51,7 +51,7 @@ export default function WhyRent() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="pt-24 pb-20 px-6 overflow-hidden" style={{ background: 'oklch(97.5% 0.007 82)' }}>
+    <section id="why-us" className="pt-24 pb-20 px-6 overflow-hidden" style={{ background: 'oklch(97.5% 0.007 82)' }}>
       <div className="max-w-[1160px] mx-auto">
         <div className="grid grid-cols-2 gap-20 items-center max-[960px]:grid-cols-1 max-[960px]:gap-14">
 
