@@ -87,7 +87,7 @@ export default function WhyRent() {
         ref={sectionRef}
         id="why-us"
         className="relative overflow-hidden max-[900px]:hidden h-screen"
-        style={{ background: 'oklch(98% 0.004 82)' }}
+        style={{ background: 'oklch(97.5% 0.007 82)' }}
       >
         <div className="flex h-screen">
 
@@ -96,12 +96,6 @@ export default function WhyRent() {
 
             {/* Ambient glow behind car */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#CFA64A]/[0.06] blur-[100px] rounded-full pointer-events-none" />
-
-            {/* Label */}
-            <div className="flex items-center gap-3 select-none">
-              <span className="block h-px w-6 bg-[#CFA64A]" />
-              <span className="text-[10px] font-bold tracking-[0.25em] text-[#CFA64A] uppercase">Why Speed Switch</span>
-            </div>
 
             {/* Headline */}
             <div className="relative z-10">
@@ -131,8 +125,8 @@ export default function WhyRent() {
           {/* RIGHT PANEL — vertical card track (GSAP scrubs this) */}
           <div className="flex-1 flex items-start pt-24 pb-16 overflow-hidden relative">
             {/* Fade masks top/bottom */}
-            <div className="absolute top-0 left-0 right-0 h-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to bottom, oklch(98% 0.004 82), transparent)' }} />
-            <div className="absolute bottom-0 left-0 right-0 h-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to top, oklch(98% 0.004 82), transparent)' }} />
+            <div className="absolute top-0 left-0 right-0 h-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to bottom, oklch(97.5% 0.007 82), transparent)' }} />
+            <div className="absolute bottom-0 left-0 right-0 h-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to top, oklch(97.5% 0.007 82), transparent)' }} />
 
             <div ref={trackRef} className="flex flex-col gap-5 w-full pr-20 pl-4">
               {benefitsList.map(({ icon: Icon, title, body }, idx) => (
@@ -176,14 +170,10 @@ export default function WhyRent() {
       </section>
 
       {/* MOBILE: Native swipe slider fallback */}
-      <section className="min-[901px]:hidden py-20 px-6 overflow-hidden relative" style={{ background: 'oklch(98% 0.004 82)' }}>
+      <section className="min-[901px]:hidden py-20 px-6 overflow-hidden relative" style={{ background: 'oklch(97.5% 0.007 82)' }}>
         <div className="max-w-[1160px] mx-auto relative z-10">
 
           <div className="mb-10 text-left">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="block h-px w-6 bg-[#CFA64A]" />
-              <span className="text-[11px] font-bold tracking-[0.2em] text-[#CFA64A] uppercase">Why Speed Switch</span>
-            </div>
             <h2
               className="text-[32px] font-extrabold uppercase text-[#1A1A1A] leading-tight m-0 mb-4 font-display"
             >

@@ -85,15 +85,10 @@ export default function RentalProcess() {
     <>
       {/* DESKTOP LAYOUT: GSAP Pinned Horizontal Pan Scroll (Hides on Mobile) */}
       <section ref={sectionRef} id="process" className="relative overflow-hidden max-[900px]:hidden h-screen bg-[#F5F5F7]">
-        <div ref={trackRef} className="flex h-screen items-center px-32 w-max gap-16 relative" style={{ background: 'oklch(98% 0.004 82)' }}>
+        <div ref={trackRef} className="flex h-screen items-center px-32 w-max gap-16 relative" style={{ background: 'oklch(97.5% 0.007 82)' }}>
           
           {/* Slide 0: Heavy Editorial Title Card (500px wide) */}
           <div className="w-[500px] shrink-0 flex flex-col justify-center h-[460px]">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.06] text-[10px] font-bold tracking-[0.25em] text-[#CFA64A] uppercase mb-6 w-fit select-none">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#CFA64A]"></span>
-              Process Flow
-            </span>
-            
             <h2
               className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-6 font-display select-none"
               style={{ fontSize: 'clamp(44px, 4.8vw, 72px)', letterSpacing: '-0.02em' }}>
@@ -143,7 +138,6 @@ export default function RentalProcess() {
 
                   {/* Step Body Copy */}
                   <div className="flex flex-col">
-                    <span className="text-[10px] tracking-widest text-[#CFA64A] font-bold uppercase mb-2 select-none">Renting Step</span>
                     <h3 className="font-bold text-[20px] text-[#1A1A1A] mb-3 leading-tight tracking-tight select-none font-display">
                       {title}
                     </h3>
@@ -162,14 +156,10 @@ export default function RentalProcess() {
       </section>
 
       {/* MOBILE LAYOUT: Simple vertical list stack (Hides on Desktop) */}
-      <section className="min-[901px]:hidden py-24 px-6 relative" style={{ background: 'oklch(98% 0.004 82)' }}>
+      <section className="min-[901px]:hidden py-24 px-6 relative" style={{ background: 'oklch(97.5% 0.007 82)' }}>
         <div className="max-w-[1160px] mx-auto w-full">
           
           <div className="mb-8">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.06] text-[10px] font-bold tracking-[0.25em] text-[#CFA64A] uppercase mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#CFA64A]"></span>
-              Process Flow
-            </span>
             <h2 className="font-bold uppercase text-[#1A1A1A] leading-[0.9] m-0 mb-4 font-display text-[32px]">
               Renting in Four Steps
             </h2>

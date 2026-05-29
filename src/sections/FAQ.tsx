@@ -18,28 +18,12 @@ const faqs = [
     a: 'Yes. We deliver to any address across Dubai at no extra charge: hotels, residences, offices, and short-term rentals. Delivery to other Emirates is available on request.',
   },
   {
-    q: 'Is there a mileage limit?',
-    a: 'Most vehicles in our fleet include unlimited mileage. Where a mileage cap applies, it is clearly stated before you confirm — never buried in fine print.',
-  },
-  {
-    q: 'What insurance is included?',
-    a: 'Basic comprehensive insurance is included with every rental. Additional coverage options are available at checkout. Our team can walk you through the details on WhatsApp before you book.',
-  },
-  {
-    q: 'What is the minimum age to rent?',
-    a: 'The minimum age is 21 for standard vehicles. Some performance or high-end models require the driver to be at least 25. This is shown on each car listing.',
-  },
-  {
-    q: 'What payment methods do you accept?',
-    a: 'We accept all major credit and debit cards, bank transfer, and cash in AED for eligible bookings. Payment options are confirmed at the time of booking via WhatsApp.',
-  },
-  {
     q: 'Can you deliver to Dubai Airport?',
     a: 'Yes. Airport delivery is available at Dubai International (DXB) and Al Maktoum International (DWC). Timing is coordinated around your flight arrival to avoid waiting.',
   },
   {
-    q: 'Can I extend my rental after it starts?',
-    a: 'Absolutely. Message us on WhatsApp any time and we will extend your booking subject to availability — usually confirmed within the hour.',
+    q: 'What insurance is included?',
+    a: 'Basic comprehensive insurance is included with every rental. Additional coverage options are available at checkout. Our team can walk you through the details on WhatsApp before you book.',
   },
   {
     q: 'How quickly does booking get confirmed?',
@@ -84,7 +68,6 @@ export default function FAQ() {
     <section id="faq" className="pt-20 pb-32 px-6" style={{ background: 'oklch(97.5% 0.007 82)' }}>
       <div className="max-w-[860px] mx-auto">
         <div className="text-center mb-14">
-          <span className="inline-block text-[11px] font-bold tracking-[0.3em] text-[#CFA64A]/50 uppercase mb-6">§ FAQ</span>
           <h2
             className="font-bold uppercase text-[#1A1A1A] leading-[0.9] m-0 mb-4 font-display"
             style={{ fontSize: 'clamp(28px,2.8vw,44px)' }}>

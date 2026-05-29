@@ -203,20 +203,16 @@ export default function PickYourCar() {
   };
 
   return (
-    <section id="vehicles" className="relative pt-16 pb-24 overflow-hidden bg-[#F8F7F3]">
+    <section id="vehicles" className="relative pt-16 pb-24 overflow-hidden" style={{ background: 'oklch(97.5% 0.007 82)' }}>
       {/* Centered soft radial glow right behind the center car for visual staging */}
       <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[280px] rounded-full pointer-events-none z-0"
         style={{ background: 'radial-gradient(circle, rgba(207,166,74,0.11), transparent 70%)' }} />
 
       <div className="relative z-10 text-center px-4 max-w-7xl mx-auto">
-        {/* Section Heading — Center bold geometric header match */}
-        <h2 className="font-extrabold uppercase text-[#1A1A1A] leading-[1.0] text-center tracking-wider mb-2 font-display"
+        {/* Section Heading */}
+        <h2 className="font-extrabold uppercase text-[#1A1A1A] leading-[0.92] text-center tracking-wider mb-8 font-display"
           style={{ fontSize: 'clamp(28px,4vw,52px)' }}>
-          PICK YOUR DREAM
-        </h2>
-        <h2 className="font-extrabold uppercase text-[#1A1A1A] leading-[1.0] text-center tracking-wider mb-8 font-display"
-          style={{ fontSize: 'clamp(28px,4vw,52px)' }}>
-          CAR TODAY
+          PICK YOUR DREAM<br />CAR TODAY
         </h2>
 
         {/* Carousel Visual Stage */}
@@ -357,7 +353,7 @@ export default function PickYourCar() {
         </div>
 
         {/* Floating white price/action bar — Overlaps perfectly, custom soft shadows, sharp corners */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[min(740px,92vw)] z-30 bg-white rounded-xl border border-black/[0.06] shadow-[0_4px_16px_rgba(0,0,0,0.03)] p-3 px-5 sm:p-3.5 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[min(740px,92vw)] z-30 bg-white rounded-xl shadow-[0_8px_28px_rgba(0,0,0,0.09)] p-3 px-5 sm:p-3.5 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4 w-full sm:w-auto">
             {/* Tilted price tag icon */}
             <div className="text-black transform -rotate-45 shrink-0">
@@ -439,7 +435,7 @@ export default function PickYourCar() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mb-6">
                   
                   {/* Aspect Card with Car Image */}
-                  <div className="bg-[#F8F7F3] rounded-xl p-3 flex items-center justify-center aspect-[4/3] relative overflow-hidden border border-black/[0.02]">
+                  <div className="rounded-xl p-3 flex items-center justify-center aspect-[4/3] relative overflow-hidden border border-black/[0.02]" style={{ background: 'oklch(97.5% 0.007 82)' }}>
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#CFA64A]/3 to-transparent pointer-events-none" />
                     <img
                       src={activeCar.image}

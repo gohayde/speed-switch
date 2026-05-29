@@ -28,7 +28,7 @@ function Logo() {
 }
 
 function Nav() {
-  const items = ['Home', 'Brands', 'Vehicles', 'Why Us', 'Delivery', 'Process', 'Reviews', 'FAQ'];
+  const items = ['Home', 'Fleet', 'Why Us', 'Reviews', 'FAQ'];
 
   return (
     <header className="hero-nav">
@@ -37,7 +37,7 @@ function Nav() {
         {items.map((item) => (
           <a
             key={item}
-            href={item === 'Home' ? '#home' : `#${item.toLowerCase().replace(/\s+/g, '-')}`}
+            href={item === 'Home' ? '#home' : item === 'Fleet' ? '#vehicles' : `#${item.toLowerCase().replace(/\s+/g, '-')}`}
             className={item === 'Home' ? 'active' : ''}
           >
             {item}

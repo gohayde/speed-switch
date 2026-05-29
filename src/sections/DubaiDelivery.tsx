@@ -27,11 +27,6 @@ export default function DubaiDelivery() {
             animate={inView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
             
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[10px] font-bold tracking-[0.25em] text-[#CFA64A] uppercase mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#CFA64A] animate-pulse"></span>
-              01 · DELIVERY COVERAGE
-            </span>
-            
             <h2
               className="font-bold uppercase text-white leading-[0.88] m-0 mb-6 font-display"
               style={{ fontSize: 'clamp(44px, 4.8vw, 72px)', letterSpacing: '-0.02em' }}>
@@ -45,7 +40,7 @@ export default function DubaiDelivery() {
             {/* Premium Highlights */}
             <div className="flex flex-col gap-5 mb-10">
               <div className="flex items-start gap-4">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-b from-[#CFA64A]/25 to-[#CFA64A]/5 border border-[#CFA64A]/20 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-9 h-9 rounded-full bg-[#CFA64A]/[0.07] border border-[#CFA64A]/20 flex items-center justify-center shrink-0 mt-0.5">
                   <MapPin size={15} className="text-[#CFA64A]" strokeWidth={1.5} />
                 </div>
                 <div>
@@ -55,7 +50,7 @@ export default function DubaiDelivery() {
               </div>
               
               <div className="flex items-start gap-4">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-b from-[#CFA64A]/25 to-[#CFA64A]/5 border border-[#CFA64A]/20 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-9 h-9 rounded-full bg-[#CFA64A]/[0.07] border border-[#CFA64A]/20 flex items-center justify-center shrink-0 mt-0.5">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-4 h-4 text-[#CFA64A]" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                   </svg>
@@ -132,8 +127,8 @@ export default function DubaiDelivery() {
 
             </div>
 
-            <p className="text-[#5E626A] text-[11px] mt-4 leading-relaxed text-right max-[900px]:text-left tracking-wider uppercase select-none">
-              // Custom handovers in Sharjah, Abu Dhabi & surrounding Emirates available on request.
+            <p className="text-[#5E626A] text-[11px] mt-4 leading-relaxed text-right max-[900px]:text-left select-none">
+              Custom handovers in Sharjah, Abu Dhabi, and surrounding Emirates available on request.
             </p>
 
           </motion.div>
