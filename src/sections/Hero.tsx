@@ -176,8 +176,8 @@ function useAmbientCanvas(ref: React.RefObject<HTMLCanvasElement>, disabled: boo
 
         const pulse = b.r + Math.sin(t * b.spd + b.phase) * 38;
         const g = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, pulse);
-        g.addColorStop(0,   'rgba(224, 162, 0, 0.072)');
-        g.addColorStop(0.4, 'rgba(207, 148, 42, 0.038)');
+        g.addColorStop(0,   'rgba(224, 162, 0, 0.18)');
+        g.addColorStop(0.4, 'rgba(207, 148, 42, 0.09)');
         g.addColorStop(1,   'rgba(224, 162, 0, 0)');
 
         ctx.beginPath();

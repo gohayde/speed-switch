@@ -89,7 +89,7 @@ export default function RentalProcess() {
         <div ref={trackRef} className="flex h-screen items-center px-32 w-max gap-16 relative" style={{ background: 'oklch(97.5% 0.007 82)' }}>
           
           {/* Slide 0: Heavy Editorial Title Card (500px wide) */}
-          <div className="w-[500px] shrink-0 flex flex-col justify-center h-[460px]">
+          <div className="w-[500px] shrink-0 flex flex-col justify-center">
             <h2
               className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-6 font-display select-none"
               style={{ fontSize: 'clamp(44px, 4.8vw, 72px)', letterSpacing: '-0.02em' }}>
@@ -117,16 +117,16 @@ export default function RentalProcess() {
 
           {/* Slide 1 - 4: Large Horizontal Step Panels */}
           {steps.map(({ number, title, body, icon }) => (
-            <div 
-              key={number} 
-              className="w-[420px] shrink-0 h-[460px] flex flex-col justify-between"
+            <div
+              key={number}
+              className="w-[380px] shrink-0 flex flex-col"
             >
               {/* Double Bezel Curved Hardware Card */}
-              <div className="p-[1.5px] rounded-[28px] bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.05] shadow-[0_16px_40px_rgba(0,0,0,0.015)] hover:shadow-[0_24px_56px_rgba(207,166,74,0.10)] hover:border-[#CFA64A]/28 hover:bg-[#CFA64A]/[0.008] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group cursor-default h-full">
-                
+              <div className="p-[1.5px] rounded-[28px] bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.05] shadow-[0_16px_40px_rgba(0,0,0,0.015)] hover:shadow-[0_24px_56px_rgba(207,166,74,0.10)] hover:border-[#CFA64A]/28 hover:bg-[#CFA64A]/[0.008] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group cursor-default">
+
                 {/* Inner Bezel Content container */}
-                <div className="bg-white p-9 rounded-[26.5px] flex flex-col justify-between h-full shadow-[inset_0_1px_0_rgba(255,255,255,1)]">
-                  
+                <div className="bg-white p-9 rounded-[26.5px] flex flex-col gap-8 shadow-[inset_0_1px_0_rgba(255,255,255,1)]">
+
                   {/* Step Header */}
                   <div className="flex items-center justify-between">
                     <span className="font-display text-[44px] font-bold text-[#CFA64A]/55 select-none leading-none tracking-tight">
