@@ -88,17 +88,13 @@ export default function WhyRent() {
         ref={sectionRef}
         id="why-us"
         className="relative overflow-hidden max-[900px]:hidden h-screen"
-        style={{ background: 'oklch(97.5% 0.007 82)' }}
+        style={{ background: 'oklch(100% 0 0)' }}
       >
         <div className="flex h-screen">
 
           {/* LEFT PANEL — sticky title + car image */}
-          <div className="w-[52%] shrink-0 flex flex-col justify-between h-screen px-20 pt-24 pb-16 relative overflow-hidden">
-
-            {/* Ambient glow behind car */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#CFA64A]/[0.06] blur-[100px] rounded-full pointer-events-none" />
-
-            {/* Headline */}
+          <div className="why-layout-option why-layout-option--poster w-[52%] shrink-0 flex flex-col h-screen relative overflow-hidden">
+            <div className="absolute bottom-[-8%] left-[7%] w-[780px] h-[380px] bg-[#CFA64A]/[0.08] blur-[88px] rounded-full pointer-events-none" />
             <motion.div
               className="relative z-10"
               initial={reduce ? undefined : { opacity: 0, y: 22 }}
@@ -106,74 +102,38 @@ export default function WhyRent() {
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.7, ease: EASE_EXPO }}
             >
-              <h2
-                className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-5 select-none font-display"
-                style={{ fontSize: 'clamp(42px, 4.2vw, 68px)', letterSpacing: '-0.02em' }}
-              >
+              <h2 className="font-bold uppercase text-[#1A1A1A] leading-[0.86] m-0 select-none font-display" style={{ fontSize: 'clamp(48px, 4.8vw, 78px)', letterSpacing: '-0.02em' }}>
                 The Rental You<br />
                 <span className="text-[#CFA64A]">Can Rely On</span>
               </h2>
-              <p className="text-[#5e6370] text-[15px] leading-relaxed max-w-[38ch] select-none">
+              <p className="why-layout-copy text-[#5e6370] text-[15px] leading-relaxed max-w-[38ch] select-none">
                 Real reviews. Real customers. Every benefit below comes straight from what renters said about us.
               </p>
             </motion.div>
-
-            {/* Bentley 3D car image */}
             <motion.div
-              className="relative z-10 flex items-end justify-center flex-1 mt-4"
+              className="relative z-10 flex items-end justify-start flex-1"
               initial={reduce ? undefined : { opacity: 0, y: 36 }}
               whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.9, delay: 0.14, ease: EASE_EXPO }}
             >
-              <img
-                src="/assets/bentley.png"
-                alt="Bentley — Speed Switch Fleet"
-                className="w-full max-w-[560px] object-contain drop-shadow-[0_30px_60px_rgba(207,166,74,0.12)] select-none pointer-events-none"
-                draggable={false}
-              />
+              <img src="/assets/bentley.png" alt="Bentley — Speed Switch Fleet" className="why-layout-car w-full object-contain drop-shadow-[0_30px_60px_rgba(207,166,74,0.14)] select-none pointer-events-none" draggable={false} />
             </motion.div>
           </div>
 
           {/* RIGHT PANEL — vertical card track (GSAP scrubs this) */}
-          <div className="flex-1 flex items-start pt-24 pb-16 overflow-hidden relative">
-            {/* Fade masks top/bottom */}
-            <div className="absolute top-0 left-0 right-0 h-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to bottom, oklch(97.5% 0.007 82), transparent)' }} />
-            <div className="absolute bottom-0 left-0 right-0 h-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to top, oklch(97.5% 0.007 82), transparent)' }} />
+          <div className="benefit-distill benefit-distill--compact flex-1 flex items-start overflow-hidden relative">
+            <div className="absolute top-0 left-0 right-0 h-20 z-10 pointer-events-none" style={{ background: 'linear-gradient(to bottom, oklch(100% 0 0), transparent)' }} />
+            <div className="absolute bottom-0 left-0 right-0 h-20 z-10 pointer-events-none" style={{ background: 'linear-gradient(to top, oklch(100% 0 0), transparent)' }} />
 
-            <div ref={trackRef} className="flex flex-col gap-5 w-full pr-20 pl-4">
-              {benefitsList.map(({ icon: Icon, title, body }, idx) => (
-                <div
-                  key={title}
-                  className="w-full shrink-0"
-                >
-                  <div className="p-[1.5px] rounded-[16px] bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.05] shadow-[0_12px_32px_rgba(0,0,0,0.015)] hover:shadow-[0_20px_48px_rgba(207,166,74,0.10)] hover:border-[#CFA64A]/28 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group cursor-default">
-                    <div className="bg-white px-8 py-7 rounded-[14.5px] flex items-center gap-6 shadow-[inset_0_1px_0_rgba(255,255,255,1)]">
-
-                      {/* Number */}
-                      <span className="text-[11px] font-bold text-[#CFA64A]/65 select-none w-6 shrink-0 font-display">
-                        {String(idx + 1).padStart(2, '0')}
-                      </span>
-
-                      {/* Icon */}
-                      <div className="w-10 h-10 rounded-full bg-[#CFA64A]/[0.11] border border-[#CFA64A]/20 flex items-center justify-center text-[#CFA64A] shrink-0 transition-colors duration-500 group-hover:bg-[#CFA64A]/18">
-                        <Icon size={16} strokeWidth={1.5} />
-                      </div>
-
-                      {/* Text */}
-                      <div className="flex-1">
-                        <h3
-                          className="font-bold text-[15px] text-[#1A1A1A] uppercase tracking-wide mb-1 select-none font-display"
-                        >
-                          {title}
-                        </h3>
-                        <p className="text-[#5e6370] text-[13px] leading-relaxed m-0 select-none">
-                          {body}
-                        </p>
-                      </div>
-
-                    </div>
+            <div ref={trackRef} className="benefit-distill-track grid w-full">
+              {benefitsList.map(({ icon: Icon, title, body }) => (
+                <div key={title} className="benefit-distill-card">
+                  <div className="benefit-distill-card-head">
+                    <Icon size={15} strokeWidth={1.6} />
+                    <h3 className="benefit-distill-title font-display">{title}</h3>
                   </div>
+                  <p className="benefit-distill-body">{body}</p>
                 </div>
               ))}
             </div>
@@ -183,7 +143,7 @@ export default function WhyRent() {
       </section>
 
       {/* MOBILE: Native swipe slider fallback */}
-      <section className="min-[901px]:hidden py-20 px-6 overflow-hidden relative" style={{ background: 'oklch(97.5% 0.007 82)' }}>
+      <section className="min-[901px]:hidden py-20 px-6 overflow-hidden relative" style={{ background: 'oklch(100% 0 0)' }}>
         <div className="max-w-[1160px] mx-auto relative z-10">
 
           <div className="mb-10 text-left">
@@ -211,16 +171,13 @@ export default function WhyRent() {
             className="flex gap-5 overflow-x-auto pb-6 snap-x snap-mandatory touch-pan-x"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {benefitsList.map(({ icon: Icon, title, body }, idx) => (
+            {benefitsList.map(({ icon: Icon, title, body }) => (
               <div
                 key={title}
-                className="flex-shrink-0 w-[280px] snap-start bg-white p-6 rounded-[20px] border border-black/[0.04] shadow-[0_10px_24px_rgba(26,26,26,0.02)] flex flex-col justify-between min-h-[200px] group"
+                className="flex-shrink-0 w-[280px] snap-start bg-[#FAFAFA] p-6 rounded-[12px] border border-black/[0.05] flex flex-col justify-between min-h-[180px] group"
               >
-                <div className="flex justify-between items-start mb-5">
-                  <span className="text-[11px] font-bold font-display text-[#CFA64A]/65">
-                    {String(idx + 1).padStart(2, '0')}
-                  </span>
-                  <div className="w-9 h-9 rounded-full bg-[#CFA64A]/[0.11] border border-[#CFA64A]/20 flex items-center justify-center text-[#CFA64A]">
+                <div className="flex justify-end mb-4">
+                  <div className="w-9 h-9 rounded-full bg-[#CFA64A]/[0.12] flex items-center justify-center text-[#CFA64A]">
                     <Icon size={15} strokeWidth={1.5} />
                   </div>
                 </div>

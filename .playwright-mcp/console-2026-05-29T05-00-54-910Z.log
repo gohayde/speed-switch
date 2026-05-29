@@ -1,0 +1,569 @@
+[      25ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[     119ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[     164ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[     444ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[     802ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[     878ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[     922ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[    1194ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[    1551ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[    1625ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[    1669ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[    1944ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[    2312ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[    2383ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[    2428ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[    2725ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[    3091ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[    3194ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[    3243ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[    3537ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[    3897ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[    3970ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[    3998ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[    4317ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[    4671ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[    4721ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[    4764ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[    4969ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[    5325ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[    5366ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[    5400ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[    5705ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[    6054ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[    6110ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[    6152ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[    6392ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[    6747ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[    6795ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[    6835ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[    7081ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[    7431ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[    7483ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[    7526ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[    7764ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[    8124ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[    8180ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[    8223ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[    8462ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[    8806ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[    8857ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[    8899ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[    9148ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[    9496ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[    9549ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[    9592ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[    9842ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   10195ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   10253ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   10295ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   10544ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   10892ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   10951ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   10992ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   11259ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   11608ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   11673ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   11716ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   11976ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   12327ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   12382ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   12422ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   12686ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   13033ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   13086ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   13127ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   13422ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   13769ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   13837ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   13881ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   14158ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   14513ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   14575ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   14618ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   14904ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   15251ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   15320ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   15361ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   15605ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   15958ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   16010ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   16051ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   16304ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   16658ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   16710ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   16750ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   16988ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   17339ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   17393ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   17434ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   17671ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   18029ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   18089ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   18132ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   18387ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   18742ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   18794ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   18834ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   19075ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   19430ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   19484ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   19528ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   19765ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   20122ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   20172ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   20217ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   20463ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   20806ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   20857ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   20900ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   21142ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   21489ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   21539ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   21582ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   21822ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   22175ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   22228ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   22271ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   22514ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   22867ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   22916ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   22959ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   23198ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   23554ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   23602ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   23646ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   23886ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   24246ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   24308ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   24356ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   24598ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   24948ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   24996ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   25040ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   25308ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   25662ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   25719ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   25763ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   25999ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   26348ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   26401ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   26441ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   26678ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   27033ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   27082ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   27124ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   27388ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   27735ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   27795ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   27838ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   28073ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   28437ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   28489ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   28529ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   28768ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   29120ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   29168ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   29209ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   29462ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   29862ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   29919ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   29961ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   30212ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   30570ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   30629ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   30671ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   30910ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   31262ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   31322ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   31364ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   31605ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   31959ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   32019ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   32061ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   32308ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   32662ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   32712ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   32756ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   32995ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   33354ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   33413ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   33456ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   33694ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   34047ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   34108ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   34151ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   34437ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   34781ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   34837ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   34879ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   35085ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   35435ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   35477ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   35503ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   35737ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   36087ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   36141ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   36185ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   36446ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   36786ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   36836ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   36880ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   37135ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   37488ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   37540ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   37583ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   37826ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   38174ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   38221ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   38265ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   38534ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   38883ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   38934ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   38977ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   39225ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   39579ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   39631ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   39672ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   39917ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   40263ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   40313ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   40359ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   40610ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   40963ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   41015ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   41059ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   41302ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   41656ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   41708ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   41753ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   41994ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   42341ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   42396ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   42440ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   42680ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   43034ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   43086ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   43127ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   43384ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   43737ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   43788ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   43833ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   44077ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   44424ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   44484ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   44529ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   44774ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   45125ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   45177ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   45219ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   45482ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   45829ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   45878ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   45923ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   46169ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   46521ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   46572ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   46615ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   46872ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   47215ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   47265ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   47310ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   47574ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   47926ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   47977ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   48021ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   48294ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   48641ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   48706ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   48754ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   49135ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   49492ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   49543ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   49585ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   49832ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   50178ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   50226ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   50270ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   50539ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   50883ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   50932ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   50976ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   51226ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   51583ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   51633ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   51677ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   51918ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   52273ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   52324ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   52367ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   52631ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   52971ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   53019ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   53065ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   53305ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   53660ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   53709ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   53752ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   54003ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   54355ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   54406ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   54450ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   54696ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   55054ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   55106ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   55151ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   55394ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   55746ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   55800ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   55844ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   56086ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   56445ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   56503ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   56551ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   56794ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   57147ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   57196ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   57238ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   57501ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   57856ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   57910ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   57955ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   58195ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   58553ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   58601ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   58644ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   58898ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   59258ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   59310ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   59354ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   59611ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   59967ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   60030ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   60072ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   60314ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   60675ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   60735ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   60778ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   61037ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   61391ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   61445ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   61492ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   61755ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   62103ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   62153ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   62196ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   62440ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   62785ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   62837ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   62879ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   63148ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   63509ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   63569ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   63614ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   63868ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   64221ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   64271ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   64311ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   64578ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   64921ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   64976ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   65021ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   65269ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   65622ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   65671ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   65715ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   65957ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   66326ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   66376ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   66420ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   66677ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   67030ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   67082ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   67125ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   67376ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   67737ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   67788ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   67831ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   68076ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   68429ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   68477ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   68522ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   68772ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   69119ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   69170ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   69212ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   69456ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   69810ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   69856ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   69901ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   70150ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   70504ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   70558ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   70602ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   70845ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   71193ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   71242ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   71285ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   71549ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   71898ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   71958ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   72001ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   72245ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   72602ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   72659ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   72703ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   72946ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   73295ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   73349ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   73391ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   73659ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   74011ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   74071ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   74115ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   74356ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   74706ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   74757ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   74799ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   75043ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   75399ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   75450ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   75495ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   75758ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   76108ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   76161ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   76205ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   76660ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   77013ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   77078ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   77120ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   77363ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   77708ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   77769ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   77810ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   78056ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   78405ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   78460ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   78505ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   78768ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   79123ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   79178ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   79220ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   79500ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   79854ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   79902ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   79943ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   80216ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   80558ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   80629ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   80671ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   80936ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   81285ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   81337ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   81378ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   81661ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   82018ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   82078ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   82120ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   82388ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   82736ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   82787ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   82827ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   83089ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   83441ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   83495ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   83538ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   83825ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   84178ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   84242ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   84283ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   84545ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   84898ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   84948ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   84989ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   85247ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   85599ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   85658ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   85700ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   85955ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   86300ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   86349ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   86393ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   86680ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   87038ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   87095ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   87137ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   87394ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   87742ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   87793ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   87834ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   88096ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   88448ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   88501ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   88544ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   88818ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   89169ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   89226ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   89268ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   89523ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   89870ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   89919ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   89959ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   90216ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   90567ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   90613ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   90658ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   90896ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   91249ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   91302ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   91345ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   91585ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   91943ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   91994ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   92038ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   92280ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   92630ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   92682ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   92724ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   92963ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   93326ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   93384ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   93426ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   93668ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   94023ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   94073ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   94115ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   94363ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   94733ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   94799ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   94841ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   95072ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   95419ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   95468ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   95511ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   95772ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   96121ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   96176ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   96219ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   96457ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   96809ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   96860ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   96901ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   97142ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   97496ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   97544ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   97587ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   97839ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   98190ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   98243ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   98286ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   98532ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   98892ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   98948ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   98991ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   99255ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[   99601ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[   99663ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[   99703ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[   99971ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[  100015ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336

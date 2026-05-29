@@ -1,6 +1,6 @@
 {
   "id": "5a732d26",
-  "phase": "cycling",
+  "phase": "discarded",
   "pageUrl": "/",
   "sourceFile": "src/sections/BrandMarquee.tsx",
   "expectedVariants": 3,
@@ -531,5 +531,5 @@
       "revision": 1
     }
   ],
-  "updatedAt": "2026-05-29T04:52:49.560Z"
+  "updatedAt": "2026-05-29T04:58:03.093Z"
 }

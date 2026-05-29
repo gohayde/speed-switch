@@ -5,7 +5,8 @@ import {
 } from 'framer-motion';
 import { ArrowRight, CalendarDays, CarFront, ChevronDown, MapPin, Search, Check } from 'lucide-react';
 
-const WA_LINK = 'https://wa.me/971500000000?text=Hi%2C%20I%20want%20to%20book%20a%20car';
+const WHATSAPP_NUMBER = '971521430808';
+const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C%20I%20want%20to%20book%20a%20car`;
 const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const carTypes = ['Luxury SUV', 'V12 Supercar', 'High-End Sports', 'Exotic Convertible'];
 const locations = ['Dubai, UAE', 'Dubai Marina', 'Palm Jumeirah', 'DXB Airport'];
@@ -59,7 +60,7 @@ function Nav() {
       </motion.nav>
       <motion.div className="hero-nav-actions" variants={reduce ? undefined : itemVariants}>
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hero-book">
-          <span>Book Now</span>
+          <span>Book on WhatsApp</span>
           <ArrowRight size={20} strokeWidth={2} />
         </a>
       </motion.div>
@@ -323,14 +324,14 @@ export default function Hero() {
                 '_blank',
               );
             }}
-            aria-label="Search rental cars"
+            aria-label="Check rental availability on WhatsApp"
           >
             <SearchField icon={CarFront}     label="Car Type"         value={selectedCarType}    isOpen={activeField === 'carType'}   onClick={() => setActiveField(activeField === 'carType'   ? null : 'carType')} />
             <SearchField icon={MapPin}        label="Pick-up Location" value={selectedLocation}   isOpen={activeField === 'location'}  onClick={() => setActiveField(activeField === 'location'  ? null : 'location')} />
             <SearchField icon={CalendarDays}  label="Date"             value={selectedDate}       isOpen={activeField === 'date'}      onClick={() => setActiveField(activeField === 'date'      ? null : 'date')} showBorder={false} />
-            <button type="submit" className="hero-search-button" aria-label="Search">
+            <button type="submit" className="hero-search-button" aria-label="Check availability on WhatsApp">
               <Search size={22} strokeWidth={2} />
-              <span>Search</span>
+              <span>Check availability</span>
             </button>
           </form>
 

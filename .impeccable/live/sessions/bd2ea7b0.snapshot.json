@@ -1,0 +1,26 @@
+{
+  "id": "bd2ea7b0",
+  "phase": "completed",
+  "pageUrl": "/",
+  "sourceFile": "src\\sections\\WhyRent.tsx",
+  "expectedVariants": 3,
+  "arrivedVariants": 3,
+  "visibleVariant": 3,
+  "paramValues": {},
+  "pendingEventSeq": null,
+  "pendingEvent": null,
+  "deliveryLease": null,
+  "checkpointRevision": 5,
+  "activeOwner": "5c630c0f",
+  "sourceMarkers": {},
+  "fallbackMode": null,
+  "annotationArtifacts": [],
+  "diagnostics": [
+    {
+      "error": "carbonize_cleanup_required",
+      "file": "src\\sections\\WhyRent.tsx",
+      "message": "Accepted variant still has carbonize markers that must be folded into source CSS."
+    }
+  ],
+  "updatedAt": "2026-05-29T05:58:09.409Z"
+}

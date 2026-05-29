@@ -45,7 +45,9 @@ export default function BrandMarquee() {
   const doubled = [...brands, ...brands];
 
   return (
-    <section id="brands" className="relative border-y border-black/[0.05] py-10 overflow-hidden" style={{ background: 'oklch(97.5% 0.007 82)' }}>
+
+
+    <section id="brands" className="relative border-y border-black/[0.05] py-10 overflow-hidden" style={{ background: 'oklch(100% 0 0)' }}>
       <div className="relative overflow-hidden w-full">
         <div className="marquee-track flex w-max items-center">
           {doubled.map((brand, i) => (
@@ -54,5 +56,7 @@ export default function BrandMarquee() {
         </div>
       </div>
     </section>
+
+
   );
 }

@@ -179,14 +179,14 @@ export default function PickYourCar() {
     const parts = value.split(' ');
     if (parts.length >= 2) {
       return (
-        <div className="text-[13px] sm:text-[14px] text-[#1A1A1A] leading-tight">
+        <div className="text-[13px] sm:text-[14px] text-white leading-tight">
           <span className="font-extrabold">{parts[0]}</span>{' '}
-          <span className="font-normal text-gray-500">{parts.slice(1).join(' ')}</span>
+          <span className="font-normal text-white/50">{parts.slice(1).join(' ')}</span>
         </div>
       );
     }
     return (
-      <div className="text-[13px] sm:text-[14px] font-extrabold text-[#1A1A1A] leading-tight">
+      <div className="text-[13px] sm:text-[14px] font-extrabold text-white leading-tight">
         {value}
       </div>
     );
@@ -204,18 +204,18 @@ export default function PickYourCar() {
   };
 
   return (
-    <section id="vehicles" className="relative pt-16 pb-24 overflow-x-hidden" style={{ background: 'oklch(97.5% 0.007 82)' }}>
+    <section id="vehicles" className="relative pt-16 pb-24 overflow-x-hidden" style={{ background: 'oklch(11% 0.007 82)' }}>
       {/* Ambient glow behind center car */}
       <div
         className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[280px] rounded-full pointer-events-none z-0"
-        style={{ background: 'radial-gradient(circle, rgba(207,166,74,0.11), transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(207,166,74,0.18), transparent 70%)' }}
       />
 
       <div className="relative z-10 text-center px-4 max-w-7xl mx-auto">
 
         {/* Section heading with clip-path reveal */}
         <motion.h2
-          className="font-extrabold uppercase text-[#1A1A1A] leading-[0.92] text-center mb-8 font-display"
+          className="font-extrabold uppercase text-white leading-[0.92] text-center mb-8 font-display"
           style={{ fontSize: 'clamp(38px,5.2vw,72px)', letterSpacing: '-0.02em', textWrap: 'balance' } as React.CSSProperties}
           variants={reduce ? undefined : headingVariants}
           initial={reduce ? undefined : 'hidden'}
@@ -302,7 +302,7 @@ export default function PickYourCar() {
           {/* Nav buttons — pointer-events-auto so they register inside the drag zone */}
           <button
             onClick={handlePrev}
-            className="absolute left-[20%] sm:left-[23%] md:left-[26%] lg:left-[27%] z-20 p-2.5 rounded-full bg-white border border-black/[0.08] text-[#5e6370] hover:border-[#CFA64A] hover:text-[#CFA64A] hover:shadow-[0_4px_12px_rgba(207,166,74,0.14)] active:scale-95 transition-all duration-[180ms] cursor-pointer pointer-events-auto"
+            className="absolute left-[20%] sm:left-[23%] md:left-[26%] lg:left-[27%] z-20 p-2.5 rounded-full bg-white/10 border border-white/20 text-white hover:border-[#CFA64A] hover:text-[#CFA64A] hover:shadow-[0_4px_12px_rgba(207,166,74,0.14)] active:scale-95 transition-all duration-[180ms] cursor-pointer pointer-events-auto"
             aria-label="Previous Car"
           >
             <ChevronLeft size={16} strokeWidth={2.2} />
@@ -323,7 +323,7 @@ export default function PickYourCar() {
               key={car.id}
               onClick={() => handleSelectCar(index)}
               className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                index === activeIndex ? 'bg-[#CFA64A] w-5' : 'w-1.5 bg-black/10 hover:bg-black/25'
+                index === activeIndex ? 'bg-[#CFA64A] w-5' : 'w-1.5 bg-white/20 hover:bg-white/40'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -438,7 +438,7 @@ export default function PickYourCar() {
                   {/* Car image — layoutId matches the carousel image for shared-element morph */}
                   <div
                     className="rounded-xl p-3 flex items-center justify-center aspect-[4/3] relative overflow-hidden border border-black/[0.02]"
-                    style={{ background: 'oklch(97.5% 0.007 82)' }}
+                    style={{ background: 'oklch(14% 0.007 82)' }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#CFA64A]/3 to-transparent pointer-events-none" />
                     <motion.img

@@ -12,8 +12,8 @@
   --color-ink:        oklch(17% 0.009 82);
   --color-muted:      oklch(54% 0.008 255);
   --color-faint:      oklch(71% 0.007 255);
-  --color-base:       oklch(99.5% 0.002 76);
-  --color-warm:       oklch(97.5% 0.010 76);
+  --color-base:       oklch(100% 0 0);
+  --color-warm:       oklch(98% 0.004 82);
   --color-dark:       oklch(17% 0.009 82);
   --color-deep:       oklch(12% 0.007 82);
   --color-surface:    oklch(100% 0 0 / 0.88);
@@ -32,7 +32,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: oklch(99.5% 0.002 76);
+  background: oklch(100% 0 0);
   color: oklch(17% 0.009 82);
   font-family: 'Manrope', Arial, sans-serif;
   font-synthesis: none;
@@ -51,6 +51,60 @@ button, a { font: inherit; }
 
 .marquee-track {
   animation: marquee 70s linear infinite;
+}
+
+.why-layout-option--poster {
+  padding: 86px 74px 48px;
+  gap: 32px;
+}
+
+.why-layout-option--poster .why-layout-copy {
+  margin-top: 18px;
+}
+
+.why-layout-option--poster .why-layout-car {
+  max-width: min(690px, 100%);
+  transform: translateX(-5%);
+}
+
+.benefit-distill--compact {
+  padding: 86px 72px 58px 12px;
+}
+
+.benefit-distill--compact .benefit-distill-track {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.benefit-distill--compact .benefit-distill-card {
+  min-height: 156px;
+  padding: 22px;
+  border: 1px solid rgb(26 26 26 / 0.07);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.benefit-distill--compact .benefit-distill-card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #CFA64A;
+}
+
+.benefit-distill--compact .benefit-distill-title {
+  margin: 0 0 10px;
+  color: #1A1A1A;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.12;
+  text-transform: uppercase;
+}
+
+.benefit-distill--compact .benefit-distill-body {
+  margin: 0;
+  color: #5e6370;
+  font-size: 12.5px;
+  line-height: 1.48;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -77,7 +131,7 @@ html.lenis { height: auto; }
   height: 100vh;
   min-height: 720px;
   overflow: hidden;
-  background: #ffffff;
+  background: #fff;
   isolation: isolate;
 }
 
@@ -257,8 +311,6 @@ html.lenis { height: auto; }
 
 .hero-copy h1 span {
   display: block;
-  transform: scaleX(1.25);
-  transform-origin: center;
 }
 
 .hero-copy h1 span + span {

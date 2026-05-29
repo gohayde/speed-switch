@@ -1,0 +1,20 @@
+{
+  "id": "cc07bdc6",
+  "phase": "discarded",
+  "pageUrl": "/",
+  "sourceFile": "src/sections/RentalProcess.tsx",
+  "expectedVariants": 3,
+  "arrivedVariants": 3,
+  "visibleVariant": 1,
+  "paramValues": {},
+  "pendingEventSeq": null,
+  "pendingEvent": null,
+  "deliveryLease": null,
+  "checkpointRevision": 8,
+  "activeOwner": "068ffc88",
+  "sourceMarkers": {},
+  "fallbackMode": null,
+  "annotationArtifacts": [],
+  "diagnostics": [],
+  "updatedAt": "2026-05-29T06:03:41.339Z"
+}

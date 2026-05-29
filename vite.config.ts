@@ -5,6 +5,17 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server: {
+    watch: {
+      ignored: [
+        '**/.impeccable/**',
+        '**/.playwright-mcp/**',
+        '**/*.png',
+        '**/*.jpeg',
+        '**/*.jpg',
+      ],
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

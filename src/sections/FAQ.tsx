@@ -87,7 +87,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="pt-28 pb-32 px-6" style={{ background: 'oklch(97.5% 0.007 82)' }}>
+    <section id="faq" className="pt-28 pb-32 px-6" style={{ background: 'oklch(100% 0 0)' }}>
       <div className="max-w-[860px] mx-auto">
         <div ref={headingRef} className="text-center mb-14">
           <motion.h2

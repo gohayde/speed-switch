@@ -1,0 +1,20 @@
+{
+  "id": "d76e2d68",
+  "phase": "variants_ready",
+  "pageUrl": "/",
+  "sourceFile": "src/sections/WhyRent.tsx",
+  "expectedVariants": 2,
+  "arrivedVariants": 0,
+  "visibleVariant": 0,
+  "paramValues": {},
+  "pendingEventSeq": null,
+  "pendingEvent": null,
+  "deliveryLease": null,
+  "checkpointRevision": 9,
+  "activeOwner": "f3f373b2",
+  "sourceMarkers": {},
+  "fallbackMode": null,
+  "annotationArtifacts": [],
+  "diagnostics": [],
+  "updatedAt": "2026-05-29T05:47:47.241Z"
+}
