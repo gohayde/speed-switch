@@ -92,7 +92,7 @@ export default function RentalProcess() {
             <h2
               className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-6 font-display select-none"
               style={{ fontSize: 'clamp(44px, 4.8vw, 72px)', letterSpacing: '-0.02em' }}>
-              Renting in<br /><span className="text-[#1A1A1A]/35">Four Steps</span>
+              Renting in<br /><span className="text-[#CFA64A]">Four Steps</span>
             </h2>
             
             <p className="text-[#777B82] text-[15px] leading-relaxed max-w-[42ch] mb-8 select-none">

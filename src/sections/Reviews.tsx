@@ -82,19 +82,16 @@ export default function Reviews() {
   ];
 
   return (
-    <section id="reviews" className="pt-20 pb-24 px-6 overflow-hidden" style={{ background: 'oklch(97.5% 0.007 82)' }}>
+    <section id="reviews" className="pt-20 pb-24 px-6 overflow-hidden" style={{ background: 'oklch(13% 0.010 82)' }}>
       <div ref={ref} className="max-w-[1160px] mx-auto">
 
         {/* Header row */}
         <div className="flex items-end justify-between mb-14 flex-wrap gap-6">
           <div>
-            <p className="text-[11px] font-semibold tracking-[0.16em] text-[#1A1A1A]/40 uppercase mb-4" style={{ fontVariant: 'small-caps' }}>
-              Client Reviews
-            </p>
             <h2
-              className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-5 font-display"
+              className="font-bold uppercase text-white leading-[0.88] m-0 mb-5 font-display"
               style={{ fontSize: 'clamp(38px,3.6vw,58px)' }}>
-              What Our Clients<br />Are Saying
+              What Our Clients<br /><span className="text-[#CFA64A]">Are Saying</span>
             </h2>
             <GoogleBadge />
           </div>
@@ -103,13 +100,13 @@ export default function Reviews() {
             <button
               onClick={prev}
               aria-label="Previous review"
-              className="w-12 h-12 rounded-full border border-black/[0.12] flex items-center justify-center transition-all duration-[180ms] hover:border-[#CFA64A] hover:text-[#CFA64A] hover:-translate-y-px">
+              className="w-12 h-12 rounded-full border border-white/[0.15] text-white flex items-center justify-center transition-all duration-[180ms] hover:border-[#CFA64A] hover:text-[#CFA64A] hover:-translate-y-px">
               <ChevronLeft size={20} strokeWidth={1.8} />
             </button>
             <button
               onClick={next}
               aria-label="Next review"
-              className="w-12 h-12 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center transition-all duration-[180ms] hover:bg-[#CFA64A] hover:text-[#1A1A1A] hover:-translate-y-px">
+              className="w-12 h-12 rounded-full bg-[#CFA64A] text-[#1A1A1A] flex items-center justify-center transition-all duration-[180ms] hover:bg-[#b8913d] hover:-translate-y-px">
               <ChevronRight size={20} strokeWidth={1.8} />
             </button>
           </div>
@@ -129,7 +126,7 @@ export default function Reviews() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.45, delay: i * 0.07, ease: [0.2, 0.8, 0.2, 1] }}
-                className={`bg-white rounded-[16px] p-8 flex flex-col gap-5 ${i === 1 ? 'shadow-[0_8px_32px_rgba(26,26,26,0.09)]' : 'shadow-[0_2px_12px_rgba(26,26,26,0.05)]'}`}>
+                className={`bg-white rounded-[16px] p-8 flex flex-col gap-5 ${i === 1 ? 'shadow-[0_12px_48px_rgba(0,0,0,0.5)]' : 'shadow-[0_4px_20px_rgba(0,0,0,0.3)]'}`}>
                 <div className="flex items-center justify-between">
                   <div className="flex gap-1">
                     {Array.from({ length: review.stars }).map((_, s) => (
@@ -162,7 +159,7 @@ export default function Reviews() {
               key={i}
               onClick={() => setIndex(i)}
               aria-label={`Go to review ${i + 1}`}
-              className={`rounded-full transition-all duration-[180ms] ${i === index ? 'w-6 h-2 bg-[#CFA64A]' : 'w-2 h-2 bg-black/20'}`}
+              className={`rounded-full transition-all duration-[180ms] ${i === index ? 'w-6 h-2 bg-[#CFA64A]' : 'w-2 h-2 bg-white/20'}`}
             />
           ))}
         </div>

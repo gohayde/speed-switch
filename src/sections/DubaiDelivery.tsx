@@ -30,7 +30,7 @@ export default function DubaiDelivery() {
             <h2
               className="font-bold uppercase text-white leading-[0.88] m-0 mb-6 font-display"
               style={{ fontSize: 'clamp(44px, 4.8vw, 72px)', letterSpacing: '-0.02em' }}>
-              We Come<br /><span className="text-white/30">To You</span>
+              We Come<br /><span className="text-[#CFA64A]">To You</span>
             </h2>
             
             <p className="text-[#8C8F96] text-[15px] leading-relaxed mb-8 max-w-[42ch]">

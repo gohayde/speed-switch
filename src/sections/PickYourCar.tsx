@@ -211,7 +211,7 @@ export default function PickYourCar() {
       <div className="relative z-10 text-center px-4 max-w-7xl mx-auto">
         {/* Section Heading */}
         <h2 className="font-extrabold uppercase text-[#1A1A1A] leading-[0.92] text-center tracking-wider mb-8 font-display"
-          style={{ fontSize: 'clamp(28px,4vw,52px)' }}>
+          style={{ fontSize: 'clamp(38px,5.2vw,72px)' }}>
           PICK YOUR DREAM<br />CAR TODAY
         </h2>
 

@@ -104,7 +104,7 @@ export default function WhyRent() {
                 style={{ fontSize: 'clamp(42px, 4.2vw, 68px)', letterSpacing: '-0.02em' }}
               >
                 The Rental You<br />
-                <span className="text-[#1A1A1A]/30">Can Rely On</span>
+                <span className="text-[#CFA64A]">Can Rely On</span>
               </h2>
               <p className="text-[#777B82] text-[15px] leading-relaxed max-w-[38ch] select-none">
                 Real reviews. Real customers. Every benefit below comes straight from what renters said about us.
