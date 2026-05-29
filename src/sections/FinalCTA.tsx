@@ -25,8 +25,8 @@ export default function FinalCTA() {
         className="relative z-10 max-w-[860px] mx-auto text-center">
 
         <h2
-          className="font-bold uppercase text-white leading-[0.86] mb-7"
-          style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(50px,5.5vw,92px)' }}>
+          className="font-bold uppercase text-white leading-[0.86] mb-7 font-display"
+          style={{ fontSize: 'clamp(50px,5.5vw,92px)' }}>
           Your Car.<br />Today.
         </h2>
         <p className="text-[#777B82] text-[17px] leading-relaxed mb-10 max-w-[65ch] mx-auto">

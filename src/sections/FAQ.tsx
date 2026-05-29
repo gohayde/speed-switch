@@ -84,10 +84,10 @@ export default function FAQ() {
     <section id="faq" className="pt-20 pb-32 px-6" style={{ background: 'oklch(97.5% 0.007 82)' }}>
       <div className="max-w-[860px] mx-auto">
         <div className="text-center mb-14">
-          <span className="inline-block text-[11px] font-bold tracking-[0.3em] text-[#CFA64A]/50 uppercase mb-6 font-[family-name:'Space_Grotesk',Arial,sans-serif]">§ FAQ</span>
+          <span className="inline-block text-[11px] font-bold tracking-[0.3em] text-[#CFA64A]/50 uppercase mb-6">§ FAQ</span>
           <h2
-            className="font-bold uppercase text-[#1A1A1A] leading-[0.9] m-0 mb-4"
-            style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(28px,2.8vw,44px)' }}>
+            className="font-bold uppercase text-[#1A1A1A] leading-[0.9] m-0 mb-4 font-display"
+            style={{ fontSize: 'clamp(28px,2.8vw,44px)' }}>
             Everything You<br />Need to Know
           </h2>
           <p className="text-[#777B82] text-[16px] leading-relaxed max-w-[65ch] mx-auto">

@@ -27,14 +27,14 @@ export default function DubaiDelivery() {
             animate={inView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
             
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[10px] font-bold tracking-[0.25em] text-[#CFA64A] uppercase font-mono mb-6">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[10px] font-bold tracking-[0.25em] text-[#CFA64A] uppercase mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#CFA64A] animate-pulse"></span>
               01 · DELIVERY COVERAGE
             </span>
             
             <h2
               className="font-bold uppercase text-white leading-[0.88] m-0 mb-6 font-display"
-              style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(44px, 4.8vw, 72px)', letterSpacing: '-0.02em' }}>
+              style={{ fontSize: 'clamp(44px, 4.8vw, 72px)', letterSpacing: '-0.02em' }}>
               We Come<br /><span className="text-white/30">To You</span>
             </h2>
             
@@ -111,7 +111,7 @@ export default function DubaiDelivery() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#CFA64A] opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#CFA64A]"></span>
                   </span>
-                  <span className="text-[10px] font-semibold text-white/95 font-mono tracking-wider uppercase">Live handover active</span>
+                  <span className="text-[10px] font-semibold text-white/95 tracking-wider uppercase">Live handover active</span>
                 </div>
 
                 {/* Floating Google Maps Badge in Center/Bottom */}
@@ -119,7 +119,7 @@ export default function DubaiDelivery() {
                   href={GOOGLE_MAPS_DUBAI}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-md border border-white/10 text-white font-medium text-[11px] px-6 py-3 rounded-full flex items-center gap-2 shadow-[0_12px_28px_rgba(0,0,0,0.3)] transition-all duration-500 hover:bg-[#CFA64A] hover:text-[#1A1A1A] hover:border-[#CFA64A]/30 hover:-translate-y-0.5 group/badge font-mono tracking-wider uppercase">
+                  className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-md border border-white/10 text-white font-medium text-[11px] px-6 py-3 rounded-full flex items-center gap-2 shadow-[0_12px_28px_rgba(0,0,0,0.3)] transition-all duration-500 hover:bg-[#CFA64A] hover:text-[#1A1A1A] hover:border-[#CFA64A]/30 hover:-translate-y-0.5 group/badge tracking-wider uppercase">
                   <span>Open Interactive Map</span>
                   <span className="w-5 h-5 rounded-full bg-white/10 group-hover/badge:bg-black/10 flex items-center justify-center transition-all duration-500 group-hover/badge:translate-x-0.5 group-hover/badge:-translate-y-0.5">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-3 h-3" strokeWidth={2}>
@@ -132,7 +132,7 @@ export default function DubaiDelivery() {
 
             </div>
 
-            <p className="text-[#5E626A] text-[11px] mt-4 leading-relaxed text-right max-[900px]:text-left font-mono tracking-wider uppercase select-none">
+            <p className="text-[#5E626A] text-[11px] mt-4 leading-relaxed text-right max-[900px]:text-left tracking-wider uppercase select-none">
               // Custom handovers in Sharjah, Abu Dhabi & surrounding Emirates available on request.
             </p>
 

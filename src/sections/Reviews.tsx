@@ -94,8 +94,8 @@ export default function Reviews() {
               Client Reviews
             </p>
             <h2
-              className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-5"
-              style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(38px,3.6vw,58px)' }}>
+              className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-5 font-display"
+              style={{ fontSize: 'clamp(38px,3.6vw,58px)' }}>
               What Our Clients<br />Are Saying
             </h2>
             <GoogleBadge />

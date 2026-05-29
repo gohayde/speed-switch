@@ -100,14 +100,14 @@ export default function WhyRent() {
             {/* Label */}
             <div className="flex items-center gap-3 select-none">
               <span className="block h-px w-6 bg-[#CFA64A]" />
-              <span className="text-[10px] font-bold tracking-[0.25em] text-[#CFA64A] uppercase font-mono">Why Speed Switch</span>
+              <span className="text-[10px] font-bold tracking-[0.25em] text-[#CFA64A] uppercase">Why Speed Switch</span>
             </div>
 
             {/* Headline */}
             <div className="relative z-10">
               <h2
-                className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-5 select-none"
-                style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(42px, 4.2vw, 68px)', letterSpacing: '-0.02em' }}
+                className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-5 select-none font-display"
+                style={{ fontSize: 'clamp(42px, 4.2vw, 68px)', letterSpacing: '-0.02em' }}
               >
                 The Rental You<br />
                 <span className="text-[#1A1A1A]/30">Can Rely On</span>
@@ -144,7 +144,7 @@ export default function WhyRent() {
                     <div className="bg-white px-8 py-7 rounded-[22.5px] flex items-center gap-6 shadow-[inset_0_1px_0_rgba(255,255,255,1)]">
 
                       {/* Number */}
-                      <span className="font-mono text-[11px] font-bold text-[#CFA64A]/35 select-none w-6 shrink-0">
+                      <span className="text-[11px] font-bold text-[#CFA64A]/35 select-none w-6 shrink-0 font-display">
                         {String(idx + 1).padStart(2, '0')}
                       </span>
 
@@ -156,8 +156,7 @@ export default function WhyRent() {
                       {/* Text */}
                       <div className="flex-1">
                         <h3
-                          className="font-bold text-[15px] text-[#1A1A1A] uppercase tracking-wide mb-1 select-none"
-                          style={{ fontFamily: "'Space Grotesk', Arial, sans-serif" }}
+                          className="font-bold text-[15px] text-[#1A1A1A] uppercase tracking-wide mb-1 select-none font-display"
                         >
                           {title}
                         </h3>
@@ -183,11 +182,10 @@ export default function WhyRent() {
           <div className="mb-10 text-left">
             <div className="flex items-center gap-3 mb-4">
               <span className="block h-px w-6 bg-[#CFA64A]" />
-              <span className="text-[11px] font-bold tracking-[0.2em] text-[#CFA64A] uppercase font-mono">Why Speed Switch</span>
+              <span className="text-[11px] font-bold tracking-[0.2em] text-[#CFA64A] uppercase">Why Speed Switch</span>
             </div>
             <h2
-              className="text-[32px] font-extrabold uppercase text-[#1A1A1A] leading-tight m-0 mb-4"
-              style={{ fontFamily: "'Space Grotesk', Arial, sans-serif" }}
+              className="text-[32px] font-extrabold uppercase text-[#1A1A1A] leading-tight m-0 mb-4 font-display"
             >
               The Rental You<br />Can Rely On
             </h2>
@@ -216,7 +214,7 @@ export default function WhyRent() {
                 className="flex-shrink-0 w-[280px] snap-start bg-white p-6 rounded-[20px] border border-black/[0.04] shadow-[0_10px_24px_rgba(26,26,26,0.02)] flex flex-col justify-between min-h-[200px] group"
               >
                 <div className="flex justify-between items-start mb-5">
-                  <span className="text-[11px] font-bold font-mono text-[#CFA64A]/40">
+                  <span className="text-[11px] font-bold font-display text-[#CFA64A]/40">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
                   <div className="w-9 h-9 rounded-full bg-[#CFA64A]/[0.06] border border-[#CFA64A]/10 flex items-center justify-center text-[#CFA64A]">
@@ -224,7 +222,7 @@ export default function WhyRent() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-[14px] text-[#1A1A1A] uppercase tracking-wide mb-2" style={{ fontFamily: "'Space Grotesk', Arial, sans-serif" }}>
+                  <h3 className="font-bold text-[14px] text-[#1A1A1A] uppercase tracking-wide mb-2 font-display">
                     {title}
                   </h3>
                   <p className="text-[#777B82] text-[12.5px] leading-relaxed m-0">

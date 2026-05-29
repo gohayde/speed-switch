@@ -1,0 +1,2 @@
+[     462ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3333/node_modules/.vite/deps/react-dom_client.js?v=5d0ffcf4:14336
+[     845ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3333/favicon.ico:0

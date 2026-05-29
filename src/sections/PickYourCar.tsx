@@ -210,12 +210,12 @@ export default function PickYourCar() {
 
       <div className="relative z-10 text-center px-4 max-w-7xl mx-auto">
         {/* Section Heading — Center bold geometric header match */}
-        <h2 className="font-extrabold uppercase text-[#1A1A1A] leading-[1.0] text-center tracking-wider mb-2"
-          style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(28px,4vw,52px)' }}>
+        <h2 className="font-extrabold uppercase text-[#1A1A1A] leading-[1.0] text-center tracking-wider mb-2 font-display"
+          style={{ fontSize: 'clamp(28px,4vw,52px)' }}>
           PICK YOUR DREAM
         </h2>
-        <h2 className="font-extrabold uppercase text-[#1A1A1A] leading-[1.0] text-center tracking-wider mb-8"
-          style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(28px,4vw,52px)' }}>
+        <h2 className="font-extrabold uppercase text-[#1A1A1A] leading-[1.0] text-center tracking-wider mb-8 font-display"
+          style={{ fontSize: 'clamp(28px,4vw,52px)' }}>
           CAR TODAY
         </h2>
 
@@ -430,7 +430,7 @@ export default function PickYourCar() {
                 {/* Modal Title */}
                 <div className="mb-5">
                   <span className="text-[9px] font-bold text-[#CFA64A] tracking-[0.2em] uppercase">Premium Rental Fleet</span>
-                  <h3 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] tracking-tight mt-0.5" style={{ fontFamily: "'Space Grotesk', Arial, sans-serif" }}>
+                  <h3 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] tracking-tight mt-0.5 font-display">
                     {activeCar.name}
                   </h3>
                 </div>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
   font-family: 'Manrope', Arial, sans-serif;
@@ -213,7 +213,7 @@ a {
   align-items: center;
   margin: 0;
   color: var(--ink);
-  font-family: 'Space Grotesk', 'Manrope', Arial, sans-serif;
+  font-family: 'Big Shoulders Display', Arial, sans-serif;
   font-size: clamp(58px, 5.95vw, 101px);
   line-height: 0.82;
   font-weight: 700;

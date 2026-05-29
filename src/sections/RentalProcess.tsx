@@ -89,14 +89,14 @@ export default function RentalProcess() {
           
           {/* Slide 0: Heavy Editorial Title Card (500px wide) */}
           <div className="w-[500px] shrink-0 flex flex-col justify-center h-[460px]">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.06] text-[10px] font-bold tracking-[0.25em] text-[#CFA64A] uppercase font-mono mb-6 w-fit select-none">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.06] text-[10px] font-bold tracking-[0.25em] text-[#CFA64A] uppercase mb-6 w-fit select-none">
               <span className="w-1.5 h-1.5 rounded-full bg-[#CFA64A]"></span>
               Process Flow
             </span>
             
             <h2
               className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-6 font-display select-none"
-              style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(44px, 4.8vw, 72px)', letterSpacing: '-0.02em' }}>
+              style={{ fontSize: 'clamp(44px, 4.8vw, 72px)', letterSpacing: '-0.02em' }}>
               Renting in<br /><span className="text-[#1A1A1A]/35">Four Steps</span>
             </h2>
             
@@ -133,7 +133,7 @@ export default function RentalProcess() {
                   
                   {/* Step Header */}
                   <div className="flex items-center justify-between">
-                    <span className="font-display text-[44px] font-bold text-[#CFA64A]/25 select-none leading-none font-mono tracking-tighter">
+                    <span className="font-display text-[44px] font-bold text-[#CFA64A]/25 select-none leading-none tracking-tight">
                       {number}
                     </span>
                     <div className="w-12 h-12 rounded-full bg-[#CFA64A]/[0.05] border border-[#CFA64A]/10 flex items-center justify-center shrink-0 transition-colors duration-500 group-hover:bg-[#CFA64A]/10">
@@ -143,7 +143,7 @@ export default function RentalProcess() {
 
                   {/* Step Body Copy */}
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-mono tracking-widest text-[#CFA64A] font-bold uppercase mb-2 select-none">Renting Step</span>
+                    <span className="text-[10px] tracking-widest text-[#CFA64A] font-bold uppercase mb-2 select-none">Renting Step</span>
                     <h3 className="font-bold text-[20px] text-[#1A1A1A] mb-3 leading-tight tracking-tight select-none font-display">
                       {title}
                     </h3>
@@ -166,7 +166,7 @@ export default function RentalProcess() {
         <div className="max-w-[1160px] mx-auto w-full">
           
           <div className="mb-8">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.06] text-[10px] font-bold tracking-[0.25em] text-[#CFA64A] uppercase font-mono mb-4">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.06] text-[10px] font-bold tracking-[0.25em] text-[#CFA64A] uppercase mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-[#CFA64A]"></span>
               Process Flow
             </span>
@@ -187,7 +187,7 @@ export default function RentalProcess() {
               >
                 <div className="bg-white p-6 rounded-[18.5px] flex gap-5">
                   <div className="flex flex-col items-center justify-start shrink-0">
-                    <span className="font-display text-[26px] font-bold text-[#CFA64A]/25 leading-none mb-2 font-mono tracking-tighter">
+                    <span className="font-display text-[26px] font-bold text-[#CFA64A]/25 leading-none mb-2 tracking-tight">
                       {number}
                     </span>
                     <div className="w-9 h-9 rounded-full bg-[#CFA64A]/[0.05] border border-[#CFA64A]/10 flex items-center justify-center shrink-0">
