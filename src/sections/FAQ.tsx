@@ -65,12 +65,12 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export default function FAQ() {
   return (
-    <section id="faq" className="pt-20 pb-32 px-6" style={{ background: 'oklch(97.5% 0.007 82)' }}>
+    <section id="faq" className="pt-28 pb-32 px-6" style={{ background: 'oklch(97.5% 0.007 82)' }}>
       <div className="max-w-[860px] mx-auto">
         <div className="text-center mb-14">
           <h2
             className="font-bold uppercase text-[#1A1A1A] leading-[0.9] m-0 mb-4 font-display"
-            style={{ fontSize: 'clamp(28px,2.8vw,44px)' }}>
+            style={{ fontSize: 'clamp(34px,3.2vw,54px)', letterSpacing: '-0.02em' }}>
             Everything You<br />Need to Know
           </h2>
           <p className="text-[#5e6370] text-[16px] leading-relaxed max-w-[65ch] mx-auto">

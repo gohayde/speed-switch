@@ -82,7 +82,7 @@ export default function Reviews() {
   ];
 
   return (
-    <section id="reviews" className="pt-20 pb-24 px-6 overflow-hidden" style={{ background: 'oklch(13% 0.010 82)' }}>
+    <section id="reviews" className="pt-32 pb-24 px-6 overflow-hidden" style={{ background: 'oklch(13% 0.010 82)' }}>
       <div ref={ref} className="max-w-[1160px] mx-auto">
 
         {/* Header row */}

@@ -212,8 +212,8 @@ export default function PickYourCar() {
 
       <div className="relative z-10 text-center px-4 max-w-7xl mx-auto">
         {/* Section Heading */}
-        <h2 className="font-extrabold uppercase text-[#1A1A1A] leading-[0.92] text-center tracking-wider mb-8 font-display"
-          style={{ fontSize: 'clamp(38px,5.2vw,72px)' }}>
+        <h2 className="font-extrabold uppercase text-[#1A1A1A] leading-[0.92] text-center mb-8 font-display"
+          style={{ fontSize: 'clamp(38px,5.2vw,72px)', letterSpacing: '-0.02em', textWrap: 'balance' } as React.CSSProperties}>
           PICK YOUR DREAM<br />CAR TODAY
         </h2>
 
@@ -309,7 +309,7 @@ export default function PickYourCar() {
         </div>
 
         {/* Specs Row Under the Car — Match reference: no small utility labels, clean row layout */}
-        <div className="relative z-10 max-w-2xl mx-auto px-4 mt-6 mb-12">
+        <div className="relative z-10 max-w-2xl mx-auto px-4 mt-6 mb-4">
           <AnimatePresence mode="wait">
             <motion.div 
               key={activeCar.id}
@@ -321,7 +321,7 @@ export default function PickYourCar() {
             >
               {/* Stat 1: Top Speed */}
               <div className="flex flex-col items-center justify-center text-center">
-                <div className="text-black mb-2 flex items-center justify-center h-10 w-10">
+                <div className="text-black mb-2 flex items-center justify-center h-8 w-8">
                   <SpeedometerIcon />
                 </div>
                 {formatStatValue(activeCar.stats.topSpeed)}
@@ -329,7 +329,7 @@ export default function PickYourCar() {
 
               {/* Stat 2: Horsepower */}
               <div className="flex flex-col items-center justify-center text-center">
-                <div className="text-black mb-2 flex items-center justify-center h-10 w-10">
+                <div className="text-black mb-2 flex items-center justify-center h-8 w-8">
                   <HorseIcon />
                 </div>
                 {formatStatValue(activeCar.stats.horsepower)}
@@ -337,7 +337,7 @@ export default function PickYourCar() {
 
               {/* Stat 3: Engine */}
               <div className="flex flex-col items-center justify-center text-center">
-                <div className="text-black mb-2 flex items-center justify-center h-10 w-10">
+                <div className="text-black mb-2 flex items-center justify-center h-8 w-8">
                   <EngineIcon />
                 </div>
                 {formatStatValue(activeCar.stats.engine)}
@@ -345,7 +345,7 @@ export default function PickYourCar() {
 
               {/* Stat 4: Seats */}
               <div className="flex flex-col items-center justify-center text-center">
-                <div className="text-black mb-2 flex items-center justify-center h-10 w-10">
+                <div className="text-black mb-2 flex items-center justify-center h-8 w-8">
                   <SeatIcon />
                 </div>
                 {formatStatValue(activeCar.stats.seats)}
@@ -354,43 +354,44 @@ export default function PickYourCar() {
           </AnimatePresence>
         </div>
 
-        {/* Floating white price/action bar — Overlaps perfectly, custom soft shadows, sharp corners */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[min(740px,92vw)] z-30 bg-white rounded-xl shadow-[0_8px_28px_rgba(0,0,0,0.09)] p-3 px-5 sm:p-3.5 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4 w-full sm:w-auto">
-            {/* Tilted price tag icon */}
-            <div className="text-black transform -rotate-45 shrink-0">
-              <Tag size={18} strokeWidth={1.5} />
-            </div>
-            {/* Vertical hairline divider */}
-            <div className="h-6 w-px bg-black/[0.08] shrink-0" />
-            
-            <div className="text-left">
-              <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none mb-1">Starting From</span>
-              <div className="flex items-baseline gap-1">
-                <span className="text-[20px] font-black text-black leading-none tracking-tight">AED {activeCar.pricePerDay.toLocaleString()}</span>
-                <span className="text-[11px] font-bold text-gray-400">/day</span>
-              </div>
+      </div>
+
+      {/* Floating white price/action bar — positioned relative to section, sits in pb-24 area */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[min(740px,92vw)] z-30 bg-white rounded-xl shadow-[0_8px_28px_rgba(0,0,0,0.09)] p-3 px-5 sm:p-3.5 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-4 w-full sm:w-auto">
+          {/* Tilted price tag icon */}
+          <div className="text-black transform -rotate-45 shrink-0">
+            <Tag size={18} strokeWidth={1.5} />
+          </div>
+          {/* Vertical hairline divider */}
+          <div className="h-6 w-px bg-black/[0.08] shrink-0" />
+
+          <div className="text-left">
+            <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none mb-1">Starting From</span>
+            <div className="flex items-baseline gap-1">
+              <span className="text-[20px] font-black text-black leading-none tracking-tight">AED {activeCar.pricePerDay.toLocaleString()}</span>
+              <span className="text-[11px] font-bold text-gray-400">/day</span>
             </div>
           </div>
-          
-          <div className="flex items-center gap-2.5 w-full sm:w-auto">
-            {/* Book Now Button (Solid Black) */}
-            <a 
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(activeCar.whatsappMessage)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 sm:flex-none px-6 py-2.5 rounded-lg bg-black hover:bg-black/90 text-white font-bold text-[12px] tracking-wider uppercase transition-all duration-200 cursor-pointer active:scale-95 text-center"
-            >
-              Book Now
-            </a>
-            {/* More Details Button (Solid Gold) */}
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="flex-1 sm:flex-none px-5 py-2.5 rounded-lg bg-[#CFA64A] hover:bg-[#b8913d] text-white font-bold text-[12px] tracking-wider uppercase transition-all duration-200 cursor-pointer active:scale-95 shadow-sm shadow-[#CFA64A]/10"
-            >
-              More Details
-            </button>
-          </div>
+        </div>
+
+        <div className="flex items-center gap-2.5 w-full sm:w-auto">
+          {/* Book Now Button (Solid Black) */}
+          <a
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(activeCar.whatsappMessage)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 sm:flex-none px-6 py-2.5 rounded-lg bg-black hover:bg-black/90 text-white font-bold text-[12px] tracking-wider uppercase transition-all duration-200 cursor-pointer active:scale-95 text-center"
+          >
+            Book Now
+          </a>
+          {/* More Details Button (Solid Gold) */}
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="flex-1 sm:flex-none px-5 py-2.5 rounded-lg bg-[#CFA64A] hover:bg-[#b8913d] text-white font-bold text-[12px] tracking-wider uppercase transition-all duration-200 cursor-pointer active:scale-95 shadow-sm shadow-[#CFA64A]/10"
+          >
+            More Details
+          </button>
         </div>
       </div>
 
