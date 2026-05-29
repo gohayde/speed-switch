@@ -1,0 +1,39 @@
+[    1008ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:14336
+[    1392ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5176/favicon.ico:0
+[  383993ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:14336
+[  455698ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:14336
+[  848429ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5176/src/sections/RentalProcess.tsx?t=1780028868385:0
+[  848430ms] [ERROR] [vite] Failed to reload /src/sections/RentalProcess.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5176/@vite/client:524
+[ 1026122ms] NotFoundError: Failed to execute 'insertBefore' on 'Node': The node before which the new node is to be inserted is not a child of this node.
+    at insertOrAppendPlacementNode (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:6805:71)
+    at insertOrAppendPlacementNode (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:6806:139)
+    at commitPlacement (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:6827:6)
+    at runWithFiberInDEV (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:850:66)
+    at commitReconciliationEffects (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:7461:6)
+    at commitMutationEffectsOnFiber (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:7242:6)
+    at recursivelyTraverseMutationEffects (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:7232:103)
+    at commitMutationEffectsOnFiber (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:7318:6)
+    at recursivelyTraverseMutationEffects (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:7232:103)
+    at commitMutationEffectsOnFiber (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:7241:6)
+[ 1026122ms] [WARNING] %s
+
+%s
+ An error occurred in the <PickYourCar> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5176/@vite/client:524
+[ 1031910ms] NotFoundError: Failed to execute 'insertBefore' on 'Node': The node before which the new node is to be inserted is not a child of this node.
+    at insertOrAppendPlacementNode (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:6805:71)
+    at insertOrAppendPlacementNode (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:6806:139)
+    at commitPlacement (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:6827:6)
+    at runWithFiberInDEV (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:850:66)
+    at commitReconciliationEffects (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:7461:6)
+    at commitMutationEffectsOnFiber (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:7242:6)
+    at recursivelyTraverseMutationEffects (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:7232:103)
+    at commitMutationEffectsOnFiber (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:7318:6)
+    at recursivelyTraverseMutationEffects (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:7232:103)
+    at commitMutationEffectsOnFiber (http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:7241:6)
+[ 1031902ms] [WARNING] %s
+
+%s
+ An error occurred in the <PickYourCar> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5176/@vite/client:524
+[ 1453595ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5176/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:14336
