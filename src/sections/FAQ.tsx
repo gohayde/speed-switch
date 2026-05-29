@@ -34,7 +34,7 @@ const faqs = [
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-black/[0.08]">
+    <div className="border-b border-[#CFA64A]/[0.12]">
       <button
         onClick={() => setOpen(o => !o)}
         className="w-full flex items-center justify-between gap-6 py-6 text-left"
@@ -71,7 +71,7 @@ export default function FAQ() {
           <h2
             className="font-bold uppercase text-[#1A1A1A] leading-[0.9] m-0 mb-4 font-display"
             style={{ fontSize: 'clamp(34px,3.2vw,54px)', letterSpacing: '-0.02em' }}>
-            Everything You<br />Need to Know
+            Everything You<br /><span className="text-[#CFA64A]">Need to Know</span>
           </h2>
           <p className="text-[#5e6370] text-[16px] leading-relaxed max-w-[65ch] mx-auto">
             Answers to the most common questions about renting with Speed Switch.

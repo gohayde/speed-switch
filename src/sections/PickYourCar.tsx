@@ -122,7 +122,7 @@ const cars: CarData[] = [
 // Custom high-fidelity outline SVG icons matching the reference image mockup
 function SpeedometerIcon() {
   return (
-    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="text-black">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="text-[#CFA64A]">
       <circle cx="12" cy="12" r="9" />
       <path d="M12 7v2M7.76 8.24l1.41 1.41M16.24 8.24l-1.41 1.41M5 12h2M17 12h2" />
       <path d="M12 12l-3.5-3.5" />
@@ -133,7 +133,7 @@ function SpeedometerIcon() {
 
 function HorseIcon() {
   return (
-    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="text-black">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="text-[#CFA64A]">
       <path d="M12 6c.5 1 1 2 2.5 2.5.8.3 1.5.2 2-.5M12 6C11 5.5 9 5 7.5 6.5s-2 3.5-2.5 5c-.3 1 0 2 .5 2.5.5.5 1.5 1 2.5 1M7.5 15c.5.5 1.5.8 2.5.5.8-.3 1.5-1 1.8-2 .3-1 .5-2 1.5-3s2-1.5 3.5-2c1-.3 2-.5 3-.5v.5c0 1.2-.5 2.5-1.5 3l-2.5 1.2c-1 .5-1.5 1-2 2s-.8 2-2.5 3c-1.2.7-2.5 1.2-3.8 1.3H5c-.8 0-1.2-.5-1-1.2.2-.7.8-1.8 1.5-2.3L7.5 15Z" />
     </svg>
   );
@@ -141,7 +141,7 @@ function HorseIcon() {
 
 function EngineIcon() {
   return (
-    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="text-black">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="text-[#CFA64A]">
       <rect x="5" y="8" width="14" height="10" rx="1.5" />
       <path d="M2 11h3M2 15h3M19 11h3M19 15h3M9 8V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M8 18v1.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V18M11 11h2M11 14h2" />
     </svg>
@@ -150,7 +150,7 @@ function EngineIcon() {
 
 function SeatIcon() {
   return (
-    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="text-black">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="text-[#CFA64A]">
       <rect x="10" y="3" width="4" height="3" rx="1" />
       <path d="M12 6v2" />
       <path d="M8 8c0-1.5.5-2 2-2h4c1.5 0 2 .5 2 2v7c0 1-.5 1.5-1.5 1.5h-5C8.5 16.5 8 16 8 15V8Z" />
@@ -278,16 +278,16 @@ export default function PickYourCar() {
           </div>
 
           {/* Sleek, subtle Left/Right Navigation Chevrons */}
-          <button 
+          <button
             onClick={handlePrev}
-            className="absolute left-[20%] sm:left-[23%] md:left-[26%] lg:left-[27%] z-20 p-2.5 rounded-full bg-white shadow-sm border border-black/[0.05] text-[#1A1A1A] hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all cursor-pointer pointer-events-auto"
+            className="absolute left-[20%] sm:left-[23%] md:left-[26%] lg:left-[27%] z-20 p-2.5 rounded-full bg-white border border-black/[0.08] text-[#5e6370] hover:border-[#CFA64A] hover:text-[#CFA64A] hover:shadow-[0_4px_12px_rgba(207,166,74,0.14)] active:scale-95 transition-all duration-[180ms] cursor-pointer pointer-events-auto"
             aria-label="Previous Car"
           >
             <ChevronLeft size={16} strokeWidth={2.2} />
           </button>
-          <button 
+          <button
             onClick={handleNext}
-            className="absolute right-[20%] sm:right-[23%] md:right-[26%] lg:right-[27%] z-20 p-2.5 rounded-full bg-white shadow-sm border border-black/[0.05] text-[#1A1A1A] hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all cursor-pointer pointer-events-auto"
+            className="absolute right-[20%] sm:right-[23%] md:right-[26%] lg:right-[27%] z-20 p-2.5 rounded-full bg-[#CFA64A] text-[#1A1A1A] shadow-[0_4px_12px_rgba(207,166,74,0.22)] hover:bg-[#b8913d] hover:-translate-y-px active:scale-95 transition-all duration-[180ms] cursor-pointer pointer-events-auto"
             aria-label="Next Car"
           >
             <ChevronRight size={16} strokeWidth={2.2} />
@@ -360,14 +360,14 @@ export default function PickYourCar() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[min(740px,92vw)] z-30 bg-white rounded-xl shadow-[0_8px_28px_rgba(0,0,0,0.09)] p-3 px-5 sm:p-3.5 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-4 w-full sm:w-auto">
           {/* Tilted price tag icon */}
-          <div className="text-black transform -rotate-45 shrink-0">
+          <div className="text-[#CFA64A] transform -rotate-45 shrink-0">
             <Tag size={18} strokeWidth={1.5} />
           </div>
           {/* Vertical hairline divider */}
           <div className="h-6 w-px bg-black/[0.08] shrink-0" />
 
           <div className="text-left">
-            <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none mb-1">Starting From</span>
+            <span className="block text-[10px] font-bold text-[#CFA64A]/80 uppercase tracking-widest leading-none mb-1">Starting From</span>
             <div className="flex items-baseline gap-1">
               <span className="text-[20px] font-black text-black leading-none tracking-tight">AED {activeCar.pricePerDay.toLocaleString()}</span>
               <span className="text-[11px] font-bold text-gray-400">/day</span>
@@ -462,28 +462,28 @@ export default function PickYourCar() {
                     {/* Stats */}
                     <div className="grid grid-cols-2 gap-2.5 mb-4">
                       <div className="bg-gray-50/60 rounded-lg p-2.5 border border-black/[0.015] flex items-center gap-2.5">
-                        <span className="text-gray-600 shrink-0"><SpeedometerIcon /></span>
+                        <span className="text-[#CFA64A] shrink-0"><SpeedometerIcon /></span>
                         <div>
                           <span className="block text-[8px] font-bold text-gray-400 uppercase tracking-wider">Top Speed</span>
                           <span className="text-[11px] font-extrabold text-gray-800 leading-none">{activeCar.stats.topSpeed}</span>
                         </div>
                       </div>
                       <div className="bg-gray-50/60 rounded-lg p-2.5 border border-black/[0.015] flex items-center gap-2.5">
-                        <span className="text-gray-600 shrink-0"><HorseIcon /></span>
+                        <span className="text-[#CFA64A] shrink-0"><HorseIcon /></span>
                         <div>
                           <span className="block text-[8px] font-bold text-gray-400 uppercase tracking-wider">Horsepower</span>
                           <span className="text-[11px] font-extrabold text-gray-800 leading-none">{activeCar.stats.horsepower}</span>
                         </div>
                       </div>
                       <div className="bg-gray-50/60 rounded-lg p-2.5 border border-black/[0.015] flex items-center gap-2.5">
-                        <span className="text-gray-600 shrink-0"><EngineIcon /></span>
+                        <span className="text-[#CFA64A] shrink-0"><EngineIcon /></span>
                         <div>
                           <span className="block text-[8px] font-bold text-gray-400 uppercase tracking-wider">Engine</span>
                           <span className="text-[11px] font-extrabold text-gray-800 leading-none">{activeCar.stats.engine}</span>
                         </div>
                       </div>
                       <div className="bg-gray-50/60 rounded-lg p-2.5 border border-black/[0.015] flex items-center gap-2.5">
-                        <span className="text-gray-600 shrink-0"><SeatIcon /></span>
+                        <span className="text-[#CFA64A] shrink-0"><SeatIcon /></span>
                         <div>
                           <span className="block text-[8px] font-bold text-gray-400 uppercase tracking-wider">Seats</span>
                           <span className="text-[11px] font-extrabold text-gray-800 leading-none">{activeCar.stats.seats}</span>

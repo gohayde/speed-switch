@@ -121,17 +121,17 @@ export default function RentalProcess() {
               className="w-[420px] shrink-0 h-[460px] flex flex-col justify-between"
             >
               {/* Double Bezel Curved Hardware Card */}
-              <div className="p-[1.5px] rounded-[28px] bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.05] shadow-[0_16px_40px_rgba(0,0,0,0.015)] hover:shadow-[0_24px_56px_rgba(207,166,74,0.08)] hover:border-[#CFA64A]/15 hover:bg-[#CFA64A]/[0.005] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group cursor-default h-full">
+              <div className="p-[1.5px] rounded-[28px] bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.05] shadow-[0_16px_40px_rgba(0,0,0,0.015)] hover:shadow-[0_24px_56px_rgba(207,166,74,0.10)] hover:border-[#CFA64A]/28 hover:bg-[#CFA64A]/[0.008] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group cursor-default h-full">
                 
                 {/* Inner Bezel Content container */}
                 <div className="bg-white p-9 rounded-[26.5px] flex flex-col justify-between h-full shadow-[inset_0_1px_0_rgba(255,255,255,1)]">
                   
                   {/* Step Header */}
                   <div className="flex items-center justify-between">
-                    <span className="font-display text-[44px] font-bold text-[#CFA64A]/25 select-none leading-none tracking-tight">
+                    <span className="font-display text-[44px] font-bold text-[#CFA64A]/55 select-none leading-none tracking-tight">
                       {number}
                     </span>
-                    <div className="w-12 h-12 rounded-full bg-[#CFA64A]/[0.05] border border-[#CFA64A]/10 flex items-center justify-center shrink-0 transition-colors duration-500 group-hover:bg-[#CFA64A]/10">
+                    <div className="w-12 h-12 rounded-full bg-[#CFA64A]/[0.10] border border-[#CFA64A]/20 flex items-center justify-center shrink-0 transition-colors duration-500 group-hover:bg-[#CFA64A]/18">
                       {icon}
                     </div>
                   </div>
@@ -177,10 +177,10 @@ export default function RentalProcess() {
               >
                 <div className="bg-white p-6 rounded-[18.5px] flex gap-5">
                   <div className="flex flex-col items-center justify-start shrink-0">
-                    <span className="font-display text-[26px] font-bold text-[#CFA64A]/25 leading-none mb-2 tracking-tight">
+                    <span className="font-display text-[26px] font-bold text-[#CFA64A]/55 leading-none mb-2 tracking-tight">
                       {number}
                     </span>
-                    <div className="w-9 h-9 rounded-full bg-[#CFA64A]/[0.05] border border-[#CFA64A]/10 flex items-center justify-center shrink-0">
+                    <div className="w-9 h-9 rounded-full bg-[#CFA64A]/[0.10] border border-[#CFA64A]/20 flex items-center justify-center shrink-0">
                       {icon}
                     </div>
                   </div>

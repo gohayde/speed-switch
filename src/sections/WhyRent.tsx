@@ -134,16 +134,16 @@ export default function WhyRent() {
                   key={title}
                   className="w-full shrink-0"
                 >
-                  <div className="p-[1.5px] rounded-[16px] bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.05] shadow-[0_12px_32px_rgba(0,0,0,0.015)] hover:shadow-[0_20px_48px_rgba(207,166,74,0.08)] hover:border-[#CFA64A]/15 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group cursor-default">
+                  <div className="p-[1.5px] rounded-[16px] bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.05] shadow-[0_12px_32px_rgba(0,0,0,0.015)] hover:shadow-[0_20px_48px_rgba(207,166,74,0.10)] hover:border-[#CFA64A]/28 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group cursor-default">
                     <div className="bg-white px-8 py-7 rounded-[14.5px] flex items-center gap-6 shadow-[inset_0_1px_0_rgba(255,255,255,1)]">
 
                       {/* Number */}
-                      <span className="text-[11px] font-bold text-[#CFA64A]/35 select-none w-6 shrink-0 font-display">
+                      <span className="text-[11px] font-bold text-[#CFA64A]/65 select-none w-6 shrink-0 font-display">
                         {String(idx + 1).padStart(2, '0')}
                       </span>
 
                       {/* Icon */}
-                      <div className="w-10 h-10 rounded-full bg-[#CFA64A]/[0.06] border border-[#CFA64A]/10 flex items-center justify-center text-[#CFA64A] shrink-0 transition-colors duration-500 group-hover:bg-[#CFA64A]/12">
+                      <div className="w-10 h-10 rounded-full bg-[#CFA64A]/[0.11] border border-[#CFA64A]/20 flex items-center justify-center text-[#CFA64A] shrink-0 transition-colors duration-500 group-hover:bg-[#CFA64A]/18">
                         <Icon size={16} strokeWidth={1.5} />
                       </div>
 
@@ -204,10 +204,10 @@ export default function WhyRent() {
                 className="flex-shrink-0 w-[280px] snap-start bg-white p-6 rounded-[20px] border border-black/[0.04] shadow-[0_10px_24px_rgba(26,26,26,0.02)] flex flex-col justify-between min-h-[200px] group"
               >
                 <div className="flex justify-between items-start mb-5">
-                  <span className="text-[11px] font-bold font-display text-[#CFA64A]/40">
+                  <span className="text-[11px] font-bold font-display text-[#CFA64A]/65">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
-                  <div className="w-9 h-9 rounded-full bg-[#CFA64A]/[0.06] border border-[#CFA64A]/10 flex items-center justify-center text-[#CFA64A]">
+                  <div className="w-9 h-9 rounded-full bg-[#CFA64A]/[0.11] border border-[#CFA64A]/20 flex items-center justify-center text-[#CFA64A]">
                     <Icon size={15} strokeWidth={1.5} />
                   </div>
                 </div>

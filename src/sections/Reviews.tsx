@@ -133,13 +133,13 @@ export default function Reviews() {
                       <Star key={s} size={13} fill="#CFA64A" className="text-[#CFA64A]" />
                     ))}
                   </div>
-                  <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[#CFA64A] bg-[rgba(207,166,74,0.1)] px-2.5 py-1 rounded-[5px]">
+                  <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[#CFA64A] bg-[rgba(207,166,74,0.15)] px-2.5 py-1 rounded-[5px]">
                     {review.tag}
                   </span>
                 </div>
                 <p className="text-[#1A1A1A] text-[15px] leading-relaxed m-0 flex-1">"{review.quote}"</p>
                 <div className="flex items-center gap-3 pt-4 border-t border-black/[0.06]">
-                  <div className="w-10 h-10 rounded-full bg-[#1A1A1A] flex items-center justify-center text-white text-[11px] font-bold shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-[#CFA64A] flex items-center justify-center text-[#1A1A1A] text-[11px] font-bold shrink-0">
                     {review.initials}
                   </div>
                   <div>
