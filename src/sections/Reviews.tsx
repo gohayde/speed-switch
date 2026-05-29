@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { motion, useInView, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 const reviews = [
@@ -71,6 +71,7 @@ export default function Reviews() {
   const [index, setIndex] = useState(0);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
+  const reduce = useReducedMotion();
 
   const prev = () => setIndex(i => (i - 1 + reviews.length) % reviews.length);
   const next = () => setIndex(i => (i + 1) % reviews.length);
@@ -114,7 +115,7 @@ export default function Reviews() {
 
         {/* Cards */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={reduce ? undefined : { opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
           className="grid grid-cols-3 gap-5 mb-8 max-[900px]:grid-cols-1">
@@ -122,9 +123,9 @@ export default function Reviews() {
             {visible.map((review, i) => (
               <motion.div
                 key={`${review.name}-${index}`}
-                initial={{ opacity: 0, x: 20 }}
+                initial={reduce ? undefined : { opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
+                exit={reduce ? undefined : { opacity: 0, x: -20 }}
                 transition={{ duration: 0.45, delay: i * 0.07, ease: [0.2, 0.8, 0.2, 1] }}
                 className={`bg-white rounded-[16px] p-8 flex flex-col gap-5 ${i === 1 ? 'shadow-[0_12px_48px_rgba(0,0,0,0.5)]' : 'shadow-[0_4px_20px_rgba(0,0,0,0.3)]'}`}>
                 <div className="flex items-center justify-between">

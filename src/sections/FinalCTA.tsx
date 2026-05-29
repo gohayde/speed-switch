@@ -1,10 +1,18 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
+const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 import { ArrowRight } from 'lucide-react';
 
 const WA_NOW = 'https://wa.me/971500000000?text=Hi%2C%20I%20want%20to%20book%20a%20car';
 const FLEET_LINK = '#fleet';
 
 export default function FinalCTA() {
+  const reduce = useReducedMotion();
+
+  const containerVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.1 } },
+  };
+
   return (
     <section className="relative pt-32 pb-36 px-6 overflow-hidden" style={{
         background: 'oklch(13% 0.010 82)',
@@ -18,22 +26,37 @@ export default function FinalCTA() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20" style={{ background: 'oklch(100% 0 0 / 0.10)' }} />
 
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        variants={reduce ? undefined : containerVariants}
+        initial={reduce ? undefined : 'hidden'}
+        whileInView={reduce ? undefined : 'visible'}
         viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
         className="relative z-10 max-w-[860px] mx-auto text-center">
 
-        <h2
+        <motion.h2
+          variants={reduce ? undefined : {
+            hidden: { clipPath: 'inset(0 0 100% 0)', opacity: 0, y: 16 },
+            visible: { clipPath: 'inset(0 0 0% 0)', opacity: 1, y: 0, transition: { duration: 0.72, ease: EASE_EXPO } },
+          }}
           className="font-bold uppercase text-white leading-[0.86] mb-7 font-display"
           style={{ fontSize: 'clamp(50px,5.5vw,92px)' }}>
           Your Car.<br />Today.
-        </h2>
-        <p className="text-white/65 text-[17px] leading-relaxed mb-10 max-w-[65ch] mx-auto">
-          Message us now and we respond fast. Premium cars delivered across all of Dubai, with clear pricing and zero hassle.
-        </p>
+        </motion.h2>
 
-        <div className="flex items-center justify-center gap-4 flex-wrap">
+        <motion.p
+          variants={reduce ? undefined : {
+            hidden: { opacity: 0, y: 12 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE_EXPO } },
+          }}
+          className="text-white/65 text-[17px] leading-relaxed mb-10 max-w-[65ch] mx-auto">
+          Message us now and we respond fast. Premium cars delivered across all of Dubai, with clear pricing and zero hassle.
+        </motion.p>
+
+        <motion.div
+          variants={reduce ? undefined : {
+            hidden: { opacity: 0, y: 10 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE_EXPO } },
+          }}
+          className="flex items-center justify-center gap-4 flex-wrap">
           <a
             href={WA_NOW}
             target="_blank"
@@ -50,7 +73,7 @@ export default function FinalCTA() {
             View Fleet
             <ArrowRight size={18} strokeWidth={2} />
           </a>
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );

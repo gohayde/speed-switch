@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
-import { useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
+const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -98,7 +99,13 @@ export default function WhyRent() {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#CFA64A]/[0.06] blur-[100px] rounded-full pointer-events-none" />
 
             {/* Headline */}
-            <div className="relative z-10">
+            <motion.div
+              className="relative z-10"
+              initial={reduce ? undefined : { opacity: 0, y: 22 }}
+              whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.7, ease: EASE_EXPO }}
+            >
               <h2
                 className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-5 select-none font-display"
                 style={{ fontSize: 'clamp(42px, 4.2vw, 68px)', letterSpacing: '-0.02em' }}
@@ -109,17 +116,23 @@ export default function WhyRent() {
               <p className="text-[#5e6370] text-[15px] leading-relaxed max-w-[38ch] select-none">
                 Real reviews. Real customers. Every benefit below comes straight from what renters said about us.
               </p>
-            </div>
+            </motion.div>
 
             {/* Bentley 3D car image */}
-            <div className="relative z-10 flex items-end justify-center flex-1 mt-4">
+            <motion.div
+              className="relative z-10 flex items-end justify-center flex-1 mt-4"
+              initial={reduce ? undefined : { opacity: 0, y: 36 }}
+              whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.9, delay: 0.14, ease: EASE_EXPO }}
+            >
               <img
                 src="/assets/bentley.png"
                 alt="Bentley — Speed Switch Fleet"
                 className="w-full max-w-[560px] object-contain drop-shadow-[0_30px_60px_rgba(207,166,74,0.12)] select-none pointer-events-none"
                 draggable={false}
               />
-            </div>
+            </motion.div>
           </div>
 
           {/* RIGHT PANEL — vertical card track (GSAP scrubs this) */}

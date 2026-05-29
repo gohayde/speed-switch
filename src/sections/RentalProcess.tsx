@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
-import { useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
+const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -169,10 +170,23 @@ export default function RentalProcess() {
           </div>
 
           {/* Staggered mobile stack cards list */}
-          <div className="flex flex-col gap-5 w-full">
+          <motion.div
+            className="flex flex-col gap-5 w-full"
+            variants={reduce ? undefined : {
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.09 } },
+            }}
+            initial={reduce ? undefined : 'hidden'}
+            whileInView={reduce ? undefined : 'visible'}
+            viewport={{ once: true, margin: '-60px' }}
+          >
             {steps.map(({ number, title, body, icon }) => (
-              <div 
+              <motion.div
                 key={number}
+                variants={reduce ? undefined : {
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE_EXPO } },
+                }}
                 className="p-[1.5px] rounded-[20px] bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.05] shadow-[0_8px_20px_rgba(0,0,0,0.01)]"
               >
                 <div className="bg-white p-6 rounded-[18.5px] flex gap-5">
@@ -193,9 +207,9 @@ export default function RentalProcess() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Mobile WhatsApp Action Button */}
           <a

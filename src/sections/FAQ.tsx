@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef } from 'react';
+const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
+import { motion, AnimatePresence, useInView, useReducedMotion } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 
 const WA_FAQ = 'https://wa.me/971500000000?text=Hi%2C%20I%20have%20a%20question%20about%20renting';
@@ -64,25 +65,57 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 }
 
 export default function FAQ() {
+  const reduce = useReducedMotion();
+  const headingRef = useRef(null);
+  const headingInView = useInView(headingRef, { once: true, margin: '-80px' });
+  const listRef = useRef(null);
+  const listInView = useInView(listRef, { once: true, margin: '-60px' });
+
+  const headingVariants = {
+    hidden: { clipPath: 'inset(0 0 100% 0)', opacity: 0, y: 12 },
+    visible: { clipPath: 'inset(0 0 0% 0)', opacity: 1, y: 0, transition: { duration: 0.65, ease: EASE_EXPO } },
+  };
+
+  const listVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.06 } },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 12 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: EASE_EXPO } },
+  };
+
   return (
     <section id="faq" className="pt-28 pb-32 px-6" style={{ background: 'oklch(97.5% 0.007 82)' }}>
       <div className="max-w-[860px] mx-auto">
-        <div className="text-center mb-14">
-          <h2
+        <div ref={headingRef} className="text-center mb-14">
+          <motion.h2
             className="font-bold uppercase text-[#1A1A1A] leading-[0.9] m-0 mb-4 font-display"
-            style={{ fontSize: 'clamp(34px,3.2vw,54px)', letterSpacing: '-0.02em' }}>
+            style={{ fontSize: 'clamp(34px,3.2vw,54px)', letterSpacing: '-0.02em' }}
+            variants={reduce ? undefined : headingVariants}
+            initial={reduce ? undefined : 'hidden'}
+            animate={headingInView && !reduce ? 'visible' : undefined}>
             Everything You<br /><span className="text-[#CFA64A]">Need to Know</span>
-          </h2>
+          </motion.h2>
           <p className="text-[#5e6370] text-[16px] leading-relaxed max-w-[65ch] mx-auto">
             Answers to the most common questions about renting with Speed Switch.
           </p>
         </div>
 
-        <div className="mb-12">
+        <motion.div
+          ref={listRef}
+          className="mb-12"
+          variants={reduce ? undefined : listVariants}
+          initial={reduce ? undefined : 'hidden'}
+          animate={listInView && !reduce ? 'visible' : undefined}
+        >
           {faqs.map(({ q, a }) => (
-            <FAQItem key={q} q={q} a={a} />
+            <motion.div key={q} variants={reduce ? undefined : itemVariants}>
+              <FAQItem q={q} a={a} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <div className="text-center">
           <p className="text-[#5e6370] text-[15px] mb-5">

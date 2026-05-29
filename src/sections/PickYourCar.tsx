@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Tag, ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "971521430808";
@@ -33,12 +33,7 @@ const cars: CarData[] = [
     image: "/assets/hero-car.png",
     pricePerDay: 220,
     currency: "AED",
-    stats: {
-      topSpeed: "300 km/h",
-      horsepower: "650 HP",
-      engine: "V8 Engine",
-      seats: "4 Seater"
-    },
+    stats: { topSpeed: "300 km/h", horsepower: "650 HP", engine: "V8 Engine", seats: "4 Seater" },
     whatsappMessage: "Hi, I want to book the Lamborghini Urus.",
     details: {
       title: "Lamborghini Urus",
@@ -63,12 +58,7 @@ const cars: CarData[] = [
     image: "/assets/audi-rs3.png",
     pricePerDay: 600,
     currency: "AED",
-    stats: {
-      topSpeed: "290 km/h",
-      horsepower: "400 HP",
-      engine: "2.5L TFSI",
-      seats: "5 Seater"
-    },
+    stats: { topSpeed: "290 km/h", horsepower: "400 HP", engine: "2.5L TFSI", seats: "5 Seater" },
     whatsappMessage: "Hi, I want to book the Audi RS3.",
     details: {
       title: "Audi RS3 Sedan",
@@ -93,12 +83,7 @@ const cars: CarData[] = [
     image: "/assets/g63-brabus.png",
     pricePerDay: 2500,
     currency: "AED",
-    stats: {
-      topSpeed: "240 km/h",
-      horsepower: "800 HP",
-      engine: "V8 Biturbo",
-      seats: "5 Seater"
-    },
+    stats: { topSpeed: "240 km/h", horsepower: "800 HP", engine: "V8 Biturbo", seats: "5 Seater" },
     whatsappMessage: "Hi, I want to book the G63 Brabus.",
     details: {
       title: "Mercedes G63 Brabus 800",
@@ -119,7 +104,8 @@ const cars: CarData[] = [
   }
 ];
 
-// Custom high-fidelity outline SVG icons matching the reference image mockup
+// ─── Stat icons ───────────────────────────────────────────────────────────────
+
 function SpeedometerIcon() {
   return (
     <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="text-[#CFA64A]">
@@ -159,12 +145,13 @@ function SeatIcon() {
   );
 }
 
+// ─── Main component ───────────────────────────────────────────────────────────
+
 export default function PickYourCar() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState<'next' | 'prev' | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const closeModal = () => setIsModalOpen(false);
+  const reduce = useReducedMotion();
 
   const activeCar = cars[activeIndex];
   const prevIndex = (activeIndex - 1 + cars.length) % cars.length;
@@ -186,7 +173,8 @@ export default function PickYourCar() {
     setActiveIndex(index);
   };
 
-  // Helper function to format stat values exactly like the reference image (bold number + regular unit)
+  const closeModal = () => setIsModalOpen(false);
+
   const formatStatValue = (value: string) => {
     const parts = value.split(' ');
     if (parts.length >= 2) {
@@ -204,80 +192,114 @@ export default function PickYourCar() {
     );
   };
 
+  // Section heading clip-path reveal variants
+  const headingVariants = {
+    hidden: { clipPath: 'inset(0 0 100% 0)', opacity: 0, y: 16 },
+    visible: {
+      clipPath: 'inset(0 0 0% 0)',
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.72, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
+
   return (
     <section id="vehicles" className="relative pt-16 pb-24 overflow-x-hidden" style={{ background: 'oklch(97.5% 0.007 82)' }}>
-      {/* Centered soft radial glow right behind the center car for visual staging */}
-      <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[280px] rounded-full pointer-events-none z-0"
-        style={{ background: 'radial-gradient(circle, rgba(207,166,74,0.11), transparent 70%)' }} />
+      {/* Ambient glow behind center car */}
+      <div
+        className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[280px] rounded-full pointer-events-none z-0"
+        style={{ background: 'radial-gradient(circle, rgba(207,166,74,0.11), transparent 70%)' }}
+      />
 
       <div className="relative z-10 text-center px-4 max-w-7xl mx-auto">
-        {/* Section Heading */}
-        <h2 className="font-extrabold uppercase text-[#1A1A1A] leading-[0.92] text-center mb-8 font-display"
-          style={{ fontSize: 'clamp(38px,5.2vw,72px)', letterSpacing: '-0.02em', textWrap: 'balance' } as React.CSSProperties}>
-          PICK YOUR DREAM<br />CAR TODAY
-        </h2>
 
-        {/* Carousel Visual Stage */}
-        <div className="relative w-full h-[140px] sm:h-[185px] md:h-[220px] lg:h-[240px] flex items-center justify-between mb-8 select-none max-w-[1100px] mx-auto">
-          
-          {/* Grounding horizontal drop shadow directly under all three cars baseline */}
+        {/* Section heading with clip-path reveal */}
+        <motion.h2
+          className="font-extrabold uppercase text-[#1A1A1A] leading-[0.92] text-center mb-8 font-display"
+          style={{ fontSize: 'clamp(38px,5.2vw,72px)', letterSpacing: '-0.02em', textWrap: 'balance' } as React.CSSProperties}
+          variants={reduce ? undefined : headingVariants}
+          initial={reduce ? undefined : 'hidden'}
+          whileInView={reduce ? undefined : 'visible'}
+          viewport={{ once: true, margin: '-60px' }}
+        >
+          PICK YOUR DREAM<br />CAR TODAY
+        </motion.h2>
+
+        {/* ── Drag carousel ──────────────────────────────────────────────── */}
+        <motion.div
+          className="relative w-full h-[140px] sm:h-[185px] md:h-[220px] lg:h-[240px] flex items-center justify-between mb-8 select-none max-w-[1100px] mx-auto carousel-drag-zone"
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.18}
+          dragSnapToOrigin
+          onDragEnd={(_, info) => {
+            const v = info.velocity.x;
+            const d = info.offset.x;
+            if (v < -380 || d < -70) handleNext();
+            else if (v > 380 || d > 70) handlePrev();
+          }}
+        >
+          {/* Ground shadow */}
           <div className="absolute left-[6%] right-[6%] top-[78%] -translate-y-1/2 h-[12px] bg-black/[0.07] blur-[10px] rounded-full pointer-events-none z-0" />
 
-          {/* Left Crop Car (Previous) */}
-          <div 
+          {/* Left car (previous) */}
+          <div
             onClick={() => handleSelectCar(prevIndex)}
             className="absolute left-[-16%] sm:left-[-12%] md:left-[-8%] lg:left-[-5%] top-1/2 -translate-y-1/2 w-[35%] sm:w-[30%] opacity-25 scale-75 cursor-pointer z-10 transition-all duration-500 hover:opacity-40 hover:scale-[0.77] max-h-[85%] flex items-center justify-center filter grayscale hover:grayscale-0 pointer-events-auto"
           >
-            <img 
-              src={cars[prevIndex].image} 
-              alt="" 
+            <img
+              src={cars[prevIndex].image}
+              alt=""
               className="w-full object-contain"
-              onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} 
+              onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
           </div>
 
-          {/* Center Active Car */}
+          {/* Center car — has layoutId so framer-motion morphs it into the modal */}
           <div className="w-[50%] sm:w-[42%] md:w-[38%] mx-auto z-10 relative flex justify-center items-center h-full">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeCar.id}
-                initial={{ 
-                  opacity: 0, 
-                  x: direction === 'next' ? 60 : direction === 'prev' ? -60 : 0, 
-                  scale: 0.96 
+                initial={{
+                  opacity: 0,
+                  x: direction === 'next' ? 60 : direction === 'prev' ? -60 : 0,
+                  scale: 0.96
                 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
-                exit={{ 
-                  opacity: 0, 
-                  x: direction === 'next' ? -60 : direction === 'prev' ? 60 : 0, 
-                  scale: 0.96 
+                exit={{
+                  opacity: 0,
+                  x: direction === 'next' ? -60 : direction === 'prev' ? 60 : 0,
+                  scale: 0.96
                 }}
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
                 className="w-full h-full flex items-center justify-center"
               >
-                <img 
-                  src={activeCar.image} 
+                <motion.img
+                  layoutId={`car-img-${activeCar.id}`}
+                  data-car-morph
+                  src={activeCar.image}
                   alt={activeCar.name}
                   className="max-w-full max-h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.06)]"
+                  transition={{ type: 'spring', stiffness: 180, damping: 22 }}
                 />
               </motion.div>
             </AnimatePresence>
           </div>
 
-          {/* Right Crop Car (Next) */}
-          <div 
+          {/* Right car (next) */}
+          <div
             onClick={() => handleSelectCar(nextIndex)}
             className="absolute right-[-16%] sm:right-[-12%] md:right-[-8%] lg:right-[-5%] top-1/2 -translate-y-1/2 w-[35%] sm:w-[30%] opacity-25 scale-75 cursor-pointer z-10 transition-all duration-500 hover:opacity-40 hover:scale-[0.77] max-h-[85%] flex items-center justify-center filter grayscale hover:grayscale-0 pointer-events-auto"
           >
-            <img 
-              src={cars[nextIndex].image} 
-              alt="" 
+            <img
+              src={cars[nextIndex].image}
+              alt=""
               className="w-full object-contain"
-              onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} 
+              onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
           </div>
 
-          {/* Sleek, subtle Left/Right Navigation Chevrons */}
+          {/* Nav buttons — pointer-events-auto so they register inside the drag zone */}
           <button
             onClick={handlePrev}
             className="absolute left-[20%] sm:left-[23%] md:left-[26%] lg:left-[27%] z-20 p-2.5 rounded-full bg-white border border-black/[0.08] text-[#5e6370] hover:border-[#CFA64A] hover:text-[#CFA64A] hover:shadow-[0_4px_12px_rgba(207,166,74,0.14)] active:scale-95 transition-all duration-[180ms] cursor-pointer pointer-events-auto"
@@ -292,26 +314,26 @@ export default function PickYourCar() {
           >
             <ChevronRight size={16} strokeWidth={2.2} />
           </button>
-        </div>
+        </motion.div>
 
-        {/* Minimal rounded indicators */}
+        {/* Dot indicators */}
         <div className="flex justify-center gap-1.5 mt-1 mb-8 relative z-10">
           {cars.map((car, index) => (
             <button
               key={car.id}
               onClick={() => handleSelectCar(index)}
-              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                index === activeIndex ? 'bg-[#CFA64A] w-5' : 'bg-black/10 hover:bg-black/25'
+              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                index === activeIndex ? 'bg-[#CFA64A] w-5' : 'w-1.5 bg-black/10 hover:bg-black/25'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
 
-        {/* Specs Row Under the Car — Match reference: no small utility labels, clean row layout */}
+        {/* Specs row */}
         <div className="relative z-10 max-w-2xl mx-auto px-4 mt-6 mb-4">
           <AnimatePresence mode="wait">
-            <motion.div 
+            <motion.div
               key={activeCar.id}
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
@@ -319,53 +341,29 @@ export default function PickYourCar() {
               transition={{ duration: 0.25 }}
               className="grid grid-cols-2 gap-y-6 md:grid-cols-4 md:gap-x-8"
             >
-              {/* Stat 1: Top Speed */}
-              <div className="flex flex-col items-center justify-center text-center">
-                <div className="text-black mb-2 flex items-center justify-center h-8 w-8">
-                  <SpeedometerIcon />
+              {[
+                { icon: <SpeedometerIcon />, value: activeCar.stats.topSpeed },
+                { icon: <HorseIcon />,       value: activeCar.stats.horsepower },
+                { icon: <EngineIcon />,      value: activeCar.stats.engine },
+                { icon: <SeatIcon />,        value: activeCar.stats.seats },
+              ].map(({ icon, value }, i) => (
+                <div key={i} className="flex flex-col items-center justify-center text-center">
+                  <div className="mb-2 flex items-center justify-center h-8 w-8">{icon}</div>
+                  {formatStatValue(value)}
                 </div>
-                {formatStatValue(activeCar.stats.topSpeed)}
-              </div>
-
-              {/* Stat 2: Horsepower */}
-              <div className="flex flex-col items-center justify-center text-center">
-                <div className="text-black mb-2 flex items-center justify-center h-8 w-8">
-                  <HorseIcon />
-                </div>
-                {formatStatValue(activeCar.stats.horsepower)}
-              </div>
-
-              {/* Stat 3: Engine */}
-              <div className="flex flex-col items-center justify-center text-center">
-                <div className="text-black mb-2 flex items-center justify-center h-8 w-8">
-                  <EngineIcon />
-                </div>
-                {formatStatValue(activeCar.stats.engine)}
-              </div>
-
-              {/* Stat 4: Seats */}
-              <div className="flex flex-col items-center justify-center text-center">
-                <div className="text-black mb-2 flex items-center justify-center h-8 w-8">
-                  <SeatIcon />
-                </div>
-                {formatStatValue(activeCar.stats.seats)}
-              </div>
+              ))}
             </motion.div>
           </AnimatePresence>
         </div>
-
       </div>
 
-      {/* Floating white price/action bar — positioned relative to section, sits in pb-24 area */}
+      {/* ── Price / action bar ──────────────────────────────────────────────── */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[min(740px,92vw)] z-30 bg-white rounded-xl shadow-[0_8px_28px_rgba(0,0,0,0.09)] p-3 px-5 sm:p-3.5 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-4 w-full sm:w-auto">
-          {/* Tilted price tag icon */}
           <div className="text-[#CFA64A] transform -rotate-45 shrink-0">
             <Tag size={18} strokeWidth={1.5} />
           </div>
-          {/* Vertical hairline divider */}
           <div className="h-6 w-px bg-black/[0.08] shrink-0" />
-
           <div className="text-left">
             <span className="block text-[10px] font-bold text-[#CFA64A]/80 uppercase tracking-widest leading-none mb-1">Starting From</span>
             <div className="flex items-baseline gap-1">
@@ -376,7 +374,6 @@ export default function PickYourCar() {
         </div>
 
         <div className="flex items-center gap-2.5 w-full sm:w-auto">
-          {/* Book Now Button (Solid Black) */}
           <a
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(activeCar.whatsappMessage)}`}
             target="_blank"
@@ -385,7 +382,6 @@ export default function PickYourCar() {
           >
             Book Now
           </a>
-          {/* More Details Button (Solid Gold) */}
           <button
             onClick={() => setIsModalOpen(true)}
             className="flex-1 sm:flex-none px-5 py-2.5 rounded-lg bg-[#CFA64A] hover:bg-[#b8913d] text-white font-bold text-[12px] tracking-wider uppercase transition-all duration-200 cursor-pointer active:scale-95 shadow-sm shadow-[#CFA64A]/10"
@@ -395,7 +391,7 @@ export default function PickYourCar() {
         </div>
       </div>
 
-      {/* Details Modal Component */}
+      {/* ── Details modal with layoutId car morph ──────────────────────────── */}
       <AnimatePresence>
         {isModalOpen && (
           <div
@@ -405,7 +401,7 @@ export default function PickYourCar() {
             aria-label={`${activeCar.name} details`}
             onKeyDown={(e) => { if (e.key === 'Escape') closeModal(); }}
           >
-            {/* Backdrop Blur */}
+            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -414,15 +410,14 @@ export default function PickYourCar() {
               className="absolute inset-0 bg-black/50 backdrop-blur-[2px] cursor-pointer"
             />
 
-            {/* Modal Body */}
+            {/* Modal body */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 15 }}
-              transition={{ type: "spring", duration: 0.4 }}
-              className="bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[85vh] overflow-y-auto relative z-10 border border-black/[0.05] scrollbar-thin text-left"
+              transition={{ type: 'spring', stiffness: 260, damping: 28 }}
+              className="bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[85vh] overflow-y-auto relative z-10 border border-black/[0.05] text-left"
             >
-              {/* Close Button */}
               <button
                 onClick={closeModal}
                 className="absolute top-5 right-5 p-1.5 rounded-full bg-gray-50 hover:bg-gray-100 text-gray-500 hover:text-black transition-all cursor-pointer z-20 active:scale-95 border border-black/[0.04]"
@@ -432,7 +427,6 @@ export default function PickYourCar() {
               </button>
 
               <div className="p-5 md:p-7">
-                {/* Modal Title */}
                 <div className="mb-5">
                   <span className="text-[9px] font-bold text-[#CFA64A] tracking-[0.2em] uppercase">Premium Rental Fleet</span>
                   <h3 className="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] tracking-tight mt-0.5 font-display">
@@ -440,55 +434,44 @@ export default function PickYourCar() {
                   </h3>
                 </div>
 
-                {/* Core Specs Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mb-6">
-                  
-                  {/* Aspect Card with Car Image */}
-                  <div className="rounded-xl p-3 flex items-center justify-center aspect-[4/3] relative overflow-hidden border border-black/[0.02]" style={{ background: 'oklch(97.5% 0.007 82)' }}>
+                  {/* Car image — layoutId matches the carousel image for shared-element morph */}
+                  <div
+                    className="rounded-xl p-3 flex items-center justify-center aspect-[4/3] relative overflow-hidden border border-black/[0.02]"
+                    style={{ background: 'oklch(97.5% 0.007 82)' }}
+                  >
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#CFA64A]/3 to-transparent pointer-events-none" />
-                    <img
+                    <motion.img
+                      layoutId={`car-img-${activeCar.id}`}
+                      data-car-morph
                       src={activeCar.image}
                       alt={activeCar.name}
                       className="max-w-full max-h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.06)]"
+                      transition={{ type: 'spring', stiffness: 180, damping: 22 }}
                     />
                   </div>
 
-                  {/* Core specs and rate */}
+                  {/* Specs and rate */}
                   <div className="flex flex-col justify-between h-full">
                     <p className="text-gray-500 text-[13px] leading-relaxed mb-4">
                       {activeCar.details.description}
                     </p>
 
-                    {/* Stats */}
                     <div className="grid grid-cols-2 gap-2.5 mb-4">
-                      <div className="bg-gray-50/60 rounded-lg p-2.5 border border-black/[0.015] flex items-center gap-2.5">
-                        <span className="text-[#CFA64A] shrink-0"><SpeedometerIcon /></span>
-                        <div>
-                          <span className="block text-[8px] font-bold text-gray-400 uppercase tracking-wider">Top Speed</span>
-                          <span className="text-[11px] font-extrabold text-gray-800 leading-none">{activeCar.stats.topSpeed}</span>
+                      {[
+                        { icon: <SpeedometerIcon />, label: 'Top Speed',   val: activeCar.stats.topSpeed },
+                        { icon: <HorseIcon />,       label: 'Horsepower',  val: activeCar.stats.horsepower },
+                        { icon: <EngineIcon />,      label: 'Engine',      val: activeCar.stats.engine },
+                        { icon: <SeatIcon />,        label: 'Seats',       val: activeCar.stats.seats },
+                      ].map(({ icon, label, val }) => (
+                        <div key={label} className="bg-gray-50/60 rounded-lg p-2.5 border border-black/[0.015] flex items-center gap-2.5">
+                          <span className="text-[#CFA64A] shrink-0">{icon}</span>
+                          <div>
+                            <span className="block text-[8px] font-bold text-gray-400 uppercase tracking-wider">{label}</span>
+                            <span className="text-[11px] font-extrabold text-gray-800 leading-none">{val}</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="bg-gray-50/60 rounded-lg p-2.5 border border-black/[0.015] flex items-center gap-2.5">
-                        <span className="text-[#CFA64A] shrink-0"><HorseIcon /></span>
-                        <div>
-                          <span className="block text-[8px] font-bold text-gray-400 uppercase tracking-wider">Horsepower</span>
-                          <span className="text-[11px] font-extrabold text-gray-800 leading-none">{activeCar.stats.horsepower}</span>
-                        </div>
-                      </div>
-                      <div className="bg-gray-50/60 rounded-lg p-2.5 border border-black/[0.015] flex items-center gap-2.5">
-                        <span className="text-[#CFA64A] shrink-0"><EngineIcon /></span>
-                        <div>
-                          <span className="block text-[8px] font-bold text-gray-400 uppercase tracking-wider">Engine</span>
-                          <span className="text-[11px] font-extrabold text-gray-800 leading-none">{activeCar.stats.engine}</span>
-                        </div>
-                      </div>
-                      <div className="bg-gray-50/60 rounded-lg p-2.5 border border-black/[0.015] flex items-center gap-2.5">
-                        <span className="text-[#CFA64A] shrink-0"><SeatIcon /></span>
-                        <div>
-                          <span className="block text-[8px] font-bold text-gray-400 uppercase tracking-wider">Seats</span>
-                          <span className="text-[11px] font-extrabold text-gray-800 leading-none">{activeCar.stats.seats}</span>
-                        </div>
-                      </div>
+                      ))}
                     </div>
 
                     <div className="border-t border-gray-100 pt-3 mt-auto">
@@ -501,10 +484,7 @@ export default function PickYourCar() {
                   </div>
                 </div>
 
-                {/* Multi Lists (Features & Requirements) */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-gray-100 pt-5 mb-5">
-                  
-                  {/* Features */}
                   <div>
                     <h4 className="text-[12px] font-bold text-[#1A1A1A] uppercase tracking-wider mb-2.5 flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#CFA64A]" /> Key Features
@@ -519,7 +499,6 @@ export default function PickYourCar() {
                     </ul>
                   </div>
 
-                  {/* Requirements */}
                   <div>
                     <h4 className="text-[12px] font-bold text-[#1A1A1A] uppercase tracking-wider mb-2.5 flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#CFA64A]" /> Rental Requirements
@@ -535,7 +514,6 @@ export default function PickYourCar() {
                   </div>
                 </div>
 
-                {/* Footer details and Call-To-Action */}
                 <div className="border-t border-gray-100 pt-5 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <p className="text-[10px] text-gray-400 leading-normal text-center sm:text-left max-w-sm">
                     *Rate includes comprehensive insurance, standard mileage limit, and free delivery directly to your hotel or residence within Dubai.
@@ -557,5 +535,3 @@ export default function PickYourCar() {
     </section>
   );
 }
-
-

@@ -1,17 +1,12 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import {
-  ArrowRight,
-  CalendarDays,
-  CarFront,
-  ChevronDown,
-  MapPin,
-  Search,
-  Check,
-} from 'lucide-react';
+  motion, AnimatePresence,
+  useScroll, useTransform, useSpring, useMotionValue, useReducedMotion,
+} from 'framer-motion';
+import { ArrowRight, CalendarDays, CarFront, ChevronDown, MapPin, Search, Check } from 'lucide-react';
 
 const WA_LINK = 'https://wa.me/971500000000?text=Hi%2C%20I%20want%20to%20book%20a%20car';
-
+const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const carTypes = ['Luxury SUV', 'V12 Supercar', 'High-End Sports', 'Exotic Convertible'];
 const locations = ['Dubai, UAE', 'Dubai Marina', 'Palm Jumeirah', 'DXB Airport'];
 
@@ -29,11 +24,29 @@ function Logo() {
 
 function Nav() {
   const items = ['Home', 'Fleet', 'Why Us', 'Reviews', 'FAQ'];
+  const reduce = useReducedMotion();
+
+  const containerVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.1, delayChildren: 0.08 } },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -16 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE_EXPO } },
+  };
 
   return (
-    <header className="hero-nav">
-      <Logo />
-      <nav className="hero-nav-links">
+    <motion.header
+      className="hero-nav"
+      variants={reduce ? undefined : containerVariants}
+      initial={reduce ? undefined : 'hidden'}
+      animate={reduce ? undefined : 'visible'}
+    >
+      <motion.div variants={reduce ? undefined : itemVariants}>
+        <Logo />
+      </motion.div>
+      <motion.nav className="hero-nav-links" variants={reduce ? undefined : itemVariants}>
         {items.map((item) => (
           <a
             key={item}
@@ -43,14 +56,14 @@ function Nav() {
             {item}
           </a>
         ))}
-      </nav>
-      <div className="hero-nav-actions">
+      </motion.nav>
+      <motion.div className="hero-nav-actions" variants={reduce ? undefined : itemVariants}>
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hero-book">
           <span>Book Now</span>
           <ArrowRight size={20} strokeWidth={2} />
         </a>
-      </div>
-    </header>
+      </motion.div>
+    </motion.header>
   );
 }
 
@@ -76,12 +89,123 @@ function SearchField({ icon: Icon, label, value, isOpen, onClick, showBorder = t
   );
 }
 
+function Dropdown({ children, className, title }: { children: React.ReactNode; className: string; title: string }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: 10, scale: 0.98 }}
+      transition={{ duration: 0.18, ease: 'easeOut' }}
+      className={`hero-dropdown ${className}`}
+    >
+      <div className="hero-dropdown-title">{title}</div>
+      {children}
+    </motion.div>
+  );
+}
+
+function DropdownOption({ active, children, onClick }: { active: boolean; children: React.ReactNode; onClick: () => void }) {
+  return (
+    <button type="button" onClick={onClick} className={`hero-dropdown-option ${active ? 'active' : ''}`}>
+      <span>{children}</span>
+      {active && <Check size={16} strokeWidth={2.5} />}
+    </button>
+  );
+}
+
+// ─── Ambient gold canvas ─────────────────────────────────────────────────────
+
+function useAmbientCanvas(ref: React.RefObject<HTMLCanvasElement>, disabled: boolean) {
+  useEffect(() => {
+    if (disabled) return;
+    const canvas = ref.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let W = 0, H = 0, cx = 0, cy = 0;
+
+    const resize = () => {
+      W = canvas.width = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    };
+
+    const ro = new ResizeObserver(resize);
+    ro.observe(canvas);
+    resize();
+    cx = W / 2;
+    cy = H / 2;
+
+    const onMove = (e: MouseEvent) => {
+      const r = canvas.getBoundingClientRect();
+      cx = e.clientX - r.left;
+      cy = e.clientY - r.top;
+    };
+    document.addEventListener('mousemove', onMove, { passive: true });
+
+    type Blob = { x: number; y: number; vx: number; vy: number; r: number; phase: number; spd: number };
+
+    const makeBlobs = (): Blob[] => [
+      { x: W * 0.15, y: H * 0.25, vx: 0.22,  vy: 0.12,  r: 260, phase: 0,   spd: 0.004  },
+      { x: W * 0.72, y: H * 0.65, vx: -0.18, vy: 0.15,  r: 220, phase: 1.8, spd: 0.003  },
+      { x: W * 0.48, y: H * 0.82, vx: 0.12,  vy: -0.18, r: 310, phase: 3.2, spd: 0.0025 },
+      { x: W * 0.88, y: H * 0.18, vx: -0.20, vy: 0.19,  r: 240, phase: 4.6, spd: 0.0035 },
+      { x: W * 0.35, y: H * 0.50, vx: 0.15,  vy: -0.10, r: 200, phase: 2.4, spd: 0.005  },
+    ];
+
+    const blobs = makeBlobs();
+    let t = 0, raf: number;
+
+    const draw = () => {
+      t++;
+      ctx.clearRect(0, 0, W, H);
+
+      for (const b of blobs) {
+        b.x += b.vx;
+        b.y += b.vy;
+        // Gentle cursor pull
+        b.vx += (cx - b.x) * 0.000018;
+        b.vy += (cy - b.y) * 0.000018;
+        b.vx *= 0.9995;
+        b.vy *= 0.9995;
+        // Wrap at edges
+        if (b.x < -b.r) b.x = W + b.r;
+        if (b.x > W + b.r) b.x = -b.r;
+        if (b.y < -b.r) b.y = H + b.r;
+        if (b.y > H + b.r) b.y = -b.r;
+
+        const pulse = b.r + Math.sin(t * b.spd + b.phase) * 38;
+        const g = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, pulse);
+        g.addColorStop(0,   'rgba(224, 162, 0, 0.072)');
+        g.addColorStop(0.4, 'rgba(207, 148, 42, 0.038)');
+        g.addColorStop(1,   'rgba(224, 162, 0, 0)');
+
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, pulse, 0, Math.PI * 2);
+        ctx.fillStyle = g;
+        ctx.fill();
+      }
+
+      raf = requestAnimationFrame(draw);
+    };
+
+    draw();
+
+    return () => {
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+      document.removeEventListener('mousemove', onMove);
+    };
+  }, [disabled]);
+}
+
+// ─── Hero ────────────────────────────────────────────────────────────────────
+
 export default function Hero() {
   const [activeField, setActiveField] = useState<'carType' | 'location' | 'date' | null>(null);
   const [selectedCarType, setSelectedCarType] = useState('Luxury SUV');
   const [selectedLocation, setSelectedLocation] = useState('Dubai, UAE');
   const [selectedDate, setSelectedDate] = useState('June 24 – June 27');
-
   const [startDay, setStartDay] = useState<number | null>(24);
   const [endDay, setEndDay] = useState<number | null>(27);
   const [currentMonth, setCurrentMonth] = useState<'May' | 'June'>('June');
@@ -91,10 +215,63 @@ export default function Hero() {
   const spacers = Array.from({ length: offset }, (_, i) => i);
   const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 
+  const heroRef = useRef<HTMLElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const reduce = useReducedMotion();
+
+  // ─── Scroll parallax ─────────────────────────────────────────────────────
+  const { scrollY } = useScroll();
+  const rawScroll = useTransform(scrollY, [0, 900], [0, reduce ? 0 : 110]);
+  const scrollSpring = useSpring(rawScroll, { stiffness: 50, damping: 18, mass: 0.6 });
+
+  // ─── Mouse parallax ──────────────────────────────────────────────────────
+  const rawMX = useMotionValue(0);
+  const rawMY = useMotionValue(0);
+  const carMX     = useSpring(useTransform(rawMX, [-1, 1], reduce ? [0, 0] : [-16, 16]), { stiffness: 90, damping: 22 });
+  const carMYMouse = useSpring(useTransform(rawMY, [-1, 1], reduce ? [0, 0] : [-9,  9]),  { stiffness: 90, damping: 22 });
+
+  // ─── Entrance spring (drives the initial drop-in, then stays at 0) ───────
+  const entranceY = useSpring(reduce ? 0 : 54, { stiffness: 90, damping: 18, mass: 0.6 });
+  const entranceOpacity = useSpring(0, { stiffness: 120, damping: 25 });
+
+  useEffect(() => {
+    const id = setTimeout(() => {
+      entranceY.set(0);
+      entranceOpacity.set(1);
+    }, 150);
+    return () => clearTimeout(id);
+  }, []);
+
+  // ─── Combined car Y: entrance + scroll + mouse ───────────────────────────
+  const combinedCarY = useTransform(
+    [entranceY, scrollSpring, carMYMouse] as Parameters<typeof useTransform>[0],
+    ([ey, sy, my]: number[]) => ey + sy + my,
+  );
+
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    if (!heroRef.current || reduce) return;
+    const r = heroRef.current.getBoundingClientRect();
+    rawMX.set((e.clientX - r.left) / r.width  * 2 - 1);
+    rawMY.set((e.clientY - r.top)  / r.height * 2 - 1);
+  }, [rawMX, rawMY, reduce]);
+
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el) return;
+    el.addEventListener('mousemove', handleMouseMove, { passive: true });
+    return () => el.removeEventListener('mousemove', handleMouseMove);
+  }, [handleMouseMove]);
+
+  useAmbientCanvas(canvasRef, !!reduce);
+
   return (
-    <main id="home" className="hero-exact">
+    <main id="home" ref={heroRef} className="hero-exact">
       <div className="hero-stage">
         <img className="hero-bg-img" src="/assets/hero-bg.png" alt="" aria-hidden="true" />
+
+        {/* Ambient gold canvas layer */}
+        <canvas ref={canvasRef} className="hero-ambient-canvas" aria-hidden="true" />
+
         <div className="hero-soft-overlay" />
         <Nav />
 
@@ -115,14 +292,21 @@ export default function Hero() {
           </p>
         </motion.section>
 
-        <motion.img
-          className="hero-car-img"
-          src="/assets/hero-car.png"
-          alt="Premium yellow luxury SUV"
-          initial={{ opacity: 0, y: 54 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-        />
+        {/* Car: entrance spring + scroll parallax + mouse parallax, all combined */}
+        <motion.div
+          className="hero-car-stage"
+          style={{
+            opacity: entranceOpacity,
+            x: carMX,
+            y: combinedCarY,
+          }}
+        >
+          <img
+            src="/assets/hero-car.png"
+            alt="Premium yellow luxury SUV"
+            className="hero-car-inner"
+          />
+        </motion.div>
 
         <motion.div
           className="hero-search-wrap"
@@ -141,9 +325,9 @@ export default function Hero() {
             }}
             aria-label="Search rental cars"
           >
-            <SearchField icon={CarFront} label="Car Type" value={selectedCarType} isOpen={activeField === 'carType'} onClick={() => setActiveField(activeField === 'carType' ? null : 'carType')} />
-            <SearchField icon={MapPin} label="Pick-up Location" value={selectedLocation} isOpen={activeField === 'location'} onClick={() => setActiveField(activeField === 'location' ? null : 'location')} />
-            <SearchField icon={CalendarDays} label="Date" value={selectedDate} isOpen={activeField === 'date'} onClick={() => setActiveField(activeField === 'date' ? null : 'date')} showBorder={false} />
+            <SearchField icon={CarFront}     label="Car Type"         value={selectedCarType}    isOpen={activeField === 'carType'}   onClick={() => setActiveField(activeField === 'carType'   ? null : 'carType')} />
+            <SearchField icon={MapPin}        label="Pick-up Location" value={selectedLocation}   isOpen={activeField === 'location'}  onClick={() => setActiveField(activeField === 'location'  ? null : 'location')} />
+            <SearchField icon={CalendarDays}  label="Date"             value={selectedDate}       isOpen={activeField === 'date'}      onClick={() => setActiveField(activeField === 'date'      ? null : 'date')} showBorder={false} />
             <button type="submit" className="hero-search-button" aria-label="Search">
               <Search size={22} strokeWidth={2} />
               <span>Search</span>
@@ -192,9 +376,9 @@ export default function Hero() {
                     {spacers.map((s) => <span key={`spacer-${s}`} className="calendar-spacer" />)}
                     {days.map((d) => {
                       const isSelectedStart = startDay === d;
-                      const isSelectedEnd = endDay === d;
-                      const isInRange = startDay !== null && endDay !== null && d > startDay && d < endDay;
-                      const isSelected = isSelectedStart || isSelectedEnd;
+                      const isSelectedEnd   = endDay === d;
+                      const isInRange       = startDay !== null && endDay !== null && d > startDay && d < endDay;
+                      const isSelected      = isSelectedStart || isSelectedEnd;
 
                       return (
                         <button
@@ -230,29 +414,5 @@ export default function Hero() {
         </motion.div>
       </div>
     </main>
-  );
-}
-
-function Dropdown({ children, className, title }: { children: React.ReactNode; className: string; title: string }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 10, scale: 0.98 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: 10, scale: 0.98 }}
-      transition={{ duration: 0.18, ease: 'easeOut' }}
-      className={`hero-dropdown ${className}`}
-    >
-      <div className="hero-dropdown-title">{title}</div>
-      {children}
-    </motion.div>
-  );
-}
-
-function DropdownOption({ active, children, onClick }: { active: boolean; children: React.ReactNode; onClick: () => void }) {
-  return (
-    <button type="button" onClick={onClick} className={`hero-dropdown-option ${active ? 'active' : ''}`}>
-      <span>{children}</span>
-      {active && <Check size={16} strokeWidth={2.5} />}
-    </button>
   );
 }
