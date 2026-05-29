@@ -6,7 +6,13 @@ const FLEET_LINK = '#fleet';
 
 export default function FinalCTA() {
   return (
-    <section className="relative pt-40 pb-44 px-6 overflow-hidden" style={{ background: 'oklch(13% 0.010 82)' }}>
+    <section className="relative pt-32 pb-36 px-6 overflow-hidden" style={{
+        background: 'oklch(13% 0.010 82)',
+        backgroundImage: 'url(/assets/fleet-bg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundBlendMode: 'overlay',
+      }}>
       <div className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at 50% 60%, oklch(72% 0.13 76 / 0.10), transparent 65%)' }} />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20" style={{ background: 'oklch(100% 0 0 / 0.10)' }} />
@@ -21,13 +27,10 @@ export default function FinalCTA() {
         <h2
           className="font-bold uppercase text-white leading-[0.86] mb-7"
           style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(50px,5.5vw,92px)' }}>
-          Your Car.<br />Your Door.<br />Today.
+          Your Car.<br />Today.
         </h2>
-        <p className="text-[#777B82] text-[17px] leading-relaxed mb-4 max-w-[65ch] mx-auto">
+        <p className="text-[#777B82] text-[17px] leading-relaxed mb-10 max-w-[65ch] mx-auto">
           Message us now and we respond fast. Premium cars delivered across all of Dubai, with clear pricing and zero hassle.
-        </p>
-        <p className="text-[#555] text-[13px] font-medium tracking-wider uppercase mb-10">
-          Typical reply: under 5 minutes
         </p>
 
         <div className="flex items-center justify-center gap-4 flex-wrap">
@@ -47,21 +50,6 @@ export default function FinalCTA() {
             View Fleet
             <ArrowRight size={18} strokeWidth={2} />
           </a>
-        </div>
-
-        {/* Proof bar */}
-        <div className="mt-20 pt-8 border-t flex flex-wrap items-center justify-center gap-x-6 gap-y-3" style={{ borderColor: 'oklch(100% 0 0 / 0.07)' }}>
-          {[
-            'Fleet of 200+ vehicles across every category',
-            '4.9 on Google',
-            'Delivery in under 30 minutes',
-            'WhatsApp reply in under 5 minutes',
-          ].map((fact, i) => (
-            <span key={fact} className="flex items-center gap-6">
-              {i > 0 && <span className="w-px h-3 opacity-20" style={{ background: 'oklch(72% 0.13 76)' }} aria-hidden />}
-              <span className="text-[13px] font-medium" style={{ color: 'oklch(71% 0.007 255)' }}>{fact}</span>
-            </span>
-          ))}
         </div>
       </motion.div>
     </section>

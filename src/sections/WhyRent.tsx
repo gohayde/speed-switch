@@ -1,152 +1,242 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Zap, MapPin, Clock, Sparkles, MessageCircle, BadgeCheck } from 'lucide-react';
+import { useRef, useEffect } from 'react';
+import { useReducedMotion } from 'framer-motion';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {
+  Sparkles,
+  Zap,
+  Users,
+  BadgeDollarSign,
+  MapPin,
+  ShieldCheck,
+} from 'lucide-react';
 
-const WA_LINK = 'https://wa.me/971500000000';
+gsap.registerPlugin(ScrollTrigger);
 
-const benefits = [
-  {
-    icon: Zap,
-    title: 'Fast Dubai Delivery',
-    body: 'We bring your car directly to your hotel, residence, or any Dubai address — often within the hour.',
-  },
+interface BenefitItem {
+  icon: any;
+  title: string;
+  body: string;
+}
+
+const benefitsList: BenefitItem[] = [
   {
     icon: Sparkles,
-    title: 'Premium, Spotless Fleet',
-    body: 'Every vehicle is detailed and inspected before delivery. You receive it immaculate, every time.',
+    title: 'Clean, Well Maintained Cars',
+    body: 'Customers repeatedly mention clean, new, reliable cars in excellent condition — from luxury models to everyday rentals.',
   },
   {
-    icon: Clock,
-    title: 'Daily & Weekly Rates',
-    body: 'Flexible durations with transparent pricing. Extend on the fly — no penalties, no surprises.',
+    icon: Zap,
+    title: 'Fast & Easy Process',
+    body: 'Renters describe the process as quick, smooth, flexible, and easy from start to finish.',
+  },
+  {
+    icon: Users,
+    title: 'Helpful, Respectful Team',
+    body: 'Many customers specifically praise Ahmad and the team for being helpful, kind, professional, honest, and responsive.',
+  },
+  {
+    icon: BadgeDollarSign,
+    title: 'Fair Prices',
+    body: 'Reviews mention reasonable prices, good value, and some of the best prices for car rental in Dubai.',
   },
   {
     icon: MapPin,
-    title: 'Delivered to Your Door',
-    body: 'Across all Dubai zones: Marina, Downtown, Palm, JBR, Business Bay, airport and more.',
+    title: 'Delivery Across Dubai',
+    body: 'Customers mention car delivery to preferred locations, hotels, JVC/Jumeirah Circle, and airport return options.',
   },
   {
-    icon: MessageCircle,
-    title: 'WhatsApp Support',
-    body: 'Reach a real person instantly on WhatsApp. Booking confirmations, changes, questions — all handled fast.',
-  },
-  {
-    icon: BadgeCheck,
-    title: 'Clear, Honest Pricing',
-    body: 'No hidden fees. The price you see is the price you pay — insurance and delivery included.',
+    icon: ShieldCheck,
+    title: 'Deposit Returned On Time',
+    body: 'Several reviews mention deposits being returned on time or the same day — a huge trust point for renters.',
   },
 ];
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.08 } },
-};
-const item = {
-  hidden: { opacity: 0, y: 22 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.2, 0.8, 0.2, 1] as [number, number, number, number] } },
-};
-
 export default function WhyRent() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-80px' });
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
+
+  useEffect(() => {
+    if (reduce || !sectionRef.current || !trackRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const distance = trackRef.current!.scrollHeight - (sectionRef.current!.clientHeight * 0.72);
+
+      gsap.to(trackRef.current, {
+        y: -distance,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: () => `+=${distance + 400}`,
+          pin: true,
+          scrub: 1.2,
+          invalidateOnRefresh: true,
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, [reduce]);
 
   return (
-    <section id="why-us" className="pt-24 pb-20 px-6 overflow-hidden" style={{ background: 'oklch(97.5% 0.007 82)' }}>
-      <div className="max-w-[1160px] mx-auto">
-        <div className="grid grid-cols-2 gap-20 items-center max-[960px]:grid-cols-1 max-[960px]:gap-14">
+    <>
+      {/* DESKTOP: Pinned split — left fixed, right cards scroll vertically */}
+      <section
+        ref={sectionRef}
+        id="why-us"
+        className="relative overflow-hidden max-[900px]:hidden h-screen"
+        style={{ background: 'oklch(98% 0.004 82)' }}
+      >
+        <div className="flex h-screen">
 
-          {/* Left: car image */}
-          <motion.div
-            initial={{ opacity: 0, x: -32 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.75, ease: [0.2, 0.8, 0.2, 1] }}
-            className="relative max-[960px]:order-last">
-            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] bg-[#EDEAE2]">
-              {/* Placeholder car silhouette — replace with real image */}
-              <img
-                src="/car-why.jpg"
-                alt="Premium car delivered in Dubai"
-                className="w-full h-full object-cover"
-                onError={e => {
-                  (e.target as HTMLImageElement).style.display = 'none';
-                }}
-              />
-              {/* Fallback visual when no image */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <svg viewBox="0 0 440 280" fill="none" className="w-[80%] opacity-20">
-                  <path d="M60 180 C80 140 120 120 180 118 L200 90 C220 62 260 58 300 62 L360 72 C390 76 410 92 420 110 L428 140 C436 148 438 158 432 164 L420 168 C416 188 398 202 376 202 C354 202 336 188 332 168 L148 168 C144 188 126 202 104 202 C82 202 64 188 60 168 L44 164 C36 158 38 148 60 180Z" fill="#CFA64A"/>
-                </svg>
-              </div>
-              {/* Gold tag */}
-              <div className="absolute top-5 left-5 bg-[#CFA64A] text-[#1A1A1A] text-[11px] font-bold tracking-[0.16em] uppercase px-3 py-1.5 rounded-[6px]">
-                Speed Switch
-              </div>
-            </div>
-            {/* Floating stat */}
-            <div className="absolute -bottom-5 -right-5 text-white rounded-[14px] px-5 py-4 shadow-[0_12px_32px_rgba(26,26,26,0.22)] max-[560px]:hidden" style={{ background: 'oklch(17% 0.009 82)' }}>
-              <p className="text-[26px] font-bold leading-none text-[#CFA64A]" style={{ fontFamily: "'Space Grotesk', Arial, sans-serif" }}>4.9</p>
-              <p className="text-[11px] text-[#777B82] font-medium mt-1">Google Rating</p>
-            </div>
-          </motion.div>
+          {/* LEFT PANEL — sticky title + car image */}
+          <div className="w-[52%] shrink-0 flex flex-col justify-between h-screen px-20 pt-24 pb-16 relative overflow-hidden">
 
-          {/* Right: copy + benefits */}
-          <div ref={ref}>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
-              className="mb-10">
-              <div className="flex items-center gap-3 mb-5">
-                <span className="block h-px w-8 bg-[#CFA64A]" />
-                <span className="text-[12px] font-bold tracking-[0.18em] text-[#CFA64A] uppercase">Why Speed Switch</span>
-              </div>
+            {/* Ambient glow behind car */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#CFA64A]/[0.06] blur-[100px] rounded-full pointer-events-none" />
+
+            {/* Label */}
+            <div className="flex items-center gap-3 select-none">
+              <span className="block h-px w-6 bg-[#CFA64A]" />
+              <span className="text-[10px] font-bold tracking-[0.25em] text-[#CFA64A] uppercase font-mono">Why Speed Switch</span>
+            </div>
+
+            {/* Headline */}
+            <div className="relative z-10">
               <h2
-                className="font-bold uppercase text-[#1A1A1A] leading-[0.86] m-0 mb-5"
-                style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(40px,4.2vw,68px)' }}>
-                The Rental You<br />Can Rely On
+                className="font-bold uppercase text-[#1A1A1A] leading-[0.88] m-0 mb-5 select-none"
+                style={{ fontFamily: "'Space Grotesk', Arial, sans-serif", fontSize: 'clamp(42px, 4.2vw, 68px)', letterSpacing: '-0.02em' }}
+              >
+                The Rental You<br />
+                <span className="text-[#1A1A1A]/30">Can Rely On</span>
               </h2>
-              <p className="text-[#777B82] text-[16px] leading-relaxed max-w-[65ch]">
-                Fast delivery, a clean premium fleet, flexible terms, and a team reachable on WhatsApp day or night. Everything a Dubai rental should be.
+              <p className="text-[#777B82] text-[15px] leading-relaxed max-w-[38ch] select-none">
+                Real reviews. Real customers. Every benefit below comes straight from what renters said about us.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={container}
-              initial="hidden"
-              animate={inView ? 'show' : 'hidden'}
-              className="mb-9 divide-y divide-black/[0.07]">
-              {benefits.map(({ icon: Icon, title, body }, i) => (
-                <motion.div key={title} variants={item}
-                  className="grid items-start py-5 gap-x-5 gap-y-1"
-                  style={{ gridTemplateColumns: '2.4rem 1fr auto' }}>
-                  <span className="text-[13px] font-bold tabular-nums text-[#CFA64A] leading-none pt-[3px] opacity-70">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <div>
-                    <p className="font-bold text-[15px] text-[#1A1A1A] leading-tight mb-1">{title}</p>
-                    <p className="text-[#777B82] text-[13px] leading-relaxed m-0 max-w-[52ch]">{body}</p>
-                  </div>
-                  <Icon size={15} strokeWidth={1.6} className="text-[#CFA64A] opacity-40 mt-[3px]" />
-                </motion.div>
-              ))}
-            </motion.div>
-
-            <motion.a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 12 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.55, ease: [0.2, 0.8, 0.2, 1] }}
-              className="inline-flex items-center gap-3 px-7 py-4 rounded-[8px] bg-[#25D366] text-white font-bold text-[15px] shadow-[0_10px_28px_rgba(37,211,102,0.25)] transition-all duration-[180ms] hover:-translate-y-[2px] hover:shadow-[0_14px_36px_rgba(37,211,102,0.35)]">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 shrink-0">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-              Talk to Us on WhatsApp
-            </motion.a>
+            {/* Bentley 3D car image */}
+            <div className="relative z-10 flex items-end justify-center flex-1 mt-4">
+              <img
+                src="/assets/bentley.png"
+                alt="Bentley — Speed Switch Fleet"
+                className="w-full max-w-[560px] object-contain drop-shadow-[0_30px_60px_rgba(207,166,74,0.12)] select-none pointer-events-none"
+                draggable={false}
+              />
+            </div>
           </div>
+
+          {/* RIGHT PANEL — vertical card track (GSAP scrubs this) */}
+          <div className="flex-1 flex items-start pt-24 pb-16 overflow-hidden relative">
+            {/* Fade masks top/bottom */}
+            <div className="absolute top-0 left-0 right-0 h-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to bottom, oklch(98% 0.004 82), transparent)' }} />
+            <div className="absolute bottom-0 left-0 right-0 h-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to top, oklch(98% 0.004 82), transparent)' }} />
+
+            <div ref={trackRef} className="flex flex-col gap-5 w-full pr-20 pl-4">
+              {benefitsList.map(({ icon: Icon, title, body }, idx) => (
+                <div
+                  key={title}
+                  className="w-full shrink-0"
+                >
+                  <div className="p-[1.5px] rounded-[24px] bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.05] shadow-[0_12px_32px_rgba(0,0,0,0.015)] hover:shadow-[0_20px_48px_rgba(207,166,74,0.08)] hover:border-[#CFA64A]/15 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group cursor-default">
+                    <div className="bg-white px-8 py-7 rounded-[22.5px] flex items-center gap-6 shadow-[inset_0_1px_0_rgba(255,255,255,1)]">
+
+                      {/* Number */}
+                      <span className="font-mono text-[11px] font-bold text-[#CFA64A]/35 select-none w-6 shrink-0">
+                        {String(idx + 1).padStart(2, '0')}
+                      </span>
+
+                      {/* Icon */}
+                      <div className="w-10 h-10 rounded-full bg-[#CFA64A]/[0.06] border border-[#CFA64A]/10 flex items-center justify-center text-[#CFA64A] shrink-0 transition-colors duration-500 group-hover:bg-[#CFA64A]/12">
+                        <Icon size={16} strokeWidth={1.5} />
+                      </div>
+
+                      {/* Text */}
+                      <div className="flex-1">
+                        <h3
+                          className="font-bold text-[15px] text-[#1A1A1A] uppercase tracking-wide mb-1 select-none"
+                          style={{ fontFamily: "'Space Grotesk', Arial, sans-serif" }}
+                        >
+                          {title}
+                        </h3>
+                        <p className="text-[#777B82] text-[13px] leading-relaxed m-0 select-none">
+                          {body}
+                        </p>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* MOBILE: Native swipe slider fallback */}
+      <section className="min-[901px]:hidden py-20 px-6 overflow-hidden relative" style={{ background: 'oklch(98% 0.004 82)' }}>
+        <div className="max-w-[1160px] mx-auto relative z-10">
+
+          <div className="mb-10 text-left">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="block h-px w-6 bg-[#CFA64A]" />
+              <span className="text-[11px] font-bold tracking-[0.2em] text-[#CFA64A] uppercase font-mono">Why Speed Switch</span>
+            </div>
+            <h2
+              className="text-[32px] font-extrabold uppercase text-[#1A1A1A] leading-tight m-0 mb-4"
+              style={{ fontFamily: "'Space Grotesk', Arial, sans-serif" }}
+            >
+              The Rental You<br />Can Rely On
+            </h2>
+            <p className="text-[#777B82] text-[14px] leading-relaxed m-0 max-w-[36ch]">
+              Real reviews. Real customers. Every benefit below comes straight from what renters said about us.
+            </p>
+          </div>
+
+          {/* Car image mobile */}
+          <div className="mb-8 flex justify-center">
+            <img
+              src="/assets/bentley.png"
+              alt="Bentley — Speed Switch Fleet"
+              className="w-full max-w-[340px] object-contain drop-shadow-[0_20px_40px_rgba(207,166,74,0.12)]"
+              draggable={false}
+            />
+          </div>
+
+          <div
+            className="flex gap-5 overflow-x-auto pb-6 snap-x snap-mandatory touch-pan-x"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {benefitsList.map(({ icon: Icon, title, body }, idx) => (
+              <div
+                key={title}
+                className="flex-shrink-0 w-[280px] snap-start bg-white p-6 rounded-[20px] border border-black/[0.04] shadow-[0_10px_24px_rgba(26,26,26,0.02)] flex flex-col justify-between min-h-[200px] group"
+              >
+                <div className="flex justify-between items-start mb-5">
+                  <span className="text-[11px] font-bold font-mono text-[#CFA64A]/40">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <div className="w-9 h-9 rounded-full bg-[#CFA64A]/[0.06] border border-[#CFA64A]/10 flex items-center justify-center text-[#CFA64A]">
+                    <Icon size={15} strokeWidth={1.5} />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-bold text-[14px] text-[#1A1A1A] uppercase tracking-wide mb-2" style={{ fontFamily: "'Space Grotesk', Arial, sans-serif" }}>
+                    {title}
+                  </h3>
+                  <p className="text-[#777B82] text-[12.5px] leading-relaxed m-0">
+                    {body}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+    </>
   );
 }
