@@ -7,3 +7,42 @@
 [  375932ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
 [  376000ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
 [  376335ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[  508997ms] [LOG] [impeccable] Resumed deferred session 5a732d26 (post-hydration). @ http://localhost:8400/live.js:8770
+[  509175ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[  509341ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[  509402ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[  509610ms] [LOG] [impeccable] Resumed deferred session 5a732d26 (post-hydration). @ http://localhost:8400/live.js:8770
+[  510159ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[  510536ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[  510728ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[  510777ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[  511055ms] [LOG] [impeccable] Resumed deferred session 5a732d26 (post-hydration). @ http://localhost:8400/live.js:8770
+[  511187ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[  511243ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[  511459ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[  511506ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[  511830ms] [LOG] [impeccable] Resumed deferred session 5a732d26 (post-hydration). @ http://localhost:8400/live.js:8770
+[  511984ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[  512038ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[  512218ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[  512263ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[  512434ms] [LOG] [impeccable] Resumed deferred session 5a732d26 (post-hydration). @ http://localhost:8400/live.js:8770
+[  512527ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[  512574ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[  512749ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[  512802ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[  513386ms] [LOG] [impeccable] Resumed deferred session 5a732d26 (post-hydration). @ http://localhost:8400/live.js:8770
+[  513505ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[  513801ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[  513801ms] [ERROR] [impeccable] Failed to send event: TypeError: Failed to fetch
+    at sendEvent (http://localhost:8400/live.js:4737:12)
+    at sendCheckpoint (http://localhost:8400/live.js:4766:12)
+    at http://localhost:8400/live.js:4774:7 @ http://localhost:8400/live.js:4732
+[  513970ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[  514012ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[  514160ms] [LOG] [impeccable] Resumed deferred session 5a732d26 (post-hydration). @ http://localhost:8400/live.js:8770
+[  514305ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[  514353ms] [LOG] [impeccable] SSE connection lost. Retry 1/20... @ http://localhost:8400/live.js:4695
+[  514560ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e42ceb9e:14336
+[  514602ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[  515111ms] [LOG] [impeccable] Resumed deferred session 5a732d26 (post-hydration). @ http://localhost:8400/live.js:8770
