@@ -116,7 +116,7 @@ function DropdownOption({ active, children, onClick }: { active: boolean; childr
 
 // ─── Ambient gold canvas ─────────────────────────────────────────────────────
 
-function useAmbientCanvas(ref: React.RefObject<HTMLCanvasElement>, disabled: boolean) {
+function useAmbientCanvas(ref: React.RefObject<HTMLCanvasElement | null>, disabled: boolean) {
   useEffect(() => {
     if (disabled) return;
     const canvas = ref.current;
@@ -245,7 +245,7 @@ export default function Hero() {
 
   // ─── Combined car Y: entrance + scroll + mouse ───────────────────────────
   const combinedCarY = useTransform(
-    [entranceY, scrollSpring, carMYMouse] as Parameters<typeof useTransform>[0],
+    [entranceY, scrollSpring, carMYMouse] as any,
     ([ey, sy, my]: number[]) => ey + sy + my,
   );
 

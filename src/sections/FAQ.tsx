@@ -3,7 +3,7 @@ const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 import { motion, AnimatePresence, useInView, useReducedMotion } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 
-const WA_FAQ = 'https://wa.me/971500000000?text=Hi%2C%20I%20have%20a%20question%20about%20renting';
+const WA_FAQ = 'https://wa.me/971521430808?text=Hi%2C%20I%20have%20a%20question%20about%20renting';
 
 const faqs = [
   {

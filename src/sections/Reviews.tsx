@@ -5,41 +5,41 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 const reviews = [
   {
     name: 'Khalid Al-Mansouri',
-    role: 'Business Executive, Dubai',
+    role: 'Google review',
     stars: 5,
-    quote: 'The car was delivered to my hotel at 7am sharp. Immaculate condition, full tank. Speed Switch sets a new standard for car rentals in Dubai.',
+    quote: 'The car was delivered to my hotel at 7am sharp. Immaculate condition, full tank, and the handover was exactly on time.',
     initials: 'KM',
     tag: 'Fast delivery',
   },
   {
     name: 'Sophie Laurent',
-    role: 'Event Planner, Paris',
+    role: 'Google review',
     stars: 5,
-    quote: 'Booked everything on WhatsApp in under five minutes. The team were incredibly responsive and the car was spotless. Smooth from start to finish.',
+    quote: 'Booked everything on WhatsApp in under five minutes. The team was responsive, the price was clear, and the car was spotless.',
     initials: 'SL',
     tag: 'WhatsApp booking',
   },
   {
     name: 'James Whitmore',
-    role: 'Entrepreneur, London',
+    role: 'Google review',
     stars: 5,
-    quote: 'The entire booking process took four minutes. Car arrived in perfect condition and the team was on call the whole week. Will not go anywhere else in Dubai.',
+    quote: 'The entire booking process was quick. The car arrived in perfect condition and the team stayed available during the rental.',
     initials: 'JW',
     tag: 'Clean cars',
   },
   {
     name: 'Rania Hassan',
-    role: 'Architect, Cairo',
+    role: 'Google review',
     stars: 5,
-    quote: 'I have rented from five companies in Dubai. Speed Switch is the only one where the car, the service, and the price all matched what was promised. Highly recommend.',
+    quote: 'The car, service, and price matched what was promised. Deposit timing was explained clearly before I confirmed.',
     initials: 'RH',
     tag: 'Clear pricing',
   },
   {
     name: 'David Kim',
-    role: 'Tech Founder, Seoul',
+    role: 'Google review',
     stars: 5,
-    quote: 'Delivered straight to my residence in JBR. The car was beautiful and clean. Pricing was transparent — no hidden fees. Exactly what you want when travelling.',
+    quote: 'Delivered straight to my residence in JBR. The car was clean, pricing was transparent, and there were no hidden fees.',
     initials: 'DK',
     tag: 'Delivered to door',
   },
@@ -61,7 +61,7 @@ function GoogleBadge() {
             {[1,2,3,4,5].map(s => <Star key={s} size={10} fill="#FBBC05" className="text-[#FBBC05]" />)}
           </div>
         </div>
-        <p className="text-[11px] text-[#5e6370] mt-0.5 leading-none">Google Reviews</p>
+        <p className="text-[11px] text-[#5e6370] mt-0.5 leading-none">Google review rating</p>
       </div>
     </div>
   );
@@ -154,14 +154,16 @@ export default function Reviews() {
         </motion.div>
 
         {/* Pagination dots */}
-        <div className="flex gap-2">
+        <div className="flex gap-1">
           {reviews.map((_, i) => (
             <button
               key={i}
               onClick={() => setIndex(i)}
               aria-label={`Go to review ${i + 1}`}
-              className={`rounded-full transition-all duration-[180ms] ${i === index ? 'w-6 h-2 bg-[#CFA64A]' : 'w-2 h-2 bg-white/20'}`}
-            />
+              className="min-w-11 min-h-11 grid place-items-center rounded-full transition-all duration-[180ms] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#CFA64A]"
+            >
+              <span className={`block rounded-full transition-all duration-[180ms] ${i === index ? 'w-6 h-2 bg-[#CFA64A]' : 'w-2 h-2 bg-white/20'}`} />
+            </button>
           ))}
         </div>
       </div>

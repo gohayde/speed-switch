@@ -6,7 +6,7 @@ const links = {
 
 function Logo() {
   return (
-    <a className="inline-flex items-center gap-[14px] group" href="#" aria-label="Speed Switch home">
+    <a className="inline-flex min-h-11 items-center gap-[14px] group" href="#home" aria-label="Speed Switch home">
       <span className="relative w-[32px] h-[32px] inline-block" aria-hidden="true">
         <span className="absolute left-[13px] top-[-2px] w-[8px] h-[36px] rounded-[1px] bg-[#CFA64A] rotate-[42deg] transition-transform duration-[400ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:rotate-0" />
         <span className="absolute left-[13px] top-[-2px] w-[8px] h-[36px] rounded-[1px] bg-[#CFA64A] rotate-[-42deg] transition-transform duration-[400ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:rotate-90" />
@@ -38,7 +38,7 @@ export default function Footer() {
               <ul className="flex flex-col gap-3 list-none p-0 m-0">
                 {items.map(item => (
                   <li key={item}>
-                    <a href="#" className="text-[14px] text-white/60 font-medium transition-colors duration-[180ms] hover:text-white">
+                    <a href={item === 'FAQ' ? '#faq' : item === 'How It Works' ? '#process' : item === 'Sports Cars' || item === 'SUVs' || item === 'Luxury Sedans' ? '#vehicles' : item === 'Dubai Airport' || item.includes('Dubai') || item.includes('Palm') || item.includes('Business') ? '#delivery' : '#home'} className="inline-flex min-h-[44px] min-w-[44px] items-center text-[14px] text-white/60 font-medium transition-colors duration-[180ms] hover:text-white">
                       {item}
                     </a>
                   </li>

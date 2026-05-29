@@ -1,40 +1,22 @@
-interface Brand {
-  name: string;
-  slug: string;
-}
-
-const brands: Brand[] = [
-  { name: 'Mercedes-Benz', slug: 'mercedes-benz' },
-  { name: 'Audi', slug: 'audi' },
-  { name: 'BMW', slug: 'bmw' },
-  { name: 'Bentley', slug: 'bentley' },
-  { name: 'Cadillac', slug: 'cadillac' },
-  { name: 'Rolls-Royce', slug: 'rolls-royce' },
-  { name: 'Dodge', slug: 'dodge' },
-  { name: 'Nissan', slug: 'nissan' },
-  { name: 'Land Rover', slug: 'land-rover' },
-  { name: 'Lamborghini', slug: 'lamborghini' },
+const brands = [
+  'Mercedes-Benz',
+  'Audi',
+  'BMW',
+  'Bentley',
+  'Cadillac',
+  'Rolls-Royce',
+  'Dodge',
+  'Nissan',
+  'Land Rover',
+  'Lamborghini',
 ];
 
-function BrandItem({ brand }: { brand: Brand }) {
-  const { name, slug } = brand;
-
-  // Use the official flat vector SVG for BMW, and high-quality colored PNGs for the other brands
-  const logoSrc = slug === 'bmw'
-    ? 'https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg'
-    : `https://cdn.jsdelivr.net/gh/filippofilip95/car-logos-dataset@master/logos/optimized/${slug}.png`;
-
+function BrandItem({ name }: { name: string }) {
   return (
-    <div className="flex items-center justify-center px-8 select-none group cursor-pointer">
-      <div className="relative w-32 h-24 flex items-center justify-center">
-        {/* Exact Official Colored Logo: 100% full colors and full opacity at all times. Zooms up on hover */}
-        <img
-          src={logoSrc}
-          alt={`${name} official logo`}
-          className="max-w-[100px] h-15 object-contain transition-all duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)] opacity-100 group-hover:scale-120"
-          loading="lazy"
-        />
-      </div>
+    <div className="flex min-w-[192px] items-center justify-center px-8 select-none">
+      <span className="font-display text-[22px] font-extrabold uppercase tracking-[0.08em] text-[#1A1A1A]/65 transition-colors duration-300 hover:text-[#CFA64A]">
+        {name}
+      </span>
     </div>
   );
 }
@@ -51,7 +33,7 @@ export default function BrandMarquee() {
       <div className="relative overflow-hidden w-full">
         <div className="marquee-track flex w-max items-center">
           {doubled.map((brand, i) => (
-            <BrandItem key={`${brand.slug}-${i}`} brand={brand} />
+            <BrandItem key={`${brand}-${i}`} name={brand} />
           ))}
         </div>
       </div>

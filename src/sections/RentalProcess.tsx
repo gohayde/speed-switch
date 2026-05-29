@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const WA_BOOK = 'https://wa.me/971500000000?text=Hi%2C%20I%20want%20to%20start%20a%20booking';
+const WA_BOOK = 'https://wa.me/971521430808?text=Hi%2C%20I%20want%20to%20start%20a%20booking';
 
 const steps = [
   {

@@ -3,6 +3,11 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Tag, ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "971521430808";
+const INCLUDED_TERMS = [
+  "Comprehensive insurance included",
+  "Standard mileage included",
+  "Free Dubai hotel or residence delivery",
+];
 
 interface CarData {
   id: string;
@@ -31,24 +36,25 @@ const cars: CarData[] = [
     id: "lamborghini-urus",
     name: "Lamborghini Urus",
     image: "/assets/hero-car.png",
-    pricePerDay: 220,
+    pricePerDay: 2200,
     currency: "AED",
     stats: { topSpeed: "300 km/h", horsepower: "650 HP", engine: "V8 Engine", seats: "4 Seater" },
     whatsappMessage: "Hi, I want to book the Lamborghini Urus.",
     details: {
       title: "Lamborghini Urus",
       description: "A luxury performance SUV with aggressive styling, premium comfort, and powerful road presence. The perfect blend of a super sports car soul with SUV functionality.",
-      price: "AED 220 /day",
+      price: "AED 2,200 /day",
       features: [
         "High performance twin-turbo V8 engine",
         "Immaculate premium leather interior",
         "Perfect for cruising Dubai's highways and streets",
-        "Available for daily and flexible weekly rental"
+        "Available for daily and flexible weekly rental",
+        ...INCLUDED_TERMS,
       ],
       requirements: [
         "Valid driving license (International for tourists)",
         "Emirates ID or Passport copy with visa entry page",
-        "Standard security deposit applies (fully refundable)"
+        "Refundable security deposit confirmed before handover"
       ]
     }
   },
@@ -68,12 +74,13 @@ const cars: CarData[] = [
         "Iconic 2.5L inline 5-cylinder turbocharged engine",
         "Quattro intelligent all-wheel-drive system",
         "Aggressive RS honeycomb grille and styling details",
-        "Audi Virtual Cockpit Plus with RS-specific layouts"
+        "Audi Virtual Cockpit Plus with RS-specific layouts",
+        ...INCLUDED_TERMS,
       ],
       requirements: [
         "Valid driving license (International for tourists)",
         "Emirates ID or Passport copy with visa entry page",
-        "Standard security deposit applies (fully refundable)"
+        "Refundable security deposit confirmed before handover"
       ]
     }
   },
@@ -93,12 +100,13 @@ const cars: CarData[] = [
         "Brabus 800 HP power enhancement and tuning pack",
         "Aggressive carbon fiber widebody aerodynamic styling",
         "Sport valved exhaust system with sidepipe signature exit",
-        "Custom premium quilted leather comfort interior"
+        "Custom premium quilted leather comfort interior",
+        ...INCLUDED_TERMS,
       ],
       requirements: [
         "Valid driving license (International for tourists)",
         "Emirates ID or Passport copy with visa entry page",
-        "Standard security deposit applies (fully refundable)"
+        "Refundable security deposit confirmed before handover"
       ]
     }
   }
@@ -193,7 +201,7 @@ export default function PickYourCar() {
   };
 
   // Section heading clip-path reveal variants
-  const headingVariants = {
+  const headingVariants: any = {
     hidden: { clipPath: 'inset(0 0 100% 0)', opacity: 0, y: 16 },
     visible: {
       clipPath: 'inset(0 0 0% 0)',
@@ -207,7 +215,7 @@ export default function PickYourCar() {
     <section id="vehicles" className="relative pt-16 pb-24 overflow-x-hidden" style={{ background: 'oklch(11% 0.007 82)' }}>
       {/* Ambient glow behind center car */}
       <div
-        className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[280px] rounded-full pointer-events-none z-0"
+        className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(420px,88vw)] h-[280px] rounded-full pointer-events-none z-0"
         style={{ background: 'radial-gradient(circle, rgba(207,166,74,0.18), transparent 70%)' }}
       />
 
@@ -245,7 +253,7 @@ export default function PickYourCar() {
           {/* Left car (previous) */}
           <div
             onClick={() => handleSelectCar(prevIndex)}
-            className="absolute left-[-16%] sm:left-[-12%] md:left-[-8%] lg:left-[-5%] top-1/2 -translate-y-1/2 w-[35%] sm:w-[30%] opacity-25 scale-75 cursor-pointer z-10 transition-all duration-500 hover:opacity-40 hover:scale-[0.77] max-h-[85%] flex items-center justify-center filter grayscale hover:grayscale-0 pointer-events-auto"
+            className="absolute left-[-6%] sm:left-[-12%] md:left-[-8%] lg:left-[-5%] top-1/2 -translate-y-1/2 w-[26%] sm:w-[30%] opacity-25 scale-75 cursor-pointer z-10 transition-all duration-500 hover:opacity-40 hover:scale-[0.77] max-h-[85%] flex items-center justify-center filter grayscale hover:grayscale-0 pointer-events-auto"
           >
             <img
               src={cars[prevIndex].image}
@@ -289,7 +297,7 @@ export default function PickYourCar() {
           {/* Right car (next) */}
           <div
             onClick={() => handleSelectCar(nextIndex)}
-            className="absolute right-[-16%] sm:right-[-12%] md:right-[-8%] lg:right-[-5%] top-1/2 -translate-y-1/2 w-[35%] sm:w-[30%] opacity-25 scale-75 cursor-pointer z-10 transition-all duration-500 hover:opacity-40 hover:scale-[0.77] max-h-[85%] flex items-center justify-center filter grayscale hover:grayscale-0 pointer-events-auto"
+            className="absolute right-[-6%] sm:right-[-12%] md:right-[-8%] lg:right-[-5%] top-1/2 -translate-y-1/2 w-[26%] sm:w-[30%] opacity-25 scale-75 cursor-pointer z-10 transition-all duration-500 hover:opacity-40 hover:scale-[0.77] max-h-[85%] flex items-center justify-center filter grayscale hover:grayscale-0 pointer-events-auto"
           >
             <img
               src={cars[nextIndex].image}
@@ -302,14 +310,14 @@ export default function PickYourCar() {
           {/* Nav buttons — pointer-events-auto so they register inside the drag zone */}
           <button
             onClick={handlePrev}
-            className="absolute left-[20%] sm:left-[23%] md:left-[26%] lg:left-[27%] z-20 p-2.5 rounded-full bg-white/10 border border-white/20 text-white hover:border-[#CFA64A] hover:text-[#CFA64A] hover:shadow-[0_4px_12px_rgba(207,166,74,0.14)] active:scale-95 transition-all duration-[180ms] cursor-pointer pointer-events-auto"
+            className="absolute left-[16%] sm:left-[23%] md:left-[26%] lg:left-[27%] z-20 min-w-11 min-h-11 p-2.5 rounded-full bg-white/10 border border-white/20 text-white hover:border-[#CFA64A] hover:text-[#CFA64A] hover:shadow-[0_4px_12px_rgba(207,166,74,0.14)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#CFA64A] active:scale-95 transition-all duration-[180ms] cursor-pointer pointer-events-auto"
             aria-label="Previous Car"
           >
             <ChevronLeft size={16} strokeWidth={2.2} />
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-[20%] sm:right-[23%] md:right-[26%] lg:right-[27%] z-20 p-2.5 rounded-full bg-[#CFA64A] text-[#1A1A1A] shadow-[0_4px_12px_rgba(207,166,74,0.22)] hover:bg-[#b8913d] hover:-translate-y-px active:scale-95 transition-all duration-[180ms] cursor-pointer pointer-events-auto"
+            className="absolute right-[16%] sm:right-[23%] md:right-[26%] lg:right-[27%] z-20 min-w-11 min-h-11 p-2.5 rounded-full bg-[#CFA64A] text-[#1A1A1A] shadow-[0_4px_12px_rgba(207,166,74,0.22)] hover:bg-[#b8913d] hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-95 transition-all duration-[180ms] cursor-pointer pointer-events-auto"
             aria-label="Next Car"
           >
             <ChevronRight size={16} strokeWidth={2.2} />
@@ -322,11 +330,13 @@ export default function PickYourCar() {
             <button
               key={car.id}
               onClick={() => handleSelectCar(index)}
-              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                index === activeIndex ? 'bg-[#CFA64A] w-5' : 'w-1.5 bg-white/20 hover:bg-white/40'
-              }`}
+              className="min-w-11 min-h-11 grid place-items-center rounded-full transition-all duration-300 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#CFA64A]"
               aria-label={`Go to slide ${index + 1}`}
-            />
+            >
+              <span className={`block h-1.5 rounded-full transition-all duration-300 ${
+                index === activeIndex ? 'bg-[#CFA64A] w-5' : 'w-1.5 bg-white/20 hover:bg-white/40'
+              }`} />
+            </button>
           ))}
         </div>
 
@@ -358,7 +368,7 @@ export default function PickYourCar() {
       </div>
 
       {/* ── Price / action bar ──────────────────────────────────────────────── */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[min(740px,92vw)] z-30 bg-white rounded-xl shadow-[0_8px_28px_rgba(0,0,0,0.09)] p-3 px-5 sm:p-3.5 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[min(740px,92vw)] z-30 bg-white rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.32)] p-3 px-5 sm:p-3.5 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-4 w-full sm:w-auto">
           <div className="text-[#CFA64A] transform -rotate-45 shrink-0">
             <Tag size={18} strokeWidth={1.5} />
@@ -380,7 +390,7 @@ export default function PickYourCar() {
             rel="noopener noreferrer"
             className="flex-1 sm:flex-none px-6 py-2.5 rounded-lg bg-black hover:bg-black/90 text-white font-bold text-[12px] tracking-wider uppercase transition-all duration-200 cursor-pointer active:scale-95 text-center"
           >
-            Book Now
+            Book on WhatsApp
           </a>
           <button
             onClick={() => setIsModalOpen(true)}
@@ -516,7 +526,7 @@ export default function PickYourCar() {
 
                 <div className="border-t border-gray-100 pt-5 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <p className="text-[10px] text-gray-400 leading-normal text-center sm:text-left max-w-sm">
-                    *Rate includes comprehensive insurance, standard mileage limit, and free delivery directly to your hotel or residence within Dubai.
+                    Rate includes comprehensive insurance, standard mileage, and free Dubai delivery. Deposit is confirmed before handover.
                   </p>
                   <a
                     href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(activeCar.whatsappMessage)}`}

@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 
-const WA_DELIVERY = 'https://wa.me/971500000000?text=Hi%2C%20I%20would%20like%20to%20request%20delivery';
+const WA_DELIVERY = 'https://wa.me/971521430808?text=Hi%2C%20I%20would%20like%20to%20request%20delivery';
 const GOOGLE_MAPS_DUBAI = 'https://www.google.com/maps/place/Dubai+-+United+Arab+Emirates/';
 
 export default function DubaiDelivery() {
