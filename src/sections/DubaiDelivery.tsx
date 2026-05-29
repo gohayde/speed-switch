@@ -23,8 +23,8 @@ export default function DubaiDelivery() {
           {/* Left Column: Focused Copy & Action (5 cols) */}
           <motion.div
             className="col-span-5 max-[900px]:col-span-12"
-            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
-            animate={inView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
             
             <h2
@@ -45,7 +45,7 @@ export default function DubaiDelivery() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium text-[14px] leading-tight">Free Delivery Across Dubai</h4>
-                  <p className="text-white/40 text-[12.5px] mt-1 leading-relaxed">Complimentary handover at all major hotels, residences, or airport terminals.</p>
+                  <p className="text-white/60 text-[12.5px] mt-1 leading-relaxed">Complimentary handover at all major hotels, residences, or airport terminals.</p>
                 </div>
               </div>
               
@@ -57,7 +57,7 @@ export default function DubaiDelivery() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium text-[14px] leading-tight">On-Demand Handovers</h4>
-                  <p className="text-white/40 text-[12.5px] mt-1 leading-relaxed">Fast delivery within minutes, fully coordinate-tracked directly on WhatsApp.</p>
+                  <p className="text-white/60 text-[12.5px] mt-1 leading-relaxed">Fast delivery within minutes, fully coordinate-tracked directly on WhatsApp.</p>
                 </div>
               </div>
             </div>
@@ -80,8 +80,8 @@ export default function DubaiDelivery() {
           {/* Right Column: Premium Double-Bezel Map Console (7 cols) */}
           <motion.div 
             className="col-span-7 max-[900px]:col-span-12"
-            initial={{ opacity: 0, x: 40, filter: 'blur(8px)' }}
-            animate={inView ? { opacity: 1, x: 0, filter: 'blur(0px)' } : {}}
+            initial={{ opacity: 0, x: 40 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}>
             
             {/* Double Bezel Console Frame */}

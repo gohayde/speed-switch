@@ -53,6 +53,12 @@ button, a { font: inherit; }
   animation: marquee 70s linear infinite;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
 /* Lenis smooth scroll */
 html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
@@ -257,7 +263,7 @@ html.lenis { height: auto; }
 .hero-copy p {
   margin: 16px auto 0;
   max-width: 540px;
-  color: #6f737b;
+  color: #5e6370;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.35;

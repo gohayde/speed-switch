@@ -55,7 +55,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.2, 0.8, 0.2, 1] }}
             className="overflow-hidden">
-            <p className="text-[#777B82] text-[15px] leading-relaxed pb-6 mt-0">{a}</p>
+            <p className="text-[#5e6370] text-[15px] leading-relaxed pb-6 mt-0">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -73,7 +73,7 @@ export default function FAQ() {
             style={{ fontSize: 'clamp(28px,2.8vw,44px)' }}>
             Everything You<br />Need to Know
           </h2>
-          <p className="text-[#777B82] text-[16px] leading-relaxed max-w-[65ch] mx-auto">
+          <p className="text-[#5e6370] text-[16px] leading-relaxed max-w-[65ch] mx-auto">
             Answers to the most common questions about renting with Speed Switch.
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function FAQ() {
         </div>
 
         <div className="text-center">
-          <p className="text-[#777B82] text-[15px] mb-5">
+          <p className="text-[#5e6370] text-[15px] mb-5">
             Still have a question? We are on WhatsApp.
           </p>
           <a

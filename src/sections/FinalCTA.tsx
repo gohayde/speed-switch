@@ -29,7 +29,7 @@ export default function FinalCTA() {
           style={{ fontSize: 'clamp(50px,5.5vw,92px)' }}>
           Your Car.<br />Today.
         </h2>
-        <p className="text-[#777B82] text-[17px] leading-relaxed mb-10 max-w-[65ch] mx-auto">
+        <p className="text-white/65 text-[17px] leading-relaxed mb-10 max-w-[65ch] mx-auto">
           Message us now and we respond fast. Premium cars delivered across all of Dubai, with clear pricing and zero hassle.
         </p>
 

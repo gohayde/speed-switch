@@ -164,6 +164,8 @@ export default function PickYourCar() {
   const [direction, setDirection] = useState<'next' | 'prev' | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const closeModal = () => setIsModalOpen(false);
+
   const activeCar = cars[activeIndex];
   const prevIndex = (activeIndex - 1 + cars.length) % cars.length;
   const nextIndex = (activeIndex + 1) % cars.length;
@@ -203,7 +205,7 @@ export default function PickYourCar() {
   };
 
   return (
-    <section id="vehicles" className="relative pt-16 pb-24 overflow-hidden" style={{ background: 'oklch(97.5% 0.007 82)' }}>
+    <section id="vehicles" className="relative pt-16 pb-24 overflow-x-hidden" style={{ background: 'oklch(97.5% 0.007 82)' }}>
       {/* Centered soft radial glow right behind the center car for visual staging */}
       <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[280px] rounded-full pointer-events-none z-0"
         style={{ background: 'radial-gradient(circle, rgba(207,166,74,0.11), transparent 70%)' }} />
@@ -395,16 +397,22 @@ export default function PickYourCar() {
       {/* Details Modal Component */}
       <AnimatePresence>
         {isModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${activeCar.name} details`}
+            onKeyDown={(e) => { if (e.key === 'Escape') closeModal(); }}
+          >
             {/* Backdrop Blur */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setIsModalOpen(false)}
+              onClick={closeModal}
               className="absolute inset-0 bg-black/50 backdrop-blur-[2px] cursor-pointer"
             />
-            
+
             {/* Modal Body */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96, y: 15 }}
@@ -415,7 +423,7 @@ export default function PickYourCar() {
             >
               {/* Close Button */}
               <button
-                onClick={() => setIsModalOpen(false)}
+                onClick={closeModal}
                 className="absolute top-5 right-5 p-1.5 rounded-full bg-gray-50 hover:bg-gray-100 text-gray-500 hover:text-black transition-all cursor-pointer z-20 active:scale-95 border border-black/[0.04]"
                 aria-label="Close details"
               >

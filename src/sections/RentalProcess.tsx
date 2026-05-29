@@ -95,7 +95,7 @@ export default function RentalProcess() {
               Renting in<br /><span className="text-[#CFA64A]">Four Steps</span>
             </h2>
             
-            <p className="text-[#777B82] text-[15px] leading-relaxed max-w-[42ch] mb-8 select-none">
+            <p className="text-[#5e6370] text-[15px] leading-relaxed max-w-[42ch] mb-8 select-none">
               No forms. No counters. Just WhatsApp, your documents, and we handle the rest. Your vehicle, delivered directly to your door.
             </p>
 
@@ -141,7 +141,7 @@ export default function RentalProcess() {
                     <h3 className="font-bold text-[20px] text-[#1A1A1A] mb-3 leading-tight tracking-tight select-none font-display">
                       {title}
                     </h3>
-                    <p className="text-[#777B82] text-[14.5px] leading-relaxed m-0 max-w-[34ch] select-none">
+                    <p className="text-[#5e6370] text-[14.5px] leading-relaxed m-0 max-w-[34ch] select-none">
                       {body}
                     </p>
                   </div>
@@ -163,7 +163,7 @@ export default function RentalProcess() {
             <h2 className="font-bold uppercase text-[#1A1A1A] leading-[0.9] m-0 mb-4 font-display text-[32px]">
               Renting in Four Steps
             </h2>
-            <p className="text-[#777B82] text-[14px] leading-relaxed m-0">
+            <p className="text-[#5e6370] text-[14px] leading-relaxed m-0">
               No forms. No counters. Just WhatsApp, your documents, and we handle the rest. Your vehicle, delivered to your door.
             </p>
           </div>
@@ -188,7 +188,7 @@ export default function RentalProcess() {
                     <h3 className="font-bold text-[15px] text-[#1A1A1A] mb-1.5 leading-tight tracking-tight">
                       {title}
                     </h3>
-                    <p className="text-[#777B82] text-[13px] leading-relaxed m-0">
+                    <p className="text-[#5e6370] text-[13px] leading-relaxed m-0">
                       {body}
                     </p>
                   </div>

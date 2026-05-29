@@ -106,7 +106,7 @@ export default function WhyRent() {
                 The Rental You<br />
                 <span className="text-[#CFA64A]">Can Rely On</span>
               </h2>
-              <p className="text-[#777B82] text-[15px] leading-relaxed max-w-[38ch] select-none">
+              <p className="text-[#5e6370] text-[15px] leading-relaxed max-w-[38ch] select-none">
                 Real reviews. Real customers. Every benefit below comes straight from what renters said about us.
               </p>
             </div>
@@ -134,8 +134,8 @@ export default function WhyRent() {
                   key={title}
                   className="w-full shrink-0"
                 >
-                  <div className="p-[1.5px] rounded-[24px] bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.05] shadow-[0_12px_32px_rgba(0,0,0,0.015)] hover:shadow-[0_20px_48px_rgba(207,166,74,0.08)] hover:border-[#CFA64A]/15 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group cursor-default">
-                    <div className="bg-white px-8 py-7 rounded-[22.5px] flex items-center gap-6 shadow-[inset_0_1px_0_rgba(255,255,255,1)]">
+                  <div className="p-[1.5px] rounded-[16px] bg-[#1A1A1A]/[0.03] border border-[#1A1A1A]/[0.05] shadow-[0_12px_32px_rgba(0,0,0,0.015)] hover:shadow-[0_20px_48px_rgba(207,166,74,0.08)] hover:border-[#CFA64A]/15 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group cursor-default">
+                    <div className="bg-white px-8 py-7 rounded-[14.5px] flex items-center gap-6 shadow-[inset_0_1px_0_rgba(255,255,255,1)]">
 
                       {/* Number */}
                       <span className="text-[11px] font-bold text-[#CFA64A]/35 select-none w-6 shrink-0 font-display">
@@ -154,7 +154,7 @@ export default function WhyRent() {
                         >
                           {title}
                         </h3>
-                        <p className="text-[#777B82] text-[13px] leading-relaxed m-0 select-none">
+                        <p className="text-[#5e6370] text-[13px] leading-relaxed m-0 select-none">
                           {body}
                         </p>
                       </div>
@@ -179,7 +179,7 @@ export default function WhyRent() {
             >
               The Rental You<br />Can Rely On
             </h2>
-            <p className="text-[#777B82] text-[14px] leading-relaxed m-0 max-w-[36ch]">
+            <p className="text-[#5e6370] text-[14px] leading-relaxed m-0 max-w-[36ch]">
               Real reviews. Real customers. Every benefit below comes straight from what renters said about us.
             </p>
           </div>
@@ -215,7 +215,7 @@ export default function WhyRent() {
                   <h3 className="font-bold text-[14px] text-[#1A1A1A] uppercase tracking-wide mb-2 font-display">
                     {title}
                   </h3>
-                  <p className="text-[#777B82] text-[12.5px] leading-relaxed m-0">
+                  <p className="text-[#5e6370] text-[12.5px] leading-relaxed m-0">
                     {body}
                   </p>
                 </div>

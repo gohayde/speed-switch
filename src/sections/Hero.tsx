@@ -181,8 +181,12 @@ export default function Hero() {
                     <span className="month-name">{currentMonth} 2026</span>
                     <button type="button" onClick={() => setCurrentMonth(currentMonth === 'May' ? 'June' : 'May')} className="month-nav-btn">›</button>
                   </div>
-                  <div className="calendar-weekdays">
-                    {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map(d => <span key={d}>{d}</span>)}
+                  <div className="calendar-weekdays" role="row">
+                    {(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as const).map((day, i) => (
+                      <abbr key={day} title={day} aria-label={day} style={{ textDecoration: 'none' }}>
+                        {['M', 'T', 'W', 'T', 'F', 'S', 'S'][i]}
+                      </abbr>
+                    ))}
                   </div>
                   <div className="calendar-days">
                     {spacers.map((s) => <span key={`spacer-${s}`} className="calendar-spacer" />)}

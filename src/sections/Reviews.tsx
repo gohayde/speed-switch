@@ -61,7 +61,7 @@ function GoogleBadge() {
             {[1,2,3,4,5].map(s => <Star key={s} size={10} fill="#FBBC05" className="text-[#FBBC05]" />)}
           </div>
         </div>
-        <p className="text-[11px] text-[#777B82] mt-0.5 leading-none">Google Reviews</p>
+        <p className="text-[11px] text-[#5e6370] mt-0.5 leading-none">Google Reviews</p>
       </div>
     </div>
   );
@@ -144,7 +144,7 @@ export default function Reviews() {
                   </div>
                   <div>
                     <p className="font-bold text-[14px] text-[#1A1A1A] leading-none mb-1">{review.name}</p>
-                    <p className="text-[12px] text-[#AAADB3] leading-none">{review.role}</p>
+                    <p className="text-[12px] text-[#767C88] leading-none">{review.role}</p>
                   </div>
                 </div>
               </motion.div>
