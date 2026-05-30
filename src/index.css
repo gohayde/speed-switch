@@ -58,6 +58,13 @@ a:focus-visible {
   animation: marquee 70s linear infinite;
 }
 
+#brands { padding: 24px 0; }
+#brands .li-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 0 32px; min-width: 180px; }
+#brands .li-wrap svg { height: 32px; width: auto; color: oklch(17% 0.009 82 / 0.75); transition: color 0.3s; }
+#brands .li-name { font-family: 'Manrope', sans-serif; font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: oklch(17% 0.009 82 / 0.35); transition: color 0.3s; }
+#brands .li-wrap:hover svg { color: oklch(74% 0.21 76); }
+#brands .li-wrap:hover .li-name { color: oklch(60% 0.17 76); }
+
 .why-layout-option--poster {
   padding: 86px 74px 48px;
   gap: 32px;

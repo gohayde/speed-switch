@@ -1,0 +1,29 @@
+{
+  "id": "46dd2e03",
+  "phase": "completed",
+  "pageUrl": "/",
+  "sourceFile": "src\\sections\\BrandMarquee.tsx",
+  "expectedVariants": 3,
+  "arrivedVariants": 3,
+  "visibleVariant": 2,
+  "paramValues": {
+    "size": "md",
+    "opacity": 0.75
+  },
+  "pendingEventSeq": null,
+  "pendingEvent": null,
+  "deliveryLease": null,
+  "checkpointRevision": 23,
+  "activeOwner": "f4101148",
+  "sourceMarkers": {},
+  "fallbackMode": null,
+  "annotationArtifacts": [],
+  "diagnostics": [
+    {
+      "error": "carbonize_cleanup_required",
+      "file": "src\\sections\\BrandMarquee.tsx",
+      "message": "Accepted variant still has carbonize markers that must be folded into source CSS."
+    }
+  ],
+  "updatedAt": "2026-05-29T23:51:20.545Z"
+}
