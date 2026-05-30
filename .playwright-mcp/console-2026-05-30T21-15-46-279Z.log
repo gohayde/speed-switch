@@ -1,0 +1,4 @@
+[     691ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:14336
+[     756ms] [LOG] [impeccable] Live variant mode ready. Hover over elements to pick one. @ http://localhost:8400/live.js:8761
+[    1311ms] [LOG] [impeccable] Live mode connected. @ http://localhost:8400/live.js:4625
+[    1370ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/favicon.ico:0

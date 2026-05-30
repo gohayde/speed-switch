@@ -1,0 +1,440 @@
+- generic [ref=e3]:
+  - main [ref=e4]:
+    - generic [ref=e5]:
+      - img
+      - generic [ref=e7]:
+        - link "Speed Switch Home" [ref=e8] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=e12]: Speed Switch
+        - navigation "Primary navigation" [ref=e13]:
+          - link "Home" [ref=e14] [cursor=pointer]:
+            - /url: "#home"
+          - link "Fleet" [ref=e15] [cursor=pointer]:
+            - /url: "#vehicles"
+          - link "Why Us" [ref=e16] [cursor=pointer]:
+            - /url: "#why-us"
+          - link "Delivery" [ref=e17] [cursor=pointer]:
+            - /url: "#delivery"
+          - link "Process" [ref=e18] [cursor=pointer]:
+            - /url: "#process"
+          - link "Reviews" [ref=e19] [cursor=pointer]:
+            - /url: "#reviews"
+          - link "FAQ" [ref=e20] [cursor=pointer]:
+            - /url: "#faq"
+        - link "Book Now" [ref=e22] [cursor=pointer]:
+          - /url: https://wa.me/971521430808?text=Hi%2C%20I%20want%20to%20book%20a%20car
+          - generic [ref=e23]: Book Now
+          - img [ref=e25]
+      - generic:
+        - region "Premium Car Rental":
+          - heading "Premium Car Rental" [level=1]:
+            - generic: Premium Car
+            - generic: Rental
+          - paragraph:
+            - text: Lamborghini, Mercedes, Bentley — delivered to your
+            - text: hotel, residence, or airport across Dubai.
+        - form "Check rental availability on WhatsApp" [ref=e28]:
+          - button "Car Type Luxury SUV" [ref=e29] [cursor=pointer]:
+            - img [ref=e30]
+            - generic [ref=e33]:
+              - generic [ref=e34]: Car Type
+              - generic [ref=e35]: Luxury SUV
+            - img [ref=e36]
+          - button "Pick-up Location Dubai, UAE" [ref=e38] [cursor=pointer]:
+            - img [ref=e39]
+            - generic [ref=e42]:
+              - generic [ref=e43]: Pick-up Location
+              - generic [ref=e44]: Dubai, UAE
+            - img [ref=e45]
+          - button "Date June 24 – June 27" [ref=e47] [cursor=pointer]:
+            - img [ref=e48]
+            - generic [ref=e50]:
+              - generic [ref=e51]: Date
+              - generic [ref=e52]: June 24 – June 27
+            - img [ref=e53]
+          - button "Check availability on WhatsApp" [ref=e55] [cursor=pointer]:
+            - img [ref=e56]
+            - generic [ref=e59]: Check availability
+      - generic:
+        - img "Premium yellow luxury SUV"
+  - generic [ref=e63]:
+    - generic [ref=e64]:
+      - img "Mercedes-Benz" [ref=e65]
+      - generic [ref=e66]: Mercedes-Benz
+    - generic [ref=e67]:
+      - img "Audi" [ref=e68]
+      - generic [ref=e69]: Audi
+    - generic [ref=e70]:
+      - img "BMW" [ref=e71]
+      - generic [ref=e72]: BMW
+    - generic [ref=e73]:
+      - img "Bentley" [ref=e74]
+      - generic [ref=e75]: Bentley
+    - generic [ref=e76]:
+      - img "Cadillac" [ref=e77]
+      - generic [ref=e78]: Cadillac
+    - generic [ref=e79]:
+      - img "Rolls-Royce" [ref=e80]
+      - generic [ref=e81]: Rolls-Royce
+    - generic [ref=e82]:
+      - img "Dodge" [ref=e83]
+      - generic [ref=e84]: Dodge
+    - generic [ref=e85]:
+      - img "Nissan" [ref=e86]
+      - generic [ref=e87]: Nissan
+    - generic [ref=e88]:
+      - img "Land Rover" [ref=e89]
+      - generic [ref=e90]: Land Rover
+    - generic [ref=e91]:
+      - img "Lamborghini" [ref=e92]
+      - generic [ref=e93]: Lamborghini
+    - generic [ref=e94]:
+      - img "Mercedes-Benz" [ref=e95]
+      - generic [ref=e96]: Mercedes-Benz
+    - generic [ref=e97]:
+      - img "Audi" [ref=e98]
+      - generic [ref=e99]: Audi
+    - generic [ref=e100]:
+      - img "BMW" [ref=e101]
+      - generic [ref=e102]: BMW
+    - generic [ref=e103]:
+      - img "Bentley" [ref=e104]
+      - generic [ref=e105]: Bentley
+    - generic [ref=e106]:
+      - img "Cadillac" [ref=e107]
+      - generic [ref=e108]: Cadillac
+    - generic [ref=e109]:
+      - img "Rolls-Royce" [ref=e110]
+      - generic [ref=e111]: Rolls-Royce
+    - generic [ref=e112]:
+      - img "Dodge" [ref=e113]
+      - generic [ref=e114]: Dodge
+    - generic [ref=e115]:
+      - img "Nissan" [ref=e116]
+      - generic [ref=e117]: Nissan
+    - generic [ref=e118]:
+      - img "Land Rover" [ref=e119]
+      - generic [ref=e120]: Land Rover
+    - generic [ref=e121]:
+      - img "Lamborghini" [ref=e122]
+      - generic [ref=e123]: Lamborghini
+  - generic [ref=e125]:
+    - generic [ref=e126]:
+      - heading "PICK YOUR DREAM CAR TODAY" [level=2] [ref=e127]:
+        - text: PICK YOUR DREAM
+        - text: CAR TODAY
+      - generic [ref=e128]:
+        - img "Lamborghini Urus" [ref=e132]
+        - button "Previous Car" [ref=e134] [cursor=pointer]:
+          - img [ref=e135]
+        - button "Next Car" [ref=e137] [cursor=pointer]:
+          - img [ref=e138]
+      - generic [ref=e140]:
+        - button "Go to slide 1" [ref=e141] [cursor=pointer]
+        - button "Go to slide 2" [ref=e143] [cursor=pointer]
+        - button "Go to slide 3" [ref=e145] [cursor=pointer]
+      - generic [ref=e148]:
+        - generic [ref=e149]:
+          - img [ref=e151]
+          - generic [ref=e156]: 300 km/h
+        - generic [ref=e157]:
+          - img [ref=e159]
+          - generic [ref=e161]: 650 HP
+        - generic [ref=e162]:
+          - img [ref=e164]
+          - generic [ref=e167]: V8 Engine
+        - generic [ref=e168]:
+          - img [ref=e170]
+          - generic [ref=e174]: 4 Seater
+    - generic [ref=e175]:
+      - generic [ref=e176]:
+        - img [ref=e178]
+        - generic [ref=e182]:
+          - generic [ref=e183]: Starting From
+          - generic [ref=e184]:
+            - generic [ref=e185]: AED 2,200
+            - generic [ref=e186]: /day
+      - generic [ref=e187]:
+        - link "Book on WhatsApp" [ref=e188] [cursor=pointer]:
+          - /url: https://wa.me/971521430808?text=Hi%2C%20I%20want%20to%20book%20the%20Lamborghini%20Urus.
+        - button "More Details" [ref=e189] [cursor=pointer]
+  - generic [ref=e192]:
+    - generic [ref=e193]:
+      - generic [ref=e194]:
+        - heading "The Rental You Can Rely On" [level=2] [ref=e196]:
+          - text: The Rental You
+          - text: Can Rely On
+        - paragraph [ref=e197]: Real reviews. Real customers. Every benefit below comes straight from what renters said about us.
+      - generic [ref=e198]:
+        - img "Bentley — Speed Switch Fleet"
+    - generic [ref=e200]:
+      - generic [ref=e201]:
+        - img [ref=e203]
+        - generic [ref=e206]:
+          - heading "Clean, Well Maintained Cars" [level=3] [ref=e207]
+          - paragraph [ref=e208]: Customers repeatedly mention clean, new, reliable cars in excellent condition — from luxury models to everyday rentals.
+      - generic [ref=e209]:
+        - img [ref=e211]
+        - generic [ref=e213]:
+          - heading "Fast & Easy Process" [level=3] [ref=e214]
+          - paragraph [ref=e215]: Renters describe the process as quick, smooth, flexible, and easy from start to finish.
+      - generic [ref=e216]:
+        - img [ref=e218]
+        - generic [ref=e223]:
+          - heading "Helpful, Respectful Team" [level=3] [ref=e224]
+          - paragraph [ref=e225]: Many customers specifically praise Ahmad and the team for being helpful, kind, professional, honest, and responsive.
+      - generic [ref=e226]:
+        - img [ref=e228]
+        - generic [ref=e231]:
+          - heading "Fair Prices" [level=3] [ref=e232]
+          - paragraph [ref=e233]: Reviews mention reasonable prices, good value, and some of the best prices for car rental in Dubai.
+      - generic [ref=e234]:
+        - img [ref=e236]
+        - generic [ref=e239]:
+          - heading "Delivery Across Dubai" [level=3] [ref=e240]
+          - paragraph [ref=e241]: Customers mention car delivery to preferred locations, hotels, JVC/Jumeirah Circle, and airport return options.
+      - generic [ref=e242]:
+        - img [ref=e244]
+        - generic [ref=e247]:
+          - heading "Deposit Returned On Time" [level=3] [ref=e248]
+          - paragraph [ref=e249]: Several reviews mention deposits being returned on time or the same day — a huge trust point for renters.
+  - generic [ref=e252]:
+    - generic [ref=e253]:
+      - heading "We Come To You" [level=2] [ref=e254]:
+        - text: We Come
+        - text: To You
+      - paragraph [ref=e255]: "Across every district in Dubai, we deliver your chosen vehicle directly to your door. Tourists and residents alike: no queues, no counters, just your car exactly where you need it."
+      - generic [ref=e256]:
+        - generic [ref=e257]:
+          - img [ref=e259]
+          - generic [ref=e262]:
+            - heading "Free Delivery Across Dubai" [level=4] [ref=e263]
+            - paragraph [ref=e264]: Complimentary handover at all major hotels, residences, or airport terminals.
+        - generic [ref=e265]:
+          - img [ref=e267]
+          - generic [ref=e269]:
+            - heading "On-Demand Handovers" [level=4] [ref=e270]
+            - paragraph [ref=e271]: Fast delivery within minutes, fully coordinate-tracked directly on WhatsApp.
+      - link "Request Delivery" [ref=e272] [cursor=pointer]:
+        - /url: https://wa.me/971521430808?text=Hi%2C%20I%20would%20like%20to%20request%20delivery
+        - generic [ref=e273]: Request Delivery
+        - img [ref=e275]
+    - generic [ref=e277]:
+      - generic [ref=e279]:
+        - img "Speed Switch Dubai Delivery Map"
+        - generic [ref=e284]: Live handover active
+        - link "Open Interactive Map" [ref=e285] [cursor=pointer]:
+          - /url: https://www.google.com/maps/place/Dubai+-+United+Arab+Emirates/
+          - generic [ref=e286]: Open Interactive Map
+          - img [ref=e288]
+      - paragraph [ref=e290]: Custom handovers in Sharjah, Abu Dhabi, and surrounding Emirates available on request.
+  - generic [ref=e293]:
+    - generic [ref=e294]:
+      - heading "Renting in Four Steps" [level=2] [ref=e296]:
+        - text: Renting in
+        - text: Four Steps
+      - paragraph [ref=e297]: No forms, no counters. WhatsApp us, share your documents, and we deliver your vehicle directly to you.
+      - link "Start Booking" [ref=e298] [cursor=pointer]:
+        - /url: https://wa.me/971521430808?text=Hi%2C%20I%20want%20to%20start%20a%20booking
+        - generic [ref=e299]: Start Booking
+        - img [ref=e301]
+    - generic [ref=e304]:
+      - generic [ref=e306]:
+        - generic: "01"
+        - img [ref=e310]
+        - generic [ref=e313]:
+          - heading "Choose Your Car" [level=3] [ref=e314]
+          - paragraph [ref=e315]: Pick from luxury, sports, SUV, or standard rental options. Browse the fleet, then message us.
+      - img [ref=e318]
+    - generic [ref=e320]:
+      - generic [ref=e322]:
+        - generic: "02"
+        - img [ref=e326]
+        - generic [ref=e328]:
+          - heading "Confirm on WhatsApp" [level=3] [ref=e329]
+          - paragraph [ref=e330]: Message the team, confirm your rental dates, delivery address, and required documents in minutes.
+      - img [ref=e333]
+    - generic [ref=e335]:
+      - generic [ref=e337]:
+        - generic: "03"
+        - img [ref=e341]
+        - generic [ref=e344]:
+          - heading "Delivered to You" [level=3] [ref=e345]
+          - paragraph [ref=e346]: Receive the car at your door in Dubai. Hotels, residences, offices — anywhere in the city, on schedule.
+      - img [ref=e349]
+    - generic [ref=e353]:
+      - generic: "04"
+      - img [ref=e357]
+      - generic [ref=e359]:
+        - heading "Drive, Return Easily" [level=3] [ref=e360]
+        - paragraph [ref=e361]: Enjoy a clean, well-maintained vehicle. Support stays on standby. Return is as smooth as pickup.
+  - generic [ref=e363]:
+    - generic [ref=e364]:
+      - generic [ref=e365]:
+        - heading "From our customers" [level=2] [ref=e366]:
+          - text: From our
+          - text: customers
+        - generic [ref=e367]:
+          - img "Google" [ref=e368]
+          - generic [ref=e373]:
+            - generic [ref=e374]:
+              - generic [ref=e375]: "4.9"
+              - generic [ref=e376]:
+                - img [ref=e377]
+                - img [ref=e379]
+                - img [ref=e381]
+                - img [ref=e383]
+                - img [ref=e385]
+            - paragraph [ref=e387]: Google review rating
+      - generic [ref=e388]:
+        - generic [ref=e389]:
+          - generic [ref=e390]: "01"
+          - generic [ref=e391]:
+            - button "Go to review 1" [ref=e392]
+            - button "Go to review 2" [ref=e393]
+            - button "Go to review 3" [ref=e394]
+            - button "Go to review 4" [ref=e395]
+            - button "Go to review 5" [ref=e396]
+          - generic [ref=e397]: "05"
+        - generic [ref=e398]:
+          - button "Previous review" [ref=e399]:
+            - img [ref=e400]
+          - button "Next review" [ref=e402]:
+            - img [ref=e403]
+    - generic [ref=e405]:
+      - generic [ref=e407]:
+        - generic [ref=e409]:
+          - generic [ref=e410]:
+            - generic [ref=e411]:
+              - img [ref=e412]
+              - img [ref=e414]
+              - img [ref=e416]
+              - img [ref=e418]
+              - img [ref=e420]
+            - generic [ref=e422]: Fast delivery
+          - paragraph [ref=e423]: "\"The car was delivered to my hotel at 7am sharp. Immaculate condition, full tank, and the handover was exactly on time.\""
+        - generic [ref=e424]:
+          - generic [ref=e425]: KM
+          - generic [ref=e426]:
+            - paragraph [ref=e427]: Khalid Al-Mansouri
+            - paragraph [ref=e428]: Google review
+      - generic [ref=e429]:
+        - generic [ref=e431]:
+          - generic [ref=e432]:
+            - img [ref=e433]
+            - img [ref=e435]
+            - img [ref=e437]
+            - img [ref=e439]
+            - img [ref=e441]
+          - generic [ref=e443]: WhatsApp booking
+        - paragraph [ref=e444]: "\"Booked everything on WhatsApp in under five minutes. The team was responsive, the price was clear, and the car was spotless.\""
+        - generic [ref=e445]:
+          - generic [ref=e446]: SL
+          - generic [ref=e447]:
+            - paragraph [ref=e448]: Sophie Laurent
+            - paragraph [ref=e449]: Google review
+      - generic [ref=e450]:
+        - generic [ref=e452]:
+          - generic [ref=e453]:
+            - img [ref=e454]
+            - img [ref=e456]
+            - img [ref=e458]
+            - img [ref=e460]
+            - img [ref=e462]
+          - generic [ref=e464]: Clean cars
+        - paragraph [ref=e465]: "\"The entire booking process was quick. The car arrived in perfect condition and the team stayed available during the rental.\""
+        - generic [ref=e466]:
+          - generic [ref=e467]: JW
+          - generic [ref=e468]:
+            - paragraph [ref=e469]: James Whitmore
+            - paragraph [ref=e470]: Google review
+  - generic [ref=e473]:
+    - generic [ref=e474]:
+      - heading "Common questions" [level=2] [ref=e476]:
+        - text: Common
+        - text: questions
+      - paragraph [ref=e477]: What renters ask most before booking with Speed Switch.
+      - link "Ask on WhatsApp" [ref=e479] [cursor=pointer]:
+        - /url: https://wa.me/971521430808?text=Hi%2C%20I%20have%20a%20question%20about%20renting
+        - img [ref=e480]
+        - text: Ask on WhatsApp
+    - generic [ref=e482]:
+      - button "What documents do I need to rent?" [ref=e485]:
+        - generic [ref=e486]: What documents do I need to rent?
+      - button "How does the security deposit work?" [ref=e492]:
+        - generic [ref=e493]: How does the security deposit work?
+      - button "Do you deliver to my hotel or residence?" [ref=e499]:
+        - generic [ref=e500]: Do you deliver to my hotel or residence?
+      - button "Can you deliver to Dubai Airport?" [ref=e506]:
+        - generic [ref=e507]: Can you deliver to Dubai Airport?
+      - button "What insurance is included?" [ref=e513]:
+        - generic [ref=e514]: What insurance is included?
+      - button "How quickly does booking get confirmed?" [ref=e520]:
+        - generic [ref=e521]: How quickly does booking get confirmed?
+  - generic [ref=e529]:
+    - heading "Your car. Today." [level=2] [ref=e530]:
+      - text: Your car.
+      - text: Today.
+    - paragraph [ref=e531]: Message us and receive a response fast. Premium cars delivered across Dubai, with clear pricing and your deposit confirmed upfront.
+    - generic [ref=e532]:
+      - link "Book on WhatsApp" [ref=e533] [cursor=pointer]:
+        - /url: https://wa.me/971521430808?text=Hi%2C%20I%20want%20to%20book%20a%20car
+        - generic [ref=e534]: Book on WhatsApp
+        - img [ref=e536]
+      - link "View fleet" [ref=e538] [cursor=pointer]:
+        - /url: "#vehicles"
+        - generic [ref=e539]: View fleet
+        - img [ref=e541]
+    - paragraph [ref=e543]: Available daily, delivered anywhere in Dubai
+  - contentinfo [ref=e544]:
+    - generic [ref=e546]:
+      - generic [ref=e547]:
+        - generic [ref=e548]:
+          - link "Speed Switch home" [ref=e549] [cursor=pointer]:
+            - /url: "#home"
+            - generic [ref=e553]: SPEED SWITCH
+          - paragraph [ref=e554]: Premium car rental across Dubai. Delivered to your door, priced transparently.
+          - link "+971 52 143 0808" [ref=e555] [cursor=pointer]:
+            - /url: https://wa.me/971521430808?text=Hi%2C%20I%20want%20to%20book%20a%20car
+            - img [ref=e556]
+            - text: +971 52 143 0808
+        - generic [ref=e558]:
+          - heading "Explore" [level=4] [ref=e559]
+          - list [ref=e560]:
+            - listitem [ref=e561]:
+              - link "Sports Cars" [ref=e562] [cursor=pointer]:
+                - /url: "#vehicles"
+            - listitem [ref=e563]:
+              - link "SUVs" [ref=e564] [cursor=pointer]:
+                - /url: "#vehicles"
+            - listitem [ref=e565]:
+              - link "Luxury Sedans" [ref=e566] [cursor=pointer]:
+                - /url: "#vehicles"
+            - listitem [ref=e567]:
+              - link "How It Works" [ref=e568] [cursor=pointer]:
+                - /url: "#process"
+            - listitem [ref=e569]:
+              - link "FAQ" [ref=e570] [cursor=pointer]:
+                - /url: "#faq"
+        - generic [ref=e571]:
+          - heading "Delivery" [level=4] [ref=e572]
+          - list [ref=e573]:
+            - listitem [ref=e574]:
+              - link "Dubai Marina" [ref=e575] [cursor=pointer]:
+                - /url: "#delivery"
+            - listitem [ref=e576]:
+              - link "Downtown Dubai" [ref=e577] [cursor=pointer]:
+                - /url: "#delivery"
+            - listitem [ref=e578]:
+              - link "Palm Jumeirah" [ref=e579] [cursor=pointer]:
+                - /url: "#delivery"
+            - listitem [ref=e580]:
+              - link "Dubai Airport" [ref=e581] [cursor=pointer]:
+                - /url: "#delivery"
+      - generic [ref=e582]:
+        - paragraph [ref=e583]: © 2026 Speed Switch. All rights reserved.
+        - generic [ref=e584]:
+          - link "Privacy policy" [ref=e585] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of service" [ref=e586] [cursor=pointer]:
+            - /url: "#"

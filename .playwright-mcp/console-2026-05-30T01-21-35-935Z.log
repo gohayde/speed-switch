@@ -1,0 +1,10 @@
+[     149ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=45ca4153:14336
+[     567ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/favicon.ico:0
+[  165819ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5173/src/sections/WhyRent.tsx?t=1780104261704:0
+[  165821ms] [ERROR] [vite] Failed to reload /src/sections/WhyRent.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:524
+[  185065ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5173/src/sections/WhyRent.tsx?t=1780104280910:0
+[  185066ms] [ERROR] [vite] Failed to reload /src/sections/WhyRent.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:524
+[  210354ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5173/src/sections/RentalProcess.tsx?t=1780104306256:0
+[  210355ms] [ERROR] [vite] Failed to reload /src/sections/RentalProcess.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:524
+[  231896ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5173/src/sections/Reviews.tsx?t=1780104327802:0
+[  231897ms] [ERROR] [vite] Failed to reload /src/sections/Reviews.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:524

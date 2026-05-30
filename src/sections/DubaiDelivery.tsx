@@ -11,11 +11,6 @@ export default function DubaiDelivery() {
 
   return (
     <section id="delivery" className="pt-36 pb-40 px-6 overflow-hidden relative" style={{ background: 'oklch(14% 0.006 82)' }}>
-      {/* Cinematic ambient radial mesh gold gradient */}
-      <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full pointer-events-none opacity-35 mix-blend-screen blur-[120px]"
-        style={{ background: 'radial-gradient(circle, oklch(72% 0.13 76 / 0.12), transparent 70%)' }} 
-      />
 
       <div ref={ref} className="max-w-[1160px] mx-auto relative z-10">
         <div className="grid grid-cols-12 gap-16 items-center max-[900px]:grid-cols-1 max-[900px]:gap-14">
@@ -33,7 +28,7 @@ export default function DubaiDelivery() {
               We Come<br /><span className="text-[#CFA64A]">To You</span>
             </h2>
             
-            <p className="text-[#8C8F96] text-[15px] leading-relaxed mb-8 max-w-[42ch]">
+            <p className="text-white/70 text-[15px] leading-relaxed mb-8 max-w-[42ch]">
               Across every district in Dubai, we deliver your chosen vehicle directly to your door. Tourists and residents alike: no queues, no counters, just your car exactly where you need it.
             </p>
 
@@ -44,11 +39,11 @@ export default function DubaiDelivery() {
                   <MapPin size={15} className="text-[#CFA64A]" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h4 className="text-white font-medium text-[14px] leading-tight">Free Delivery Across Dubai</h4>
-                  <p className="text-white/60 text-[12.5px] mt-1 leading-relaxed">Complimentary handover at all major hotels, residences, or airport terminals.</p>
+                  <h3 className="text-white font-medium text-[14px] leading-tight">Free Delivery Across Dubai</h3>
+                  <p className="text-white/75 text-[12.5px] mt-1 leading-relaxed">Complimentary handover at all major hotels, residences, or airport terminals.</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <div className="w-9 h-9 rounded-full bg-[#CFA64A]/[0.07] border border-[#CFA64A]/20 flex items-center justify-center shrink-0 mt-0.5">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-4 h-4 text-[#CFA64A]" strokeWidth={1.5}>
@@ -56,8 +51,8 @@ export default function DubaiDelivery() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-white font-medium text-[14px] leading-tight">On-Demand Handovers</h4>
-                  <p className="text-white/60 text-[12.5px] mt-1 leading-relaxed">Fast delivery within minutes, fully coordinate-tracked directly on WhatsApp.</p>
+                  <h3 className="text-white font-medium text-[14px] leading-tight">On-Demand Handovers</h3>
+                  <p className="text-white/75 text-[12.5px] mt-1 leading-relaxed">Fast delivery within minutes, fully coordinate-tracked directly on WhatsApp.</p>
                 </div>
               </div>
             </div>
@@ -85,7 +80,7 @@ export default function DubaiDelivery() {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}>
             
             {/* Double Bezel Console Frame */}
-            <div className="p-2 rounded-[28px] bg-gradient-to-b from-white/10 to-white/[0.02] border border-white/[0.08] shadow-[0_24px_80px_rgba(0,0,0,0.4)] relative overflow-hidden group">
+            <div className="p-2 rounded-[28px] bg-gradient-to-b from-white/10 to-white/[0.02] border border-white/[0.08] relative group">
               
               {/* Inner Screen Case */}
               <div className="rounded-[20px] overflow-hidden relative aspect-[4/3] bg-black/40">
@@ -114,7 +109,7 @@ export default function DubaiDelivery() {
                   href={GOOGLE_MAPS_DUBAI}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-md border border-white/10 text-white font-medium text-[11px] px-6 py-3 rounded-full flex items-center gap-2 shadow-[0_12px_28px_rgba(0,0,0,0.3)] transition-all duration-500 hover:bg-[#CFA64A] hover:text-[#1A1A1A] hover:border-[#CFA64A]/30 hover:-translate-y-0.5 group/badge tracking-wider uppercase">
+                  className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-md border border-white/10 text-white font-medium text-[11px] px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-500 hover:bg-[#CFA64A] hover:text-[#1A1A1A] hover:border-[#CFA64A]/30 hover:-translate-y-0.5 group/badge tracking-wider uppercase">
                   <span>Open Interactive Map</span>
                   <span className="w-5 h-5 rounded-full bg-white/10 group-hover/badge:bg-black/10 flex items-center justify-center transition-all duration-500 group-hover/badge:translate-x-0.5 group-hover/badge:-translate-y-0.5">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-3 h-3" strokeWidth={2}>
@@ -127,7 +122,7 @@ export default function DubaiDelivery() {
 
             </div>
 
-            <p className="text-[#5E626A] text-[11px] mt-4 leading-relaxed text-right max-[900px]:text-left select-none">
+            <p className="text-white/45 text-[11px] mt-4 leading-relaxed text-right max-[900px]:text-left select-none">
               Custom handovers in Sharjah, Abu Dhabi, and surrounding Emirates available on request.
             </p>
 

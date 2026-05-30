@@ -1,200 +1,190 @@
-import { useRef, useEffect } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+
 const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import {
-  Sparkles,
-  Zap,
-  Users,
-  BadgeDollarSign,
-  MapPin,
-  ShieldCheck,
-} from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
-interface BenefitItem {
-  icon: any;
-  title: string;
-  body: string;
-}
-
-const benefitsList: BenefitItem[] = [
+const benefits = [
   {
-    icon: Sparkles,
-    title: 'Clean, Well Maintained Cars',
-    body: 'Customers repeatedly mention clean, new, reliable cars in excellent condition — from luxury models to everyday rentals.',
+    title: 'Clean & Maintained',
+    body: "Every car arrives freshly cleaned and serviced. New, reliable, excellent condition — every time.",
   },
   {
-    icon: Zap,
-    title: 'Fast & Easy Process',
-    body: 'Renters describe the process as quick, smooth, flexible, and easy from start to finish.',
+    title: 'Fast Process',
+    body: 'Quick from first message to keys in hand. Renters call it the smoothest rental they\'ve had.',
   },
   {
-    icon: Users,
-    title: 'Helpful, Respectful Team',
-    body: 'Many customers specifically praise Ahmad and the team for being helpful, kind, professional, honest, and responsive.',
+    title: 'Trusted Team',
+    body: 'Ahmad and the team are named by name in reviews. Helpful, honest, professional.',
   },
   {
-    icon: BadgeDollarSign,
     title: 'Fair Prices',
-    body: 'Reviews mention reasonable prices, good value, and some of the best prices for car rental in Dubai.',
+    body: 'Transparent billing, no surprises. Consistently some of the best rates in Dubai.',
   },
   {
-    icon: MapPin,
-    title: 'Delivery Across Dubai',
-    body: 'Customers mention car delivery to preferred locations, hotels, JVC/Jumeirah Circle, and airport return options.',
+    title: 'City Delivery',
+    body: 'Hotel, residence, office — delivered across Dubai. Airport returns accepted.',
   },
   {
-    icon: ShieldCheck,
-    title: 'Deposit Returned On Time',
-    body: 'Several reviews mention deposits being returned on time or the same day — a huge trust point for renters.',
+    title: 'Deposit Returned',
+    body: 'Same-day deposit returns are standard here, not an exception. It shows in every review.',
   },
 ];
 
 export default function WhyRent() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
 
-  useEffect(() => {
-    if (reduce || !sectionRef.current || !trackRef.current) return;
-
-    const ctx = gsap.context(() => {
-      const distance = trackRef.current!.scrollHeight - (sectionRef.current!.clientHeight * 0.72);
-
-      gsap.to(trackRef.current, {
-        y: -distance,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top top',
-          end: () => `+=${distance + 400}`,
-          pin: true,
-          scrub: 1.2,
-          invalidateOnRefresh: true,
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, [reduce]);
-
   return (
-    <>
-      {/* DESKTOP: Pinned split — left fixed, right cards scroll vertically */}
-      <section
-        ref={sectionRef}
-        id="why-us"
-        className="relative overflow-hidden max-[900px]:hidden h-screen"
-        style={{ background: 'oklch(100% 0 0)' }}
-      >
-        <div className="flex h-screen">
-
-          {/* LEFT PANEL — sticky title + car image */}
-          <div className="why-layout-option why-layout-option--poster w-[52%] shrink-0 flex flex-col h-screen relative overflow-hidden">
-            <div className="absolute bottom-[-8%] left-[7%] w-[780px] h-[380px] bg-[#CFA64A]/[0.08] blur-[88px] rounded-full pointer-events-none" />
-            <motion.div
-              className="relative z-10"
-              initial={reduce ? undefined : { opacity: 0, y: 22 }}
-              whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.7, ease: EASE_EXPO }}
-            >
-              <h2 className="font-bold uppercase text-[#1A1A1A] leading-[0.86] m-0 select-none font-display" style={{ fontSize: 'clamp(48px, 4.8vw, 78px)', letterSpacing: '-0.02em' }}>
-                The Rental You<br />
-                <span className="text-[#CFA64A]">Can Rely On</span>
-              </h2>
-              <p className="why-layout-copy text-[#5e6370] text-[15px] leading-relaxed max-w-[38ch] select-none">
-                Real reviews. Real customers. Every benefit below comes straight from what renters said about us.
-              </p>
-            </motion.div>
-            <motion.div
-              className="relative z-10 flex items-end justify-start flex-1"
-              initial={reduce ? undefined : { opacity: 0, y: 36 }}
-              whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.9, delay: 0.14, ease: EASE_EXPO }}
-            >
-              <img src="/assets/bentley.png" alt="Bentley — Speed Switch Fleet" className="why-layout-car w-full object-contain drop-shadow-[0_30px_60px_rgba(207,166,74,0.14)] select-none pointer-events-none" draggable={false} />
-            </motion.div>
-          </div>
-
-          {/* RIGHT PANEL — vertical card track (GSAP scrubs this) */}
-          <div className="benefit-distill benefit-distill--compact flex-1 flex items-start overflow-hidden relative">
-            <div className="absolute top-0 left-0 right-0 h-20 z-10 pointer-events-none" style={{ background: 'linear-gradient(to bottom, oklch(100% 0 0), transparent)' }} />
-            <div className="absolute bottom-0 left-0 right-0 h-20 z-10 pointer-events-none" style={{ background: 'linear-gradient(to top, oklch(100% 0 0), transparent)' }} />
-
-            <div ref={trackRef} className="benefit-distill-track grid w-full">
-              {benefitsList.map(({ icon: Icon, title, body }) => (
-                <div key={title} className="benefit-distill-card">
-                  <div className="benefit-distill-card-head">
-                    <Icon size={15} strokeWidth={1.6} />
-                    <h3 className="benefit-distill-title font-display">{title}</h3>
-                  </div>
-                  <p className="benefit-distill-body">{body}</p>
-                </div>
-              ))}
+    <section
+      id="why-us"
+      style={{ background: 'oklch(13% 0.010 82)' }}
+    >
+      {/* ── TOP: heading / car ─────────────────────────── */}
+      <div className="max-w-[1340px] mx-auto px-8 max-[640px]:px-5">
+        <div
+          className="grid max-[900px]:grid-cols-1"
+          style={{ gridTemplateColumns: '1fr 1.15fr' }}
+        >
+          {/* Left — heading */}
+          <motion.div
+            className="flex flex-col justify-end pt-28 max-[900px]:pt-20"
+            initial={reduce ? undefined : { opacity: 0, y: 28 }}
+            whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.75, ease: EASE_EXPO }}
+          >
+            <div className="mb-8">
+              <div className="w-8 h-px" style={{ background: 'rgba(207,166,74,0.6)' }} />
             </div>
-          </div>
 
-        </div>
-      </section>
-
-      {/* MOBILE: Native swipe slider fallback */}
-      <section className="min-[901px]:hidden py-20 px-6 overflow-hidden relative" style={{ background: 'oklch(100% 0 0)' }}>
-        <div className="max-w-[1160px] mx-auto relative z-10">
-
-          <div className="mb-10 text-left">
             <h2
-              className="text-[32px] font-extrabold uppercase text-[#1A1A1A] leading-tight m-0 mb-4 font-display"
+              className="font-display font-black uppercase text-white m-0 mb-8 leading-[0.86]"
+              style={{
+                fontSize: 'clamp(44px, 5.2vw, 80px)',
+                letterSpacing: '-0.02em',
+                textWrap: 'balance',
+              }}
             >
-              The Rental You<br />Can Rely On
+              The Rental You<br />
+              <span style={{ color: '#CFA64A' }}>Can Rely On</span>
             </h2>
-            <p className="text-[#5e6370] text-[14px] leading-relaxed m-0 max-w-[36ch]">
-              Real reviews. Real customers. Every benefit below comes straight from what renters said about us.
-            </p>
-          </div>
 
-          {/* Car image mobile */}
-          <div className="mb-8 flex justify-center">
+            <p
+              className="font-sans text-[16px] m-0 max-w-[38ch] max-[900px]:mb-6"
+              style={{ color: 'rgba(255,255,255,0.72)', lineHeight: 1.72 }}
+            >
+              Real reviews. Real customers. Every benefit below came directly from what renters said about us.
+            </p>
+          </motion.div>
+
+          {/* Right — car */}
+          <motion.div
+            className="relative flex items-end justify-center max-[900px]:mt-4"
+            initial={reduce ? undefined : { opacity: 0, x: 20 }}
+            whileInView={reduce ? undefined : { opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 1, delay: 0.12, ease: EASE_EXPO }}
+          >
+            <div
+              className="absolute pointer-events-none"
+              style={{
+                inset: 0,
+                background:
+                  'radial-gradient(ellipse 65% 55% at 55% 65%, rgba(207,166,74,0.06) 0%, transparent 72%)',
+              }}
+            />
             <img
-              src="/assets/bentley.png"
-              alt="Bentley — Speed Switch Fleet"
-              className="w-full max-w-[340px] object-contain drop-shadow-[0_20px_40px_rgba(207,166,74,0.12)]"
+              src="/assets/g63-brabus.png"
+              alt="G63 Brabus — Speed Switch Dubai fleet"
+              className="relative w-full object-contain select-none pointer-events-none"
+              style={{
+                maxWidth: '720px',
+                filter: 'drop-shadow(0 28px 56px rgba(207,166,74,0.20))',
+                WebkitMaskImage: 'linear-gradient(to bottom, black 42%, transparent 90%)',
+                maskImage: 'linear-gradient(to bottom, black 42%, transparent 90%)',
+              }}
               draggable={false}
             />
-          </div>
-
-          <div
-            className="flex gap-5 overflow-x-auto pb-6 snap-x snap-mandatory touch-pan-x"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {benefitsList.map(({ icon: Icon, title, body }) => (
-              <div
-                key={title}
-                className="flex-shrink-0 w-[280px] snap-start bg-[#FAFAFA] p-6 rounded-[12px] border border-black/[0.05] flex flex-col justify-between min-h-[180px] group"
-              >
-                <div className="flex justify-end mb-4">
-                  <div className="w-9 h-9 rounded-full bg-[#CFA64A]/[0.12] flex items-center justify-center text-[#CFA64A]">
-                    <Icon size={15} strokeWidth={1.5} />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-bold text-[14px] text-[#1A1A1A] uppercase tracking-wide mb-2 font-display">
-                    {title}
-                  </h3>
-                  <p className="text-[#5e6370] text-[12.5px] leading-relaxed m-0">
-                    {body}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
+          </motion.div>
         </div>
-      </section>
-    </>
+      </div>
+
+      {/* ── BENEFITS ───────────────────────────────────── */}
+      <div
+        className="max-w-[1340px] mx-auto px-8 max-[640px]:px-5"
+        style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
+      >
+        {/* Featured pair — first two benefits, side by side, larger type */}
+        <div className="grid grid-cols-2 max-[640px]:grid-cols-1" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+          {benefits.slice(0, 2).map(({ title, body }, i) => (
+            <motion.div
+              key={title}
+              className="py-10 pr-10 max-[640px]:pr-0"
+              style={i === 0 ? { borderRight: '1px solid rgba(255,255,255,0.07)' } : {}}
+              initial={reduce ? undefined : { opacity: 0, y: 14 }}
+              whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-30px' }}
+              transition={{ duration: 0.5, delay: i * 0.08, ease: EASE_EXPO }}
+            >
+              <div className="w-7 h-px mb-6" style={{ background: 'rgba(207,166,74,0.65)' }} />
+              <h3
+                className="font-display font-black uppercase text-white m-0 mb-3"
+                style={{ fontSize: '20px', letterSpacing: '-0.015em' }}
+              >
+                {title}
+              </h3>
+              <p
+                className="font-sans m-0 text-[15px] max-w-[38ch]"
+                style={{ color: 'rgba(255,255,255,0.72)', lineHeight: 1.68 }}
+              >
+                {body}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Compact four — tighter, 4-col desktop */}
+        <div className="grid grid-cols-4 max-[760px]:grid-cols-2 max-[440px]:grid-cols-1">
+          {benefits.slice(2).map(({ title, body }, i) => (
+            <motion.div
+              key={title}
+              className="benefit-cell relative py-8"
+              initial={reduce ? undefined : { opacity: 0, y: 12 }}
+              whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-30px' }}
+              transition={{ duration: 0.45, delay: i * 0.06, ease: EASE_EXPO }}
+            >
+              <div
+                className="absolute top-0 left-0"
+                style={{ width: '20px', height: '1px', background: 'rgba(207,166,74,0.45)' }}
+              />
+              <h3
+                className="font-display font-black uppercase text-white m-0 mb-2"
+                style={{ fontSize: '13.5px', letterSpacing: '-0.01em' }}
+              >
+                {title}
+              </h3>
+              <p
+                className="font-sans m-0 text-[13px]"
+                style={{ color: 'rgba(255,255,255,0.68)', lineHeight: 1.62 }}
+              >
+                {body}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Shared CSS for compact cell gutters */}
+      <style>{`
+        #why-us .benefit-cell { padding-right: 28px; }
+        #why-us .benefit-cell:nth-child(4n) { padding-right: 0; }
+        @media (max-width: 760px) {
+          #why-us .benefit-cell { padding-right: 24px; }
+          #why-us .benefit-cell:nth-child(2n) { padding-right: 0; }
+        }
+        @media (max-width: 440px) {
+          #why-us .benefit-cell { padding-right: 0 !important; }
+        }
+      `}</style>
+    </section>
   );
 }
