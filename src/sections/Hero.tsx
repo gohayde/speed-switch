@@ -3,42 +3,80 @@ import {
   motion, AnimatePresence,
   useScroll, useTransform, useSpring, useMotionValue, useReducedMotion,
 } from 'framer-motion';
-import { ArrowRight, CalendarDays, CarFront, ChevronDown, MapPin, Search, Check } from 'lucide-react';
+import { ArrowRight, CalendarDays, CarFront, ChevronDown, MapPin, Check } from 'lucide-react';
+import { useLanguage, translations } from '../LanguageContext';
 
 const WHATSAPP_NUMBER = '971521430808';
 const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C%20I%20want%20to%20book%20a%20car`;
+
 const carTypes = ['Luxury SUV', 'V12 Supercar', 'High-End Sports', 'Exotic Convertible'];
-const locations = ['Dubai, UAE', 'Dubai Marina', 'Palm Jumeirah', 'DXB Airport'];
+const mapPins = [
+  { name: 'Dubai Marina', x: 80, y: 165 },
+  { name: 'Palm Jumeirah', x: 110, y: 110 },
+  { name: 'Downtown Dubai', x: 200, y: 80 },
+  { name: 'DXB Airport', x: 275, y: 45 },
+];
+
+const translatedCarTypes: Record<string, { en: string; ar: string }> = {
+  'Luxury SUV': { en: 'Luxury SUV', ar: 'دفع رباعي فاخر' },
+  'V12 Supercar': { en: 'V12 Supercar', ar: 'خارقة V12' },
+  'High-End Sports': { en: 'High-End Sports', ar: 'رياضية فاخرة' },
+  'Exotic Convertible': { en: 'Exotic Convertible', ar: 'مكشوفة مميزة' },
+};
+
+const translatedLocations: Record<string, { en: string; ar: string }> = {
+  'Dubai Marina': { en: 'Dubai Marina', ar: 'مرسى دبي' },
+  'Palm Jumeirah': { en: 'Palm Jumeirah', ar: 'نخلة جميرا' },
+  'Downtown Dubai': { en: 'Downtown Dubai', ar: 'وسط دبي' },
+  'DXB Airport': { en: 'DXB Airport', ar: 'مطار دبي DXB' },
+};
 
 function Logo() {
   return (
-    <a className="inline-flex min-h-11 items-center gap-[14px] group hero-logo" href="#home" aria-label="Speed Switch Home">
-      <span className="relative w-[22px] h-[22px] inline-block flex-shrink-0" aria-hidden="true">
-        <span className="absolute left-[9px] top-[-1px] w-[5px] h-[24px] rounded-[2px] bg-[#CFA64A] rotate-[42deg] transition-transform duration-[400ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:rotate-0" />
-        <span className="absolute left-[9px] top-[-1px] w-[5px] h-[24px] rounded-[2px] bg-[#CFA64A] rotate-[-42deg] transition-transform duration-[400ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:rotate-90" />
-      </span>
+    <a className="inline-flex min-h-11 items-center gap-[12px] group hero-logo" href="#home" aria-label="Speed Switch Home">
+      <svg className="w-[20px] h-[20px] text-[#111215] transition-colors duration-300 group-hover:text-[#F7BF35] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-180" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 17L12 12L17 17" stroke="currentColor" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M7 10L12 5L17 10" stroke="currentColor" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
       <span className="hero-logo-word">SPEED SWITCH</span>
     </a>
   );
 }
 
 function Nav() {
+  const { language, setLanguage, t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const items = [
-    { label: 'Home',     href: '#home' },
-    { label: 'Fleet',    href: '#vehicles' },
-    { label: 'Why Us',   href: '#why-us' },
-    { label: 'Delivery', href: '#delivery' },
-    { label: 'Process',  href: '#process' },
-    { label: 'Reviews',  href: '#reviews' },
-    { label: 'FAQ',      href: '#faq' },
+    { label: t('nav_fleet'),    href: '#vehicles' },
+    { label: t('nav_why_us'),   href: '#why-us' },
+    { label: t('nav_delivery'), href: '#delivery' },
+    { label: t('nav_process'),  href: '#process' },
+    { label: t('nav_reviews'),  href: '#reviews' },
+    { label: t('nav_faq'),      href: '#faq' },
   ];
   const reduce = useReducedMotion();
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [menuOpen]);
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <>
       <motion.header
-        className="hero-nav-island"
+        className="hero-nav-island animate-header"
         initial={reduce ? undefined : { opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
@@ -47,13 +85,23 @@ function Nav() {
           <Logo />
           <nav className="hero-nav-links" aria-label="Primary navigation">
             {items.map(({ label, href }) => (
-              <a key={label} href={href}>{label}</a>
+              <a key={label} href={href} onClick={(e) => handleScroll(e, href)}>{label}</a>
             ))}
           </nav>
-          <div className="hero-nav-actions">
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hero-book">
-              <span>Book Now</span>
-              <span className="hero-book-arrow">
+          <div className="hero-nav-actions" style={{ gap: '12px' }}>
+            {/* High-end Minimalist Language Switcher Pill */}
+            <button
+              type="button"
+              onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
+              className="px-3.5 py-1.5 rounded-full border border-black/10 bg-white/60 hover:bg-[#F7BF35]/15 hover:border-[#F7BF35]/40 text-[10.5px] font-black tracking-widest transition-all cursor-pointer select-none active:scale-95 text-black"
+              aria-label={language === 'en' ? 'Switch to Arabic' : 'التغيير إلى الإنجليزية'}
+            >
+              {language === 'en' ? 'العربية' : 'EN'}
+            </button>
+
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="speed-cta hidden sm:inline-flex">
+              <span>{t('cta_book_whatsapp')}</span>
+              <span className="speed-cta-arrow">
                 <ArrowRight size={13} strokeWidth={2} />
               </span>
             </a>
@@ -93,7 +141,7 @@ function Nav() {
                   key={label}
                   href={href}
                   className="hero-overlay-link"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => { handleScroll(e, href); setMenuOpen(false); }}
                   initial={reduce ? undefined : { opacity: 0, y: 28 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.55, delay: 0.05 + i * 0.06, ease: [0.16, 1, 0.3, 1] }}
@@ -102,18 +150,24 @@ function Nav() {
                   {label}
                 </motion.a>
               ))}
-              <motion.a
-                href={WA_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hero-overlay-cta"
-                onClick={() => setMenuOpen(false)}
-                initial={reduce ? undefined : { opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.05 + items.length * 0.06, ease: [0.16, 1, 0.3, 1] }}
-              >
-                Book on WhatsApp
-              </motion.a>
+              <div className="pt-8 flex flex-col gap-4">
+                <motion.a
+                  href={WA_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="speed-cta w-full"
+                  style={{ justifyContent: 'center' }}
+                  onClick={() => setMenuOpen(false)}
+                  initial={reduce ? undefined : { opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.05 + items.length * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <span>{t('cta_book_whatsapp')}</span>
+                  <span className="speed-cta-arrow">
+                    <ArrowRight size={13} strokeWidth={2} />
+                  </span>
+                </motion.a>
+              </div>
             </nav>
           </motion.div>
         )}
@@ -133,7 +187,13 @@ interface SearchFieldProps {
 
 function SearchField({ icon: Icon, label, value, isOpen, onClick, showBorder = true }: SearchFieldProps) {
   return (
-    <button type="button" onClick={onClick} className={`hero-field ${showBorder ? 'with-border' : ''}`}>
+    <button
+      type="button"
+      onClick={onClick}
+      className={`hero-field ${showBorder ? 'with-border' : ''}`}
+      aria-haspopup="listbox"
+      aria-expanded={isOpen}
+    >
       <Icon className="hero-field-icon" size={22} strokeWidth={1.75} />
       <span className="hero-field-copy">
         <span className="hero-field-label">{label}</span>
@@ -152,6 +212,7 @@ function Dropdown({ children, className, title }: { children: React.ReactNode; c
       exit={{ opacity: 0, y: 10, scale: 0.98 }}
       transition={{ duration: 0.18, ease: 'easeOut' }}
       className={`hero-dropdown ${className}`}
+      role="listbox"
     >
       <div className="hero-dropdown-title">{title}</div>
       {children}
@@ -161,26 +222,61 @@ function Dropdown({ children, className, title }: { children: React.ReactNode; c
 
 function DropdownOption({ active, children, onClick }: { active: boolean; children: React.ReactNode; onClick: () => void }) {
   return (
-    <button type="button" onClick={onClick} className={`hero-dropdown-option ${active ? 'active' : ''}`}>
+    <button type="button" onClick={onClick} className={`hero-dropdown-option ${active ? 'active' : ''}`} role="option" aria-selected={active}>
       <span>{children}</span>
       {active && <Check size={16} strokeWidth={2.5} />}
     </button>
   );
 }
 
-// ─── Hero ────────────────────────────────────────────────────────────────────
-
 export default function Hero() {
+  const { language, t } = useLanguage();
   const [activeField, setActiveField] = useState<'carType' | 'location' | 'date' | null>(null);
-  const [selectedCarType, setSelectedCarType] = useState('Luxury SUV');
-  const [selectedLocation, setSelectedLocation] = useState('Dubai, UAE');
-  const [selectedDate, setSelectedDate] = useState('Jun 24 – Jun 27');
-  const [startDay, setStartDay] = useState<number | null>(24);
-  const [endDay, setEndDay] = useState<number | null>(27);
-  const [currentMonth, setCurrentMonth] = useState<'May' | 'June'>('June');
 
-  const daysInMonth = currentMonth === 'May' ? 31 : 30;
-  const offset = currentMonth === 'May' ? 4 : 0;
+  useEffect(() => {
+    if (!activeField) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setActiveField(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeField]);
+
+  const [selectedCarType, setSelectedCarType] = useState('Luxury SUV');
+  const [selectedLocation, setSelectedLocation] = useState('Dubai Marina');
+
+  const today = useRef(new Date()).current;
+  const thisMonthDate = useRef(new Date(today.getFullYear(), today.getMonth(), 1)).current;
+  const nextMonthDate = useRef(new Date(today.getFullYear(), today.getMonth() + 1, 1)).current;
+
+  // Calculate default start (3 days from now) and end (6 days from now) dates
+  const dStart = useRef(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 3)).current;
+  const dEnd = useRef(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 6)).current;
+
+  // Default to next month if the start date spills over the current month
+  const defaultShowNextMonth = dStart.getMonth() !== today.getMonth();
+
+  const [activeMonthDate, setActiveMonthDate] = useState<Date>(
+    defaultShowNextMonth ? nextMonthDate : thisMonthDate
+  );
+
+  const initialStartDay = dStart.getDate();
+  const initialEndDay = dEnd.getMonth() === dStart.getMonth() ? dEnd.getDate() : new Date(dStart.getFullYear(), dStart.getMonth() + 1, 0).getDate();
+
+  const startMonthName = dStart.toLocaleString(language === 'ar' ? 'ar-EG' : 'default', { month: 'short' });
+  const endMonthName = dEnd.getMonth() === dStart.getMonth() ? dEnd.toLocaleString(language === 'ar' ? 'ar-EG' : 'default', { month: 'short' }) : startMonthName;
+
+  const [selectedDate, setSelectedDate] = useState(
+    language === 'ar'
+      ? `${startMonthName} ${initialStartDay} – ${endMonthName} ${initialEndDay}`
+      : `${startMonthName} ${initialStartDay} – ${endMonthName} ${initialEndDay}`
+  );
+  const [startDay, setStartDay] = useState<number | null>(initialStartDay);
+  const [endDay, setEndDay] = useState<number | null>(initialEndDay);
+
+  const daysInMonth = new Date(activeMonthDate.getFullYear(), activeMonthDate.getMonth() + 1, 0).getDate();
+  const dayOfWeek = activeMonthDate.getDay(); // 0 is Sunday, 1 is Monday, etc.
+  const offset = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // Map Monday as 0, Sunday as 6
   const spacers = Array.from({ length: offset }, (_, i) => i);
   const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 
@@ -230,10 +326,13 @@ export default function Hero() {
     return () => el.removeEventListener('mousemove', handleMouseMove);
   }, [handleMouseMove]);
 
+  const activeCarTypeName = translatedCarTypes[selectedCarType]?.[language] || selectedCarType;
+  const activeLocationName = translatedLocations[selectedLocation]?.[language] || selectedLocation;
+
   return (
     <main id="home" ref={heroRef} className="hero-exact">
       <div className="hero-stage">
-        <img className="hero-bg-img" src="/assets/hero-bg.png" alt="" aria-hidden="true" />
+        <img className="hero-bg-img" src="/assets/hero-bg.webp" alt="" aria-hidden="true" fetchPriority="high" decoding="async" />
 
         <div className="hero-soft-overlay" />
         <Nav />
@@ -244,15 +343,16 @@ export default function Hero() {
             aria-labelledby="hero-title"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ease: [0.2, 0.8, 0.2, 1] }}
+            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 id="hero-title">
-              <span>Drive Dubai</span>
-              <span>In Style</span>
+            <h1 id="hero-title" className="text-[#111215]">
+              <span>{t('hero_title_1')}</span>
+              <span className="bg-[#111215] text-[#F7BF35] px-8 py-3.5 mt-4 inline-block tracking-tight select-none rounded-2xl">
+                {t('hero_title_2')}
+              </span>
             </h1>
-            <p>
-              Pick your car. Pick your date. We bring it to you.<br />
-              Anywhere in Dubai, any time.
+            <p className="text-black/60">
+              {t('hero_subtitle')}
             </p>
           </motion.section>
 
@@ -260,104 +360,291 @@ export default function Hero() {
             className="hero-search-wrap"
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
+            transition={{ duration: 0.65, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <form
-            className="hero-search"
-            onSubmit={(event) => {
-              event.preventDefault();
-              window.open(
-                `${WA_LINK}&text=Hi%20I%20want%20to%20rent%20a%20${encodeURIComponent(selectedCarType)}%20in%20${encodeURIComponent(selectedLocation)}%20for%20${encodeURIComponent(selectedDate)}`,
-                '_blank',
-              );
-            }}
-            aria-label="Check rental availability on WhatsApp"
-          >
-            <SearchField icon={CarFront}     label="Car Type"         value={selectedCarType}    isOpen={activeField === 'carType'}   onClick={() => setActiveField(activeField === 'carType'   ? null : 'carType')} />
-            <SearchField icon={MapPin}        label="Location"         value={selectedLocation}   isOpen={activeField === 'location'}  onClick={() => setActiveField(activeField === 'location'  ? null : 'location')} />
-            <SearchField icon={CalendarDays}  label="Date"             value={selectedDate}       isOpen={activeField === 'date'}      onClick={() => setActiveField(activeField === 'date'      ? null : 'date')} showBorder={false} />
-            <button type="submit" className="hero-search-button" aria-label="Check availability on WhatsApp">
-              <Search size={20} strokeWidth={2.5} />
-            </button>
-          </form>
+              className="hero-search"
+              onSubmit={(event) => {
+                event.preventDefault();
+                // Dynamically format WhatsApp messaging based on current language
+                const template = translations.hero_whatsapp_template[language];
+                const message = template
+                  .replace('{car}', activeCarTypeName)
+                  .replace('{location}', activeLocationName)
+                  .replace('{date}', selectedDate);
+                
+                window.open(
+                  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+                  '_blank',
+                );
+              }}
+              aria-label={t('cta_book_whatsapp')}
+            >
+              <SearchField icon={CarFront}     label={t('hero_field_car')}       value={activeCarTypeName}    isOpen={activeField === 'carType'}   onClick={() => setActiveField(activeField === 'carType'   ? null : 'carType')} />
+              <SearchField icon={MapPin}        label={t('hero_field_location')}  value={activeLocationName}   isOpen={activeField === 'location'}  onClick={() => setActiveField(activeField === 'location'  ? null : 'location')} />
+              <SearchField icon={CalendarDays}  label={t('hero_field_date')}      value={selectedDate}         isOpen={activeField === 'date'}      onClick={() => setActiveField(activeField === 'date'      ? null : 'date')} showBorder={false} />
+              <button type="submit" className="hero-search-button" aria-label={t('cta_book_whatsapp')}>
+                <span>{t('cta_book_whatsapp')}</span>
+                <span className="hero-search-button-arrow">
+                  <ArrowRight size={13} strokeWidth={2.2} />
+                </span>
+              </button>
+            </form>
 
-          <AnimatePresence>
-            {activeField && <div className="hero-click-away" onClick={() => setActiveField(null)} />}
-          </AnimatePresence>
+            <AnimatePresence>
+              {activeField && <div className="hero-click-away" onClick={() => setActiveField(null)} />}
+            </AnimatePresence>
 
-          <AnimatePresence>
-            {activeField === 'carType' && (
-              <Dropdown className="dropdown-car" title="Select Category">
-                {carTypes.map((type) => (
-                  <DropdownOption key={type} active={selectedCarType === type} onClick={() => { setSelectedCarType(type); setActiveField(null); }}>
-                    {type}
-                  </DropdownOption>
-                ))}
-              </Dropdown>
-            )}
-            {activeField === 'location' && (
-              <Dropdown className="dropdown-location" title="Choose Location">
-                {locations.map((location) => (
-                  <DropdownOption key={location} active={selectedLocation === location} onClick={() => { setSelectedLocation(location); setActiveField(null); }}>
-                    {location}
-                  </DropdownOption>
-                ))}
-              </Dropdown>
-            )}
-            {activeField === 'date' && (
-              <Dropdown className="dropdown-date" title="Select Date Range">
-                <div className="hero-calendar">
-                  <div className="hero-calendar-header">
-                    <button type="button" onClick={() => setCurrentMonth(currentMonth === 'May' ? 'June' : 'May')} className="month-nav-btn">‹</button>
-                    <span className="month-name">{currentMonth} 2026</span>
-                    <button type="button" onClick={() => setCurrentMonth(currentMonth === 'May' ? 'June' : 'May')} className="month-nav-btn">›</button>
-                  </div>
-                  <div className="calendar-weekdays" role="row">
-                    {(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as const).map((day, i) => (
-                      <abbr key={day} title={day} aria-label={day} style={{ textDecoration: 'none' }}>
-                        {['M', 'T', 'W', 'T', 'F', 'S', 'S'][i]}
-                      </abbr>
-                    ))}
-                  </div>
-                  <div className="calendar-days">
-                    {spacers.map((s) => <span key={`spacer-${s}`} className="calendar-spacer" />)}
-                    {days.map((d) => {
-                      const isSelectedStart = startDay === d;
-                      const isSelectedEnd   = endDay === d;
-                      const isInRange       = startDay !== null && endDay !== null && d > startDay && d < endDay;
-                      const isSelected      = isSelectedStart || isSelectedEnd;
+            <AnimatePresence>
+              {activeField === 'carType' && (
+                <Dropdown className="dropdown-car" title={t('hero_dropdown_car_title')}>
+                  {carTypes.map((type) => (
+                    <DropdownOption key={type} active={selectedCarType === type} onClick={() => { setSelectedCarType(type); setActiveField(null); }}>
+                      {translatedCarTypes[type]?.[language] || type}
+                    </DropdownOption>
+                  ))}
+                </Dropdown>
+              )}
+              {activeField === 'location' && (
+                <Dropdown className="dropdown-location w-full max-w-[360px] md:max-w-[380px]" title={t('hero_dropdown_loc_title')}>
+                  <div className="relative p-2 bg-black/[0.015] rounded-xl border border-black/[0.03] overflow-hidden select-none">
+                    {/* SVG Map of Dubai Coastal Area */}
+                    <svg viewBox="0 0 340 220" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+                      {/* Grid background pattern */}
+                      <defs>
+                        <pattern id="mapGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0,0,0,0.03)" strokeWidth="0.5" />
+                        </pattern>
+                      </defs>
+                      <rect width="100%" height="100%" fill="url(#mapGrid)" rx="8" />
 
-                      return (
+                      {/* Dubai Coastline path */}
+                      <path
+                        d="M -20 185 Q 70 170 140 120 T 360 45"
+                        fill="none"
+                        stroke="rgba(0, 0, 0, 0.05)"
+                        strokeWidth="5"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M -20 185 Q 70 170 140 120 T 360 45"
+                        fill="none"
+                        stroke="rgba(247, 191, 53, 0.15)"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeDasharray="4,4"
+                      />
+
+                      {/* Palm Jumeirah Stylized Outline */}
+                      <g transform="translate(10, 0)">
+                        {/* Trunk */}
+                        <path d="M 105 142 L 105 122" stroke="#F7BF35" strokeWidth="5.5" strokeLinecap="round" opacity="0.6" />
+                        {/* Crescent Outer Protection Ring */}
+                        <path d="M 70 112 A 36 36 0 0 1 140 112" fill="none" stroke="rgba(247, 191, 53, 0.3)" strokeWidth="2" strokeDasharray="3,3" />
+                        {/* Fronds */}
+                        <path d="M 85 127 Q 75 122 70 127 M 90 122 Q 75 115 68 120 M 95 117 Q 95 102 95 98 M 100 117 Q 115 102 115 98 M 105 122 Q 120 115 127 120 M 110 127 Q 120 122 125 127" fill="none" stroke="#F7BF35" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+                      </g>
+
+                      {/* Pulse Animations and Interactive Pins */}
+                      {mapPins.map((pin) => {
+                        const isActive = selectedLocation === pin.name;
+                        return (
+                          <g
+                            key={pin.name}
+                            className="cursor-pointer group/pin"
+                            onClick={() => {
+                              setSelectedLocation(pin.name);
+                              setActiveField(null);
+                            }}
+                          >
+                            {/* Outer pulsing ring for active pin */}
+                            {isActive && (
+                              <circle
+                                cx={pin.x}
+                                cy={pin.y}
+                                r="12"
+                                fill="none"
+                                stroke="#F7BF35"
+                                strokeWidth="1.5"
+                                opacity="0.8"
+                              >
+                                <animate
+                                  attributeName="r"
+                                  values="6;16;6"
+                                  dur="2s"
+                                  repeatCount="indefinite"
+                                />
+                                <animate
+                                  attributeName="opacity"
+                                  values="0.8;0;0.8"
+                                  dur="2s"
+                                  repeatCount="indefinite"
+                                />
+                              </circle>
+                            )}
+
+                            {/* Hover effect glowing target */}
+                            <circle
+                              cx={pin.x}
+                              cy={pin.y}
+                              r="16"
+                              fill="rgba(247, 191, 53, 0)"
+                              className="transition-all duration-300 group-hover/pin:fill-rgba(247,191,53,0.06)"
+                            />
+
+                            {/* Solid pin core */}
+                            <circle
+                              cx={pin.x}
+                              cy={pin.y}
+                              r={isActive ? "6" : "4.5"}
+                              fill={isActive ? "#F7BF35" : "#111215"}
+                              stroke={isActive ? "#ffffff" : "#F7BF35"}
+                              strokeWidth="1.5"
+                              className="transition-all duration-300 group-hover/pin:scale-125"
+                              style={{ transformOrigin: `${pin.x}px ${pin.y}px` }}
+                            />
+
+                            {/* Tooltip background & text */}
+                            <g
+                              transform={`translate(${pin.x}, ${pin.y - 16})`}
+                              className="opacity-0 pointer-events-none transition-all duration-300 group-hover/pin:opacity-100"
+                            >
+                              <rect
+                                x="-45"
+                                y="-20"
+                                width="90"
+                                height="20"
+                                rx="4"
+                                fill="#111215"
+                                filter="drop-shadow(0 4px 6px rgba(0,0,0,0.15))"
+                              />
+                              <text
+                                x="0"
+                                y="-7"
+                                fill="#ffffff"
+                                fontSize="9"
+                                fontWeight="800"
+                                textAnchor="middle"
+                                className="font-sans tracking-wide uppercase"
+                              >
+                                {translatedLocations[pin.name]?.[language] || pin.name}
+                              </text>
+                            </g>
+                          </g>
+                        );
+                      })}
+                    </svg>
+
+                    {/* Quick select text list at bottom */}
+                    <div className="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-black/5">
+                      {mapPins.map((pin) => (
                         <button
-                          key={d}
+                          key={pin.name}
                           type="button"
-                          className={`calendar-day-btn ${isSelectedStart ? 'start-day' : ''} ${isSelectedEnd ? 'end-day' : ''} ${isInRange ? 'in-range' : ''} ${isSelected ? 'selected' : ''}`}
                           onClick={() => {
-                            if (startDay === null || (startDay !== null && endDay !== null)) {
-                              setStartDay(d);
-                              setEndDay(null);
-                              setSelectedDate(`${currentMonth.slice(0,3)} ${d}`);
-                            } else {
-                              if (d >= startDay) {
-                                setEndDay(d);
-                                setSelectedDate(`${currentMonth.slice(0,3)} ${startDay} – ${currentMonth.slice(0,3)} ${d}`);
-                                setActiveField(null);
-                              } else {
-                                setStartDay(d);
-                                setSelectedDate(`${currentMonth.slice(0,3)} ${d}`);
-                              }
-                            }
+                            setSelectedLocation(pin.name);
+                            setActiveField(null);
                           }}
+                          className={`px-3 py-1.5 text-[11px] font-bold rounded-lg border transition-all duration-200 ${
+                            selectedLocation === pin.name
+                              ? 'bg-[#F7BF35]/10 border-[#F7BF35] text-[#111215]'
+                              : 'bg-white border-black/5 hover:border-black/15 text-black/55'
+                          }`}
                         >
-                          {d}
+                          {translatedLocations[pin.name]?.[language] || pin.name}
                         </button>
-                      );
-                    })}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </Dropdown>
-            )}
-          </AnimatePresence>
+                </Dropdown>
+              )}
+              {activeField === 'date' && (
+                <Dropdown className="dropdown-date" title={t('hero_dropdown_date_title')}>
+                  <div className="hero-calendar">
+                    <div className="hero-calendar-header">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setActiveMonthDate(activeMonthDate.getTime() === thisMonthDate.getTime() ? nextMonthDate : thisMonthDate);
+                          setStartDay(null);
+                          setEndDay(null);
+                        }}
+                        className="month-nav-btn"
+                        aria-label="Previous month"
+                      >
+                        ‹
+                      </button>
+                      <span className="month-name">
+                        {activeMonthDate.toLocaleString(language === 'ar' ? 'ar-EG' : 'default', { month: 'long', year: 'numeric' })}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setActiveMonthDate(activeMonthDate.getTime() === thisMonthDate.getTime() ? nextMonthDate : thisMonthDate);
+                          setStartDay(null);
+                          setEndDay(null);
+                        }}
+                        className="month-nav-btn"
+                        aria-label="Next month"
+                      >
+                        ›
+                      </button>
+                    </div>
+                    <div className="calendar-weekdays" role="row">
+                      {(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as const).map((day) => (
+                        <abbr key={day} title={day} aria-label={day} style={{ textDecoration: 'none' }}>
+                          {t(`hero_calendar_${day.toLowerCase()}`).slice(0, 3)}
+                        </abbr>
+                      ))}
+                    </div>
+                    <div className="calendar-days">
+                      {spacers.map((s) => <span key={`spacer-${s}`} className="calendar-spacer" />)}
+                      {days.map((d) => {
+                        const isSelectedStart = startDay === d;
+                        const isSelectedEnd   = endDay === d;
+                        const isInRange       = startDay !== null && endDay !== null && d > startDay && d < endDay;
+                        const isSelected      = isSelectedStart || isSelectedEnd;
+                        const monthShort = activeMonthDate.toLocaleString(language === 'ar' ? 'ar-EG' : 'default', { month: 'short' });
+
+                        // Hardening Constraint: Disable past days in the current month
+                        const isPastDay = activeMonthDate.getFullYear() < today.getFullYear() ||
+                          (activeMonthDate.getFullYear() === today.getFullYear() && activeMonthDate.getMonth() < today.getMonth()) ||
+                          (activeMonthDate.getFullYear() === today.getFullYear() && activeMonthDate.getMonth() === today.getMonth() && d < today.getDate());
+
+                        return (
+                          <button
+                            key={d}
+                            type="button"
+                            disabled={isPastDay}
+                            style={isPastDay ? { opacity: 0.28, pointerEvents: 'none', cursor: 'not-allowed', textDecoration: 'line-through' } : undefined}
+                            className={`calendar-day-btn ${isSelectedStart ? 'start-day' : ''} ${isSelectedEnd ? 'end-day' : ''} ${isInRange ? 'in-range' : ''} ${isSelected ? 'selected' : ''}`}
+                            onClick={() => {
+                              if (isPastDay) return;
+                              if (startDay === null || (startDay !== null && endDay !== null)) {
+                                setStartDay(d);
+                                setEndDay(null);
+                                setSelectedDate(`${monthShort} ${d}`);
+                              } else {
+                                if (d >= startDay) {
+                                  setEndDay(d);
+                                  setSelectedDate(`${monthShort} ${startDay} – ${monthShort} ${d}`);
+                                  setActiveField(null);
+                                } else {
+                                  setStartDay(d);
+                                  setSelectedDate(`${monthShort} ${d}`);
+                                }
+                              }
+                            }}
+                          >
+                            {d}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </Dropdown>
+              )}
+            </AnimatePresence>
           </motion.div>
         </div>
 
@@ -371,7 +658,7 @@ export default function Hero() {
           }}
         >
           <img
-            src="/assets/hero-car.png"
+            src="/assets/hero-car.webp"
             alt="Premium yellow luxury SUV"
             className="hero-car-inner"
           />
@@ -380,3 +667,4 @@ export default function Hero() {
     </main>
   );
 }
+

@@ -1,109 +1,158 @@
-const WA_BOOK = 'https://wa.me/971521430808?text=Hi%2C%20I%20want%20to%20book%20a%20car';
-
-const navGroups = [
-  {
-    heading: 'Explore',
-    items: [
-      { label: 'Sports Cars', href: '#vehicles' },
-      { label: 'SUVs', href: '#vehicles' },
-      { label: 'Luxury Sedans', href: '#vehicles' },
-      { label: 'How It Works', href: '#process' },
-      { label: 'FAQ', href: '#faq' },
-    ],
-  },
-  {
-    heading: 'Delivery',
-    items: [
-      { label: 'Dubai Marina', href: '#delivery' },
-      { label: 'Downtown Dubai', href: '#delivery' },
-      { label: 'Palm Jumeirah', href: '#delivery' },
-      { label: 'Dubai Airport', href: '#delivery' },
-    ],
-  },
-];
+import { useLanguage } from '../LanguageContext';
 
 function Logo() {
   return (
-    <a className="inline-flex min-h-11 items-center gap-[14px] group" href="#home" aria-label="Speed Switch home">
-      <span className="relative w-[32px] h-[32px] inline-block" aria-hidden="true">
-        <span className="absolute left-[13px] top-[-2px] w-[8px] h-[36px] rounded-[1px] bg-[#CFA64A] rotate-[42deg] transition-transform duration-[400ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:rotate-0" />
-        <span className="absolute left-[13px] top-[-2px] w-[8px] h-[36px] rounded-[1px] bg-[#CFA64A] rotate-[-42deg] transition-transform duration-[400ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:rotate-90" />
-      </span>
-      <span className="text-[18px] leading-none font-extrabold tracking-[0.15em] text-white">SPEED SWITCH</span>
+    <a className="inline-flex min-h-11 items-center gap-[12px] group" href="#home" aria-label="Speed Switch home">
+      <svg className="w-[20px] h-[20px] text-white transition-colors duration-300 group-hover:text-[#F7BF35] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-180" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 17L12 12L17 17" stroke="currentColor" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M7 10L12 5L17 10" stroke="currentColor" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+      <span className="hero-logo-word !text-white">SPEED SWITCH</span>
     </a>
   );
 }
 
-export default function Footer() {
-  return (
-    <footer className="text-white relative" style={{ background: 'oklch(10% 0.006 82)' }}>
-      {/* Gold top accent rule */}
-      <div className="absolute top-0 inset-x-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(207,166,74,0.28) 30%, rgba(207,166,74,0.28) 70%, transparent)' }} />
+const getTranslatedExploreLinks = (language: 'en' | 'ar') => {
+  if (language === 'ar') {
+    return [
+      { label: 'سيارات رياضية', href: '#vehicles' },
+      { label: 'سيارات دفع رباعي', href: '#vehicles' },
+      { label: 'سيدان فاخرة', href: '#vehicles' },
+      { label: 'خطوات التأجير', href: '#process' },
+      { label: 'الأسئلة الشائعة', href: '#faq' },
+    ];
+  }
+  return [
+    { label: 'Sports Cars', href: '#vehicles' },
+    { label: 'SUVs', href: '#vehicles' },
+    { label: 'Luxury Sedans', href: '#vehicles' },
+    { label: 'How It Works', href: '#process' },
+    { label: 'FAQ', href: '#faq' },
+  ];
+};
 
-      <div className="max-w-[1160px] mx-auto px-6 pt-20 pb-10">
+export default function Footer() {
+  const { language, t } = useLanguage();
+  const exploreLinks = getTranslatedExploreLinks(language);
+
+  return (
+    <footer className="text-white relative" style={{ background: 'oklch(12% 0.007 82)' }}>
+      {/* Gold top accent rule */}
+      <div className="absolute top-0 inset-x-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(247,191,53,0.3) 30%, rgba(247,191,53,0.3) 70%, transparent)' }} />
+
+      <div className="max-w-[1160px] mx-auto px-6 pt-20 pb-10 relative z-10">
 
         {/* Main grid: brand left, links right */}
-        <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr] gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr] gap-12 mb-16 text-left rtl:text-right">
 
-          {/* Brand column */}
-          <div>
+          {/* Column 1: Brand */}
+          <div className="flex flex-col items-start rtl:items-end">
             <Logo />
-            <p className="text-white/52 text-[14px] leading-relaxed mt-6 mb-8 max-w-[280px]" style={{ lineHeight: 1.65 }}>
-              Premium car rental across Dubai. Delivered to your door, priced transparently.
+            <p className="text-white/60 text-[14px] leading-relaxed mt-6 max-w-[325px]" style={{ lineHeight: 1.65 }}>
+              {t('footer_desc')}
             </p>
-
-            {/* WhatsApp contact */}
-            <a
-              href={WA_BOOK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 font-semibold text-[13px] transition-colors duration-[200ms]"
-              style={{ color: 'rgba(37,211,102,0.70)' }}
-              onMouseEnter={e => (e.currentTarget.style.color = '#25D366')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(37,211,102,0.70)')}
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 shrink-0">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-              +971 52 143 0808
-            </a>
           </div>
 
-          {/* Nav columns */}
-          {navGroups.map(({ heading, items }) => (
-            <div key={heading}>
-              <h3
-                className="font-bold text-[11px] tracking-[0.18em] uppercase mb-6"
-                style={{ color: 'rgba(207,166,74,0.50)' }}
+          {/* Column 2: Explore */}
+          <div className="flex flex-col items-start rtl:items-end">
+            <h3
+              className="font-bold text-[11px] tracking-[0.18em] uppercase mb-6"
+              style={{ color: '#F7BF35' }}
+            >
+              {t('footer_explore')}
+            </h3>
+            <ul className="flex flex-col gap-1.5 list-none p-0 m-0 items-start rtl:items-end">
+              {exploreLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    className="inline-flex min-h-[36px] items-center text-[14px] font-semibold transition-colors duration-[180ms] text-white/60 hover:text-white"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: HQ Location & Stylized Map */}
+          <div className="flex flex-col items-start rtl:items-end">
+            <h3
+              className="font-bold text-[11px] tracking-[0.18em] uppercase mb-6"
+              style={{ color: '#F7BF35' }}
+            >
+              {t('footer_location')}
+            </h3>
+            <div className="flex flex-col gap-4 w-full items-start rtl:items-end">
+              {/* Stylized custom SVG map - Clickable link to official coordinates */}
+              <a 
+                href="https://maps.app.goo.gl/mTcn8Ai2dpDmYAhCA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative w-full h-[115px] rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden group select-none shadow-[0_12px_24px_rgba(0,0,0,0.15)] block cursor-pointer"
               >
-                {heading}
-              </h3>
-              <ul className="flex flex-col gap-1 list-none p-0 m-0">
-                {items.map(({ label, href }) => (
-                  <li key={label}>
-                    <a
-                      href={href}
-                      className="inline-flex min-h-[36px] items-center text-[14px] font-medium transition-colors duration-[180ms] hover:text-white/80"
-                      style={{ color: 'rgba(255,255,255,0.52)' }}
-                    >
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+                <svg viewBox="0 0 240 115" className="w-full h-full opacity-60 group-hover:opacity-85 transition-opacity duration-300" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <pattern id="footerMapGrid" width="16" height="16" patternUnits="userSpaceOnUse">
+                      <path d="M 16 0 L 0 0 0 16" fill="none" stroke="rgba(255,255,255,0.03)" strokeWidth="0.5" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#footerMapGrid)" />
+                  {/* Dubai Coastline Line */}
+                  <path d="M -10 95 Q 55 85 105 55 T 255 15" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="3.5" />
+                  <path d="M -10 95 Q 55 85 105 55 T 255 15" fill="none" stroke="rgba(247,191,53,0.25)" strokeWidth="1.2" strokeDasharray="3,3" />
+                  {/* Palm Jumeirah Symbol */}
+                  <g transform="translate(80, 50) scale(0.65)">
+                    <path d="M 10 10 Q 0 -5 10 -20" fill="none" stroke="rgba(247,191,53,0.35)" strokeWidth="1.5" />
+                    <circle cx="10" cy="-20" r="1.5" fill="#F7BF35" />
+                  </g>
+                  {/* Glowing Radar Target at HQ (Business Bay/Downtown) */}
+                  <circle cx="155" cy="48" r="10" fill="rgba(247,191,53,0.18)" className="animate-pulse" style={{ transformOrigin: '155px 48px' }} />
+                  <circle cx="155" cy="48" r="4" fill="#F7BF35" stroke="#111215" strokeWidth="1.2" />
+                </svg>
+                <div 
+                  className="absolute bottom-2.5 bg-[#111215]/80 backdrop-blur-md border border-white/10 rounded-lg px-2.5 py-1 text-[9px] font-black text-white tracking-wide uppercase select-none group-hover:border-[#F7BF35]/30 transition-all duration-300"
+                  style={{ bottom: '10px', left: '10px' }}
+                >
+                  {language === 'ar' ? 'برج برايم تاور، دبي ↗' : 'Prime Tower, Dubai ↗'}
+                </div>
+              </a>
+              
+              <div className="text-[13px] font-semibold text-white/50 flex flex-col gap-2.5 mt-1 items-start rtl:items-end w-full">
+                <a
+                  href="https://maps.app.goo.gl/mTcn8Ai2dpDmYAhCA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-[#F7BF35] transition-colors duration-180 flex items-start gap-2 group rtl:flex-row-reverse"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-4 h-4 text-[#F7BF35] shrink-0 mt-0.5" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                  </svg>
+                  <span className="leading-relaxed whitespace-pre-line text-left rtl:text-right">
+                    {t('footer_office')}
+                  </span>
+                </a>
+                <span className="flex items-center gap-2 rtl:flex-row-reverse">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-4 h-4 text-[#F7BF35] shrink-0" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                  <span>{t('footer_open')}</span>
+                </span>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
 
         {/* Bottom row */}
-        <div className="pt-7 flex flex-col sm:flex-row items-center justify-between gap-3" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-          <p className="text-[13px]" style={{ color: 'rgba(255,255,255,0.38)' }}>
-            &copy; {new Date().getFullYear()} Speed Switch. All rights reserved.
+        <div className="pt-7 flex items-center justify-center" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
+          <p className="text-[13px] font-semibold text-white/40 text-center">
+            {language === 'ar' ? (
+              <>جميع الحقوق محفوظة. سبيد سويتش © {new Date().getFullYear()}</>
+            ) : (
+              <>&copy; {new Date().getFullYear()} Speed Switch. All rights reserved.</>
+            )}
           </p>
-          <div className="flex items-center gap-5">
-            <a href="#" className="text-[13px] transition-colors duration-[180ms] hover:text-white/55" style={{ color: 'rgba(255,255,255,0.38)' }}>Privacy policy</a>
-            <a href="#" className="text-[13px] transition-colors duration-[180ms] hover:text-white/55" style={{ color: 'rgba(255,255,255,0.38)' }}>Terms of service</a>
-          </div>
         </div>
       </div>
     </footer>

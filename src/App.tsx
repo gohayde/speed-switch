@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
+import { LanguageProvider } from './LanguageContext';
 import Hero from './sections/Hero';
 import BrandMarquee from './sections/BrandMarquee';
 import PickYourCar from './sections/PickYourCar';
@@ -21,17 +22,20 @@ export default function App() {
   }, []);
 
   return (
-    <div className="overflow-x-hidden">
-      <Hero />
-      <BrandMarquee />
-      <PickYourCar />
-      <WhyRent />
-      <DubaiDelivery />
-      <RentalProcess />
-      <Reviews />
-      <FAQ />
-      <FinalCTA />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="overflow-x-hidden">
+        <Hero />
+        <BrandMarquee />
+        <PickYourCar />
+        <WhyRent />
+        <DubaiDelivery />
+        <RentalProcess />
+        <Reviews />
+        <FAQ />
+        <FinalCTA />
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
+
