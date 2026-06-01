@@ -99,12 +99,14 @@ function Nav() {
               {language === 'en' ? 'العربية' : 'EN'}
             </button>
 
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="speed-cta hidden sm:inline-flex">
-              <span>{t('cta_book_whatsapp')}</span>
-              <span className="speed-cta-arrow">
-                <ArrowRight size={13} strokeWidth={2} />
-              </span>
-            </a>
+            <div className="hidden sm:block">
+              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="speed-cta">
+                <span>{t('cta_book_whatsapp')}</span>
+                <span className="speed-cta-arrow">
+                  <ArrowRight size={13} strokeWidth={2} />
+                </span>
+              </a>
+            </div>
             <button
               className={`hero-hamburger${menuOpen ? ' is-open' : ''}`}
               onClick={() => setMenuOpen(o => !o)}
@@ -332,8 +334,7 @@ export default function Hero() {
   return (
     <main id="home" ref={heroRef} className="hero-exact">
       <div className="hero-stage">
-        <img className="hero-bg-img" src="/assets/hero-bg.webp" alt="" aria-hidden="true" fetchPriority="high" decoding="async" />
-
+        <div className="hero-bg-canvas" aria-hidden="true" />
         <div className="hero-soft-overlay" />
         <Nav />
 

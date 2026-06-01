@@ -104,7 +104,7 @@ html.lenis { height: auto; }
   min-height: 100dvh;
   min-height: max(100dvh, 660px);
   overflow: hidden; /* Constrains the Urus cleanly inside */
-  background: oklch(99% 0.003 82);
+  background: #ffffff;
 }
 
 .hero-stage {
@@ -114,7 +114,7 @@ html.lenis { height: auto; }
   height: 100%;
 }
 
-.hero-bg-img,
+.hero-bg-canvas,
 .hero-soft-overlay {
   position: absolute;
   inset: 0;
@@ -123,18 +123,43 @@ html.lenis { height: auto; }
   pointer-events: none;
 }
 
-.hero-bg-img {
-  object-fit: cover;
-  object-position: center bottom;
+.hero-bg-canvas {
+  background: #ffffff;
   z-index: 0;
-  opacity: 0.88; /* Slightly bleached for light dominant layout */
+  overflow: hidden;
+}
+
+/* Crisp golden radial glow in upper left matching the mockup exactly */
+.hero-bg-canvas::before {
+  content: '';
+  position: absolute;
+  top: -15%;
+  left: -10%;
+  width: 50%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(247, 191, 53, 0.32) 0%, rgba(247, 191, 53, 0.12) 30%, rgba(247, 191, 53, 0) 70%);
+  filter: blur(56px);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+/* Beautiful angled bottom slope matching the mockup exactly */
+.hero-bg-canvas::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: clamp(320px, 36vh, 460px);
+  background: #F7BF35;
+  clip-path: polygon(0 76%, 100% 32%, 100% 100%, 0 100%);
+  pointer-events: none;
 }
 
 .hero-soft-overlay {
   z-index: 1;
-  background:
-    radial-gradient(circle at 49% 18%, oklch(80.5% 0.175 87.5 / 0.06), transparent 42%),
-    linear-gradient(180deg, oklch(99% 0.003 82 / 0.3), transparent 60%);
+  display: none; /* Keep overlay hidden to match mockup's ultra-clean white look */
 }
 
 /* ─── Floating Pill Navigation ───────────────────────────────────────────── */
@@ -751,6 +776,76 @@ html.lenis { height: auto; }
     z-index: 35;
     width: 100%;
     margin-top: 8px;
+  }
+}
+
+/* ─── Tablet: restore hero search to row layout (641–900px) ─────────────── */
+@media (min-width: 641px) and (max-width: 900px) {
+  .hero-content-stack {
+    gap: 24px;
+  }
+
+  .hero-search {
+    grid-template-columns: minmax(110px, 1.1fr) minmax(100px, 1fr) minmax(100px, 1fr) auto;
+    min-height: 68px;
+    padding: 5px 8px 5px 20px;
+    border-radius: 100px;
+  }
+
+  .hero-field,
+  .hero-field:nth-of-type(2),
+  .hero-field:nth-of-type(3) {
+    grid-template-columns: 26px 1fr 16px;
+    height: 54px;
+    min-height: unset;
+    padding: 0 12px 0 0 !important;
+    margin-left: 0 !important;
+    border-right: 0;
+  }
+
+  .hero-field:nth-of-type(2),
+  .hero-field:nth-of-type(3) {
+    padding-left: 14px !important;
+  }
+
+  .hero-field.with-border {
+    border-right: 1px solid rgba(0, 0, 0, 0.06) !important;
+    border-bottom: 0 !important;
+  }
+
+  .hero-field:hover,
+  .hero-field:focus-visible {
+    background: rgba(247, 191, 53, 0.04) !important;
+    padding-left: 10px !important;
+    padding-right: 12px !important;
+  }
+
+  .hero-field-label {
+    font-size: 10px;
+  }
+
+  .hero-field-value {
+    font-size: 13px;
+  }
+
+  .hero-search-button {
+    width: auto !important;
+    height: 42px !important;
+    margin-top: 0 !important;
+    padding: 0 6px 0 16px;
+    font-size: 11px;
+  }
+
+  .hero-search-button-arrow {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Dropdowns revert to absolute over stacked */
+  .hero-dropdown {
+    position: absolute !important;
+    top: 80px;
+    width: 260px;
   }
 }
 

@@ -478,8 +478,8 @@ export default function PickYourCar() {
                         opacity: i === activeIndex ? 1 : 0.45,
                         scale: i === activeIndex ? 1 : 0.82,
                         filter: i === activeIndex
-                          ? 'drop-shadow(0 16px 36px rgba(0,0,0,0.10)) brightness(1)'
-                          : 'drop-shadow(0 4px 8px rgba(0,0,0,0.04)) brightness(0.9)',
+                          ? 'brightness(1) drop-shadow(0 16px 36px rgba(0,0,0,0.10))'
+                          : 'brightness(0.9) drop-shadow(0 4px 8px rgba(0,0,0,0.04))',
                       }}
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       className="w-full h-full object-contain cursor-pointer"
@@ -521,7 +521,7 @@ export default function PickYourCar() {
               {STATS.map(({ icon, value }, i) => (
                 <div key={i} className="flex flex-col items-center gap-2.5 flex-1 relative">
                   <div className="text-[#111215]">{icon}</div>
-                  <span className="text-[12px] sm:text-[13px] font-extrabold text-[#111215] leading-none whitespace-nowrap">{value}</span>
+                  <span className="text-[10px] sm:text-[13px] font-extrabold text-[#111215] leading-tight text-center">{value}</span>
                 </div>
               ))}
             </motion.div>
@@ -559,12 +559,12 @@ export default function PickYourCar() {
             </div>
 
             {/* CTAs */}
-            <div className="flex items-center gap-3 w-full sm:w-auto">
+            <div className="flex items-center gap-3 w-full sm:w-auto max-[640px]:flex-col max-[640px]:gap-2.5">
               <a
                 href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(activeCarTranslated.whatsappMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="speed-cta flex-grow sm:flex-grow-0 sm:shrink-0"
+                className="speed-cta flex-grow sm:flex-grow-0 sm:shrink-0 max-[640px]:w-full max-[640px]:justify-center"
               >
                 <span>{t('cta_book_whatsapp')}</span>
                 <span className="speed-cta-arrow">
@@ -573,7 +573,7 @@ export default function PickYourCar() {
               </a>
               <button
                 onClick={(e) => openModal(e)}
-                className="speed-cta-secondary flex-grow sm:flex-grow-0 sm:shrink-0"
+                className="speed-cta-secondary flex-grow sm:flex-grow-0 sm:shrink-0 max-[640px]:w-full max-[640px]:justify-center"
               >
                 <span>{t('cta_view_details')}</span>
                 <span className="speed-cta-secondary-arrow">

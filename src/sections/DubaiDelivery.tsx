@@ -93,33 +93,26 @@ export default function DubaiDelivery() {
               {/* Inner Screen Case */}
               <div className="rounded-[14px] overflow-hidden relative aspect-[4/3] bg-black/5">
                 
-                {/* Custom Vector Map Asset */}
-                <img 
-                  src="/assets/dubai-delivery-map.webp" 
-                  alt="Speed Switch Dubai Delivery Map" 
-                  className="w-full h-full object-cover opacity-90 group-hover:scale-[1.02] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] select-none pointer-events-none"
+                {/* Real interactive Google Map - Styled in high-end dark mode */}
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.1706691475727!2d55.2741498!3d25.1869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f694e9f7353f9%3A0xe54d2dcfe366914!2sThe%20Prime%20Tower!5e0!3m2!1sen!2sae!4v1717200000000!5m2!1sen!2sae"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)' }} 
+                  allowFullScreen={false} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Speed Switch Interactive Delivery Map"
+                  className="w-full h-full z-10"
                 />
 
-                {/* Subtle outer vignette overlay to bleed edges */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10 pointer-events-none" />
-
-                <div 
-                  className="absolute bg-white/90 backdrop-blur-md border border-black/5 rounded-full px-3.5 py-2 flex items-center gap-2 select-none shadow-[0_6px_16px_rgba(0,0,0,0.04)]"
-                  style={{ top: '20px', left: '20px' }}
-                >
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F7BF35] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#F7BF35]"></span>
-                  </span>
-                  <span className="text-[10px] font-bold text-black/75 tracking-wider uppercase">{t('deliv_active_badge')}</span>
-                </div>
 
                 {/* Floating Map Link Badge in Center/Bottom */}
                 <a 
                   href={GOOGLE_MAPS_DUBAI}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-6 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 border border-black/10 bg-white px-5 py-3.5 rounded-2xl text-[13px] font-bold text-[#111215]/70 hover:text-[#111215] hover:border-black/20 transition-all duration-200 shadow-[0_6px_16px_rgba(0,0,0,0.06)] select-none">
+                  className="absolute bottom-6 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 border border-black/10 bg-white px-5 py-3.5 rounded-2xl text-[13px] font-bold text-[#111215]/70 hover:text-[#111215] hover:border-black/20 transition-all duration-200 shadow-[0_6px_16px_rgba(0,0,0,0.06)] select-none z-20">
                   <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-[#FBBC05]" aria-hidden="true">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
                   </svg>

@@ -84,39 +84,29 @@ export default function Footer() {
               {t('footer_location')}
             </h3>
             <div className="flex flex-col gap-4 w-full items-start rtl:items-end">
-              {/* Stylized custom SVG map - Clickable link to official coordinates */}
-              <a 
-                href="https://maps.app.goo.gl/mTcn8Ai2dpDmYAhCA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative w-full h-[115px] rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden group select-none shadow-[0_12px_24px_rgba(0,0,0,0.15)] block cursor-pointer"
-              >
-                <svg viewBox="0 0 240 115" className="w-full h-full opacity-60 group-hover:opacity-85 transition-opacity duration-300" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <pattern id="footerMapGrid" width="16" height="16" patternUnits="userSpaceOnUse">
-                      <path d="M 16 0 L 0 0 0 16" fill="none" stroke="rgba(255,255,255,0.03)" strokeWidth="0.5" />
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#footerMapGrid)" />
-                  {/* Dubai Coastline Line */}
-                  <path d="M -10 95 Q 55 85 105 55 T 255 15" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="3.5" />
-                  <path d="M -10 95 Q 55 85 105 55 T 255 15" fill="none" stroke="rgba(247,191,53,0.25)" strokeWidth="1.2" strokeDasharray="3,3" />
-                  {/* Palm Jumeirah Symbol */}
-                  <g transform="translate(80, 50) scale(0.65)">
-                    <path d="M 10 10 Q 0 -5 10 -20" fill="none" stroke="rgba(247,191,53,0.35)" strokeWidth="1.5" />
-                    <circle cx="10" cy="-20" r="1.5" fill="#F7BF35" />
-                  </g>
-                  {/* Glowing Radar Target at HQ (Business Bay/Downtown) */}
-                  <circle cx="155" cy="48" r="10" fill="rgba(247,191,53,0.18)" className="animate-pulse" style={{ transformOrigin: '155px 48px' }} />
-                  <circle cx="155" cy="48" r="4" fill="#F7BF35" stroke="#111215" strokeWidth="1.2" />
-                </svg>
-                <div 
-                  className="absolute bottom-2.5 bg-[#111215]/80 backdrop-blur-md border border-white/10 rounded-lg px-2.5 py-1 text-[9px] font-black text-white tracking-wide uppercase select-none group-hover:border-[#F7BF35]/30 transition-all duration-300"
+              {/* Real interactive Google Map - Styled in high-end dark mode */}
+              <div className="relative w-full h-[115px] rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden group shadow-[0_12px_24px_rgba(0,0,0,0.15)] block">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.1706691475727!2d55.2741498!3d25.1869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f694e9f7353f9%3A0xe54d2dcfe366914!2sThe%20Prime%20Tower!5e0!3m2!1sen!2sae!4v1717200000000!5m2!1sen!2sae"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)' }} 
+                  allowFullScreen={false} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Speed Switch HQ Location"
+                  className="w-full h-full opacity-70 group-hover:opacity-90 transition-opacity duration-300"
+                />
+                <a 
+                  href="https://maps.app.goo.gl/mTcn8Ai2dpDmYAhCA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bg-[#111215]/85 backdrop-blur-md border border-white/10 rounded-lg px-2.5 py-1.5 text-[9px] font-black text-white tracking-wide uppercase select-none hover:border-[#F7BF35]/40 hover:text-[#F7BF35] transition-all duration-300 z-20 cursor-pointer"
                   style={{ bottom: '10px', left: '10px' }}
                 >
                   {language === 'ar' ? 'برج برايم تاور، دبي ↗' : 'Prime Tower, Dubai ↗'}
-                </div>
-              </a>
+                </a>
+              </div>
               
               <div className="text-[13px] font-semibold text-white/50 flex flex-col gap-2.5 mt-1 items-start rtl:items-end w-full">
                 <a
