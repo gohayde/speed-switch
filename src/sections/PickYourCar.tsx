@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useReducedMotion, useMotionValue, animate } fr
 import { X, Gauge, Zap, Cog, Repeat, User, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 
-const WHATSAPP_NUMBER = "971521430808";
+const WHATSAPP_NUMBER = "971523660709";
 
 interface CarData {
   id: string;
@@ -35,47 +35,22 @@ const cars: CarData[] = [
     image: "/assets/hero-car.webp",
     pricePerDay: 2200,
     currency: "AED",
-    stats: { topSpeed: "300 km/h", horsepower: "650 HP", engine: "V8 Engine", transmission: "Automatic", seats: "4 Seater" },
+    stats: { topSpeed: "300 km/h", horsepower: "650 HP", engine: "4.0L V8 Twin-Turbo", transmission: "Automatic", seats: "4 Seater" },
     whatsappMessage: "Hi, I want to book the Lamborghini Urus.",
     details: {
       title: "Lamborghini Urus",
       description: "A luxury performance SUV with aggressive styling, premium comfort, and powerful road presence. The perfect blend of a super sports car soul with SUV functionality.",
       price: "AED 2,200 /day",
       features: [
-        "High performance twin-turbo V8 engine",
-        "Immaculate premium leather interior",
-        "Perfect for cruising Dubai's highways and streets",
-        "Available for daily and flexible weekly rental"
+        "4.0L Twin-Turbo V8 engine (650 HP)",
+        "Premium Italian leather interior",
+        "Adaptive air suspension & active roll stabilization",
+        "Complimentary delivery to any Dubai hotel or airport"
       ],
       requirements: [
-        "Valid driving licence (UAE or international)",
-        "Emirates ID or Passport copy with visa entry page",
-        "Refundable security deposit confirmed before handover"
-      ]
-    }
-  },
-  {
-    id: "bentley-bentayga",
-    name: "Bentley Bentayga V8",
-    image: "/assets/bentley.webp",
-    pricePerDay: 2400,
-    currency: "AED",
-    stats: { topSpeed: "290 km/h", horsepower: "550 HP", engine: "V8 Biturbo", transmission: "Automatic", seats: "5 Seater" },
-    whatsappMessage: "Hi, I want to book the Bentley Bentayga V8.",
-    details: {
-      title: "Bentley Bentayga V8",
-      description: "Bentley's benchmark SUV: brute twin-scroll power wrapped in handcrafted Mulliner leather. Effortless across the city, commanding on the highway.",
-      price: "AED 2,400 /day",
-      features: [
-        "Handcrafted Mulliner premium leather interior",
-        "Effortless twin-scroll turbocharged V8 performance",
-        "Bentley Dynamic Ride active roll control system",
-        "Naim premium surround sound audio system"
-      ],
-      requirements: [
-        "Valid driving licence (UAE or international)",
-        "Emirates ID or Passport copy with visa entry page",
-        "Refundable security deposit confirmed before handover"
+        "Valid UAE driving license or International Driving Permit",
+        "Emirates ID or Passport with tourist entry stamp",
+        "Refundable security deposit hold (returned via bank receipt)"
       ]
     }
   },
@@ -85,22 +60,22 @@ const cars: CarData[] = [
     image: "/assets/audi-rs3.webp",
     pricePerDay: 600,
     currency: "AED",
-    stats: { topSpeed: "290 km/h", horsepower: "400 HP", engine: "2.5L TFSI", transmission: "Automatic", seats: "5 Seater" },
+    stats: { topSpeed: "290 km/h", horsepower: "400 HP", engine: "2.5L TFSI I5", transmission: "Automatic", seats: "5 Seater" },
     whatsappMessage: "Hi, I want to book the Audi RS3.",
     details: {
       title: "Audi RS3 Sedan",
       description: "Four hundred horsepower through a 2.5L five-cylinder, Quattro all-wheel drive, and motorsport-derived handling in a compact sedan. The RS3 is the sharpest car in its class.",
       price: "AED 600 /day",
       features: [
-        "Iconic 2.5L inline 5-cylinder turbocharged engine",
-        "Quattro intelligent all-wheel-drive system",
-        "Aggressive RS honeycomb grille and styling details",
-        "Audi Virtual Cockpit Plus with RS-specific layouts"
+        "Legendary 2.5L 5-cylinder turbocharged engine (400 HP)",
+        "Quattro all-wheel-drive with RS torque splitter",
+        "RS-spec sport suspension and dynamic body styling",
+        "Audi Virtual Cockpit with customized RS telemetry"
       ],
       requirements: [
-        "Valid driving licence (UAE or international)",
-        "Emirates ID or Passport copy with visa entry page",
-        "Refundable security deposit confirmed before handover"
+        "Valid UAE driving license or International Driving Permit",
+        "Emirates ID or Passport with tourist entry stamp",
+        "Refundable security deposit hold (returned via bank receipt)"
       ]
     }
   },
@@ -110,22 +85,22 @@ const cars: CarData[] = [
     image: "/assets/g63-brabus.webp",
     pricePerDay: 2500,
     currency: "AED",
-    stats: { topSpeed: "240 km/h", horsepower: "800 HP", engine: "V8 Biturbo", transmission: "Automatic", seats: "5 Seater" },
+    stats: { topSpeed: "240 km/h", horsepower: "800 HP", engine: "4.0L V8 Brabus Tuned", transmission: "Automatic", seats: "5 Seater" },
     whatsappMessage: "Hi, I want to book the G63 Brabus.",
     details: {
       title: "Mercedes G63 Brabus 800",
-      description: "A heavily tuned, high-status luxury SUV combining legendary military-grade off-road heritage with brute-force performance and extreme carbon aerodynamic enhancements.",
+      description: "A heavily tuned, high-status luxury SUV combining G-Class heritage with an 800 horsepower Brabus performance tuning and customized carbon fiber styling.",
       price: "AED 2,500 /day",
       features: [
-        "Brabus 800 HP power enhancement and tuning pack",
-        "Aggressive carbon fiber widebody aerodynamic styling",
-        "Sport valved exhaust system with sidepipe signature exit",
-        "Custom premium quilted leather comfort interior"
+        "Brabus 800 HP engine tuning and custom carbon engine cover",
+        "Brabus WIDESTAR carbon fiber body styling",
+        "Brabus valve-controlled sports exhaust with sidepipes",
+        "Brabus fine leather bespoke quilted interior"
       ],
       requirements: [
-        "Valid driving licence (UAE or international)",
-        "Emirates ID or Passport copy with visa entry page",
-        "Refundable security deposit confirmed before handover"
+        "Valid UAE driving license or International Driving Permit",
+        "Emirates ID or Passport with tourist entry stamp",
+        "Refundable security deposit hold (returned via bank receipt)"
       ]
     }
   }
@@ -285,97 +260,73 @@ export default function PickYourCar() {
     const translationsAR: Record<string, Partial<CarData>> = {
       "lamborghini-urus": {
         name: "لامبورغيني أوروس",
-        stats: { topSpeed: "٣٠٠ كم/س", horsepower: "٦٥٠ حصان", engine: "محرك V8 ثنائي التوربو", transmission: "أوتوماتيك", seats: "٤ مقاعد" },
+        stats: { topSpeed: "٣٠٠ كم/س", horsepower: "٦٥٠ حصان", engine: "محرك V8 ثنائي التوربو (٤.٠ لتر)", transmission: "أوتوماتيك", seats: "٤ مقاعد" },
         whatsappMessage: "مرحباً، أود حجز سيارة لامبورغيني أوروس.",
         details: {
           title: "لامبورغيني أوروس",
           description: "سيارة دفع رباعي رياضية فائقة الأداء تجمع بين هيبة سيارات السوبر سبورت والحضور الطاغي مع مستويات راحة فاخرة. تجسيد مثالي للأداء الجبار والموثوقية المطلقة.",
           price: "٢,٢٠٠ درهم / يوم",
           features: [
-            "محرك V8 ثنائي التوربو فائق الأداء والسرعة",
-            "مقصورة داخلية من الجلد الطبيعي الفاخر بالكامل",
-            "مثالية للتنقل في طرق وشوارع دبي السريعة والأنيقة",
-            "متاحة للتأجير اليومي والتأجير الأسبوعي المرن",
+            "محرك V8 ثنائي التوربو سعة 4.0 لتر (650 حصان)",
+            "مقصورة داخلية من الجلد الإيطالي الفاخر",
+            "نظام تعليق هوائي متكيف ومثبت لفة نشط",
+            "توصيل مجاني لأي فندق أو مطار في دبي",
             "تأمين شامل متكامل",
             "المسافة المقطوعة القياسية مشمولة",
             "توصيل مجاني للفنادق والمنازل في دبي"
           ],
           requirements: [
-            "رخصة قيادة سارية المفعول (إماراتية أو دولية معترف بها)",
-            "بطاقة الهوية الإماراتية أو نسخة جواز السفر مع صفحة تأشيرة الدخول",
-            "مبلغ تأمين مسترد يتم تأكيده قبل عملية الاستلام"
-          ]
-        }
-      },
-      "bentley-bentayga": {
-        name: "بنتلي بينتايغا V8",
-        stats: { topSpeed: "٢٩٠ كم/س", horsepower: "٥٥٠ حصان", engine: "V8 ثنائي التوربو", transmission: "أوتوماتيك", seats: "٥ مقاعد" },
-        whatsappMessage: "مرحباً، أود حجز سيارة بنتلي بينتايغا V8.",
-        details: {
-          title: "بنتلي بينتايغا V8",
-          description: "المرجع الفاخر لسيارات الدفع الرباعي الرياضية: قوة جبارة مغلفة بجلد مولينير الفاخر والمصنوع يدوياً بدقة فائقة. أداء مذهل وحضور راقٍ ومهيب.",
-          price: "٢,٤٠٠ درهم / يوم",
-          features: [
-            "جلد مولينير الفاخر والمصنوع يدوياً بالكامل بدقة متناهية",
-            "أداء فائق واستجابة مذهلة بمحرك V8 ثنائي التوربو",
-            "نظام التحكم النشط بالثبات والالتفاف الذكي",
-            "نظام صوتي محيطي فاخر للغاية من Naim",
-            "تأمين شامل متكامل",
-            "المسافة المقطوعة القياسية مشمولة",
-            "توصيل مجاني للفنادق والمنازل في دبي"
-          ],
-          requirements: [
-            "رخصة قيادة سارية المفعول (إماراتية أو دولية معترف بها)",
-            "بطاقة الهوية الإماراتية أو نسخة جواز السفر مع صفحة تأشيرة الدخول",
-            "مبلغ تأمين مسترد يتم تأكيده قبل عملية الاستلام"
+            "رخصة قيادة إماراتية سارية المفعول أو رخصة قيادة دولية",
+            "الهوية الإماراتية أو جواز السفر مع ختم دخول السياح",
+            "مبلغ تأمين مسترد (يتم إرجاعه عبر إيصال بنكي)"
           ]
         }
       },
       "audi-rs3": {
         name: "أودي RS3 سيدان",
-        stats: { topSpeed: "٢٩٠ كم/س", horsepower: "٤٠٠ حصان", engine: "٢.٥ لتر TFSI أسطوري", transmission: "أوتوماتيك", seats: "٥ مقاعد" },
+        stats: { topSpeed: "٢٩٠ كم/س", horsepower: "٤٠٠ حصان", engine: "محرك ٢.٥ لتر أسطوري ذو ٥ أسطوانات", transmission: "أوتوماتيك", seats: "٥ مقاعد" },
         whatsappMessage: "مرحباً، أود حجز سيارة أودي RS3.",
         details: {
           title: "أودي RS3 سيدان",
           description: "أربعمائة حصان جامح مستمد من محرك 5 أسطوانات، مع نظام دفع كواترو الرياضي الذكي، لتوفر تجربة قيادة رياضية لا مثيل لها في فئتها المدمجة.",
           price: "٦٠٠ درهم / يوم",
           features: [
-            "محرك أسطوري توربو 5 أسطوانات حائز على جوائز عالمية",
-            "نظام كواترو (Quattro) للدفع الرباعي الذكي فائق الثبات",
-            "شبكة أمامية هجومية وفتحات تهوية بتصميم RS الرياضي",
-            "شاشة أودي الرقمية بالكامل مع واجهة معلومات RS الخاصة بالسباق",
+            "محرك توربو أسطوري ذو 5 أسطوانات سعة 2.5 لتر (400 حصان)",
+            "دفع رباعي ذكي من كواترو مع موزع عزم الدوران RS",
+            "نظام تعليق رياضي بتعديل RS وتصميم هيكل ديناميكي",
+            "شاشة أودي الرقمية المخصصة لقياسات أداء RS",
             "تأمين شامل متكامل",
             "المسافة المقطوعة القياسية مشمولة",
             "توصيل مجاني للفنادق والمنازل في دبي"
           ],
           requirements: [
-            "رخصة قيادة سارية المفعول (إماراتية أو دولية معترف بها)",
-            "بطاقة الهوية الإماراتية أو نسخة جواز السفر مع صفحة تأشيرة الدخول",
-            "مبلغ تأمين مسترد يتم تأكيده قبل عملية الاستلام"
+            "رخصة قيادة إماراتية سارية المفعول أو رخصة قيادة دولية",
+            "الهوية الإماراتية أو جواز السفر مع ختم دخول السياح",
+            "مبلغ تأمين مسترد (يتم إرجاعه عبر إيصال بنكي)"
           ]
         }
       },
       "g63-brabus": {
         name: "مرسيدس G63 برابوس 800",
-        stats: { topSpeed: "٢٤٠ كم/س", horsepower: "٨٠٠ حصان", engine: "V8 ثنائي التوربو معدل", transmission: "أوتوماتيك", seats: "٥ مقاعد" },
+        stats: { topSpeed: "٢٤٠ كم/س", horsepower: "٨٠٠ حصان", engine: "محرك V8 ثنائي التوربو معدل من برابوس", transmission: "أوتوماتيك", seats: "٥ مقاعد" },
         whatsappMessage: "مرحباً، أود حجز سيارة مرسيدس G63 برابوس 800.",
         details: {
           title: "مرسيدس G63 برابوس 800",
           description: "القوة المطلقة والهيبة المطلقة؛ دمج مثالي لإرث الفئة G الأسطوري مع تعديلات برابوس الحصرية بقوة 800 حصان وأجزاء ألياف الكربون فائقة الخفة.",
           price: "٢,٥٠٠ درهم / يوم",
           features: [
-            "محرك برابوس 800 حصان معدل لتقديم عزم دوران مرعب",
-            "هيكل عريض هجومي مع حزمة تعديل برابوس الخارجية من الكاربون فايبر",
-            "نظام عادم رياضي ذكي بفتحات جانبية مميزة الصوت الجبار",
-            "مقصورة حصرية فاخرة من الجلد المبطن عالي الفخامة",
+            "تعديل محرك برابوس بقوة 800 حصان وغطاء محرك مخصص من الكاربون",
+            "تصميم هيكل عريض Brabus WIDESTAR من ألياف الكربون",
+            "عادم رياضي ذكي بصوت برابوس الجبار ومخارج جانبية",
+            "تصميم داخلي مبطن وحصري من جلد برابوس الفاخر",
             "تأمين شامل متكامل",
             "المسافة المقطوعة القياسية مشمولة",
             "توصيل مجاني للفنادق والمنازل في دبي"
           ],
           requirements: [
-            "رخصة قيادة سارية المفعول (إماراتية أو دولية معترف بها)",
-            "بطاقة الهوية الإماراتية أو نسخة جواز السفر مع صفحة تأشيرة الدخول",
-            "مبلغ تأمين مسترد يتم تأكيده قبل عملية الاستلام"
+            "رخصة قيادة إماراتية سارية المفعول أو رخصة قيادة دولية",
+            "الهوية الإماراتية أو جواز السفر مع ختم دخول السياح",
+            "مبلغ تأمين مسترد (يتم إرجاعه عبر إيصال بنكي)"
           ]
         }
       }
@@ -408,7 +359,7 @@ export default function PickYourCar() {
       {/* Vertical dot navigator — right edge / left edge in RTL */}
       <div 
         className="absolute top-1/2 -translate-y-1/2 z-20 flex flex-col items-center"
-        style={{ right: '16px' }}
+        style={language === 'ar' ? { left: '16px' } : { right: '16px' }}
       >
         {cars.map((car, i) => (
           <button
@@ -474,6 +425,7 @@ export default function PickYourCar() {
                       layoutId={i === activeIndex ? `car-img-${car.id}` : undefined}
                       src={car.image}
                       alt={tc.name}
+                      loading={i === activeIndex ? "eager" : "lazy"}
                       animate={{
                         opacity: i === activeIndex ? 1 : 0.45,
                         scale: i === activeIndex ? 1 : 0.82,
@@ -519,20 +471,18 @@ export default function PickYourCar() {
               className="flex items-center justify-between"
             >
               {STATS.map(({ icon, value }, i) => (
-                <div key={i} className="flex flex-col items-center gap-2.5 flex-1 relative">
+                <div
+                  key={i}
+                  className={`flex flex-col items-center gap-2.5 flex-1 relative ${
+                    i < STATS.length - 1 ? 'border-r border-black/[0.08]' : ''
+                  }`}
+                >
                   <div className="text-[#111215]">{icon}</div>
                   <span className="text-[10px] sm:text-[13px] font-extrabold text-[#111215] leading-tight text-center">{value}</span>
                 </div>
               ))}
             </motion.div>
           </AnimatePresence>
-
-          {/* Subtle borders between metrics */}
-          <div className="absolute inset-y-0 left-4 right-4 flex pointer-events-none" aria-hidden>
-            {[1,2,3,4].map(i => (
-              <div key={i} className="flex-1 border-r border-black/[0.05] last:border-r-0" />
-            ))}
-          </div>
         </div>
 
         {/* ── Price / Action Bar ── */}
@@ -617,7 +567,7 @@ export default function PickYourCar() {
               <button
                 onClick={closeModal}
                 className="absolute top-4 p-1.5 rounded-full bg-black/5 hover:bg-black/10 text-black/50 hover:text-black transition-all cursor-pointer z-30 active:scale-95"
-                style={{ right: '16px' }}
+                style={{ [language === 'ar' ? 'left' : 'right']: '16px' }}
                 aria-label={`Close ${activeCarTranslated.name} details`}
               >
                 <X size={14} strokeWidth={2} />

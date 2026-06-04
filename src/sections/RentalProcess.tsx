@@ -3,49 +3,26 @@ import { useLanguage } from '../LanguageContext';
 
 const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
-const getTranslatedSteps = (language: 'en' | 'ar') => {
-  if (language === 'ar') {
-    return [
-      {
-        n: '٠١',
-        title: 'اختر\nسيارتك',
-        body: 'تصفح تشكيلتنا من لامبورغيني، جي-واجن، ماكلارين. حدد سيارتك وسنؤكد حجزك في دقائق.',
-      },
-      {
-        n: '٠٢',
-        title: 'نوصّلها\nإليك',
-        body: 'أرسل لنا موقعك، وسنقوم بتوصيل السيارة مباشرة إلى فندقك، فيلتك، أو مكتبك في أي مكان في دبي.',
-      },
-      {
-        n: '٠٣',
-        title: 'انطلق\nواستمتع',
-        body: 'خزان وقود ممتلئ، سيارة فائقة النظافة. نستلمها من باب بيتك، ونعيد لك مبلغ التأمين في نفس اليوم.',
-      },
-    ];
-  }
-  return [
-    {
-      n: '01',
-      title: 'Choose\nYour Car',
-      body: 'Browse Lamborghinis, G-Wagons, McLarens. Pick the car. We confirm in minutes.',
-    },
-    {
-      n: '02',
-      title: 'We Deliver\nTo You',
-      body: 'Send us a location. Your car arrives at your hotel, villa, or office anywhere in Dubai.',
-    },
-    {
-      n: '03',
-      title: 'Drive\n& Enjoy',
-      body: 'Full tank. Clean car. We collect from your door. Deposit back the same day.',
-    },
-  ];
-};
-
 export default function RentalProcess() {
   const { language, t } = useLanguage();
   const reduce = useReducedMotion();
-  const steps = getTranslatedSteps(language);
+  const steps = [
+    {
+      n: language === 'ar' ? '٠١' : '01',
+      title: t('process_step1_title'),
+      body: t('process_step1_body'),
+    },
+    {
+      n: language === 'ar' ? '٠٢' : '02',
+      title: t('process_step2_title'),
+      body: t('process_step2_body'),
+    },
+    {
+      n: language === 'ar' ? '٠٣' : '03',
+      title: t('process_step3_title'),
+      body: t('process_step3_body'),
+    },
+  ];
 
   return (
     <section

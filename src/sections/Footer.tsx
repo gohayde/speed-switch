@@ -102,7 +102,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="absolute bg-[#111215]/85 backdrop-blur-md border border-white/10 rounded-lg px-2.5 py-1.5 text-[9px] font-black text-white tracking-wide uppercase select-none hover:border-[#F7BF35]/40 hover:text-[#F7BF35] transition-all duration-300 z-20 cursor-pointer"
-                  style={{ bottom: '10px', left: '10px' }}
+                  style={{ bottom: '10px', [language === 'ar' ? 'right' : 'left']: '10px' }}
                 >
                   {language === 'ar' ? 'برج برايم تاور، دبي ↗' : 'Prime Tower, Dubai ↗'}
                 </a>

@@ -3,61 +3,61 @@ import { motion, AnimatePresence, useInView, useReducedMotion } from 'framer-mot
 import { useLanguage } from '../LanguageContext';
 
 const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
-const WA_FAQ = 'https://wa.me/971521430808?text=Hi%2C%20I%20have%20a%20question%20about%20renting';
+const WA_FAQ = 'https://wa.me/971523660709?text=Hi%2C%20I%20have%20a%20question%20about%20renting';
 
 const getTranslatedFaqs = (language: 'en' | 'ar') => {
   if (language === 'ar') {
     return [
       {
         q: 'ما هي المستندات المطلوبة للاستئجار؟',
-        a: 'رخصة قيادة سارية المفعول (دولية أو إماراتية)، وجواز السفر أو الهوية الإماراتية، وبطاقة ائتمان أو خصم لمبلغ التأمين. نرحب بالزوار من جميع أنحاء العالم. يرجى التأكد من توافق بلد الرخصة قبل تأكيد الحجز.',
+        a: 'للاستئجار، تحتاج إلى: (١) رخصة قيادة سارية المفعول من بلدك الأم أو رخصة دولية إذا لزم الأمر. (٢) نسخة من جواز السفر مع صفحة تأشيرة الدخول (للسياح) أو الهوية الإماراتية (للمقيمين). (٣) بطاقة ائتمان أو خصم لمبلغ التأمين. لا يحتاج زوار دول مجلس التعاون الخليجي، الاتحاد الأوروبي، الولايات المتحدة، المملكة المتحدة، كندا، وبعض الدول الأخرى إلى رخصة دولية.',
       },
       {
         q: 'كيف يعمل مبلغ التأمين المسترد؟',
-        a: 'يتم حجز مبلغ التأمين مؤقتاً على بطاقتك في بداية الإيجار. ويتم إلغاء الحجز تلقائياً خلال 3 إلى 5 أيام عمل من إرجاع السيارة بنفس حالتها. يختلف المبلغ حسب فئة السيارة وحجمها.',
+        a: 'يتم إجراء حجز مؤقت لمبلغ التأمين على بطاقتك الائتمانية أو الخصم أثناء تسليم السيارة. بمجرد إرجاع السيارة بحالتها الأصلية، نقوم بإلغاء الحجز في نفس اليوم. وستظهر الأموال في حسابك خلال ٣ إلى ٥ أيام عمل حسب سياسة مصرفك.',
       },
       {
         q: 'هل تقومون بالتوصيل إلى الفندق أو المنزل؟',
-        a: 'نعم بالتأكيد. نوفر خدمة توصيل مجانية إلى أي عنوان في دبي: الفنادق، المنازل، المكاتب، والشقق المفروشة. التوصيل إلى الإمارات الأخرى متاح عند الطلب.',
+        a: 'نعم، نوفر خدمة توصيل واستلام مجانية إلى أي فندق، منزل خاص، فيلا، أو مكتب في جميع أنحاء دبي. يتم تنسيق عملية التسليم مباشرة مع السائق الخاص بك عبر واتساب.',
       },
       {
         q: 'هل يمكنكم تسليم السيارة في مطار دبي؟',
-        a: 'نعم، خدمة التوصيل والاستلام في مطار دبي الدولي (DXB) ومطار آل مكتوم (DWC) متاحة دائماً. يتم تنسيق وقت التسليم بدقة حول موعد وصول رحلتك لتجنب أي انتظار.',
+        a: 'نعم، نقوم بالتوصيل والاستلام في مطاري دبي الدولي (DXB) وآل مكتوم الدولي (DWC). نحن نتابع حالة رحلتك وننسق مع السائق ليلتقي بك خارج مبنى الوصول لتسليم سريع وسهل.',
       },
       {
         q: 'ما هي التغطية التأمينية المشمولة؟',
-        a: 'التأمين الشامل الأساسي مشمول تلقائياً مع كل عملية تأجير. تتوفر خيارات تغطية إضافية أوسع، يرجى الاستفسار عنها على الواتساب وسنقدم لك التفاصيل الكاملة.',
+        a: 'تأمين شامل قياسي مشمول في سعر الإيجار. يغطي هذا المسؤولية تجاه الغير والأضرار، شريطة الحصول على تقرير شرطة. يمكنك شراء تغطية إضافية أو إعفاء من أضرار الاصطدام أثناء الحجز.',
       },
       {
         q: 'ما هي سرعة تأكيد الحجز؟',
-        a: 'يتم تأكيد معظم الحجوزات فورياً في غضون دقائق معدودة عبر محادثة الواتساب. فريقنا متاح للإجابة على مدار الساعة، طوال أيام الأسبوع.',
+        a: 'نؤكد توفر السيارة وتفاصيل الحجز في غضون ٥ إلى ١٠ دقائق عبر واتساب. فريق الحجوزات لدينا متصل بالإنترنت على مدار الساعة طوال أيام الأسبوع لمساعدتك.',
       },
     ];
   }
   return [
     {
       q: 'What documents do I need to rent?',
-      a: 'A valid driving licence (international or UAE), a passport or Emirates ID, and a credit or debit card for the security deposit. Visitors from most countries are welcome. Check that your licence country is recognised before booking.',
+      a: 'To rent, you need: (1) A valid driving licence from your home country or an International Driving Permit (IDP) if required. (2) A passport copy with the entry visa page (for tourists) or an Emirates ID (for UAE residents). (3) A credit or debit card for the security deposit hold. Visitors from GCC, EU, US, UK, Canada, and select other countries do not require an IDP.',
     },
     {
       q: 'How does the security deposit work?',
-      a: 'A refundable hold is placed on your card at the start of your rental. It is released within 3 to 5 business days of returning the vehicle in the same condition. The amount varies by vehicle category.',
+      a: 'An authorization hold is placed on your credit or debit card during handover. Once you return the vehicle in its original condition, we release the hold on the same day. Depending on your bank, the funds will reflect in your account within 3 to 5 business days.',
     },
     {
       q: 'Do you deliver to my hotel or residence?',
-      a: 'Yes. We deliver to any address across Dubai at no extra charge: hotels, residences, offices, and short-term rentals. Delivery to other Emirates is available on request.',
+      a: 'Yes, we provide complimentary delivery and collection to any hotel, private residence, villa, or office across Dubai. Handovers are coordinated directly with your driver via WhatsApp.',
     },
     {
       q: 'Can you deliver to Dubai Airport?',
-      a: 'Yes. Airport delivery is available at Dubai International (DXB) and Al Maktoum International (DWC). Timing is coordinated around your flight arrival to avoid waiting.',
+      a: 'Yes, we deliver and collect at both Dubai International (DXB) and Al Maktoum International (DWC) airports. We track your flight status and arrange for your driver to meet you outside the arrivals terminal for a seamless handover.',
     },
     {
       q: 'What insurance is included?',
-      a: 'Basic comprehensive insurance is included with every rental. Additional coverage is available; ask us on WhatsApp before you book and we will walk you through the options.',
+      a: 'Standard comprehensive insurance is included in the rental price. This covers third-party liability and damage, subject to a police report. You can purchase additional coverage or a collision damage waiver (CDW) during booking.',
     },
     {
       q: 'How quickly does booking get confirmed?',
-      a: 'Most bookings are confirmed within minutes on WhatsApp. We respond throughout the day, 7 days a week.',
+      a: 'We confirm vehicle availability and booking details within 5 to 10 minutes on WhatsApp. Our reservation team is online 24/7 to assist with your booking.',
     },
   ];
 };

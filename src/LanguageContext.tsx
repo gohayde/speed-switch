@@ -1,3 +1,5 @@
+'use client';
+
 import React, { createContext, useState, useContext, useEffect } from 'react';
 
 export type Language = 'en' | 'ar';
@@ -27,9 +29,9 @@ export const translations: TranslationDict = {
   hero_title_1: { en: 'Drive Dubai', ar: 'قد في دبي' },
   hero_title_2: { en: 'In Style', ar: 'بأناقة' },
   hero_subtitle: { en: 'Pick your car. Pick your date. We bring it to you. Anywhere in Dubai, any time.', ar: 'اختر سيارتك. حدد تاريخك. نأتي بها إليك. في أي مكان في دبي، وفي أي وقت.' },
-  hero_field_car: { en: 'Car Type', ar: 'نوع السيارة' },
-  hero_field_location: { en: 'Location', ar: 'الموقع' },
-  hero_field_date: { en: 'Date', ar: 'التاريخ' },
+  hero_field_car: { en: 'Select Car Class', ar: 'اختر فئة السيارة' },
+  hero_field_location: { en: 'Delivery Location', ar: 'موقع التوصيل' },
+  hero_field_date: { en: 'Rental Dates', ar: 'تواريخ الإيجار' },
   hero_dropdown_car_title: { en: 'Select Category', ar: 'اختر الفئة' },
   hero_dropdown_loc_title: { en: 'Choose Location from Map', ar: 'اختر الموقع من الخريطة' },
   hero_dropdown_date_title: { en: 'Select Date Range', ar: 'اختر الفترة الزمنية' },
@@ -49,24 +51,24 @@ export const translations: TranslationDict = {
   why_subtitle: { en: 'THE RENTAL', ar: 'خدمة التأجير' },
   why_subtitle_2: { en: 'DUBAI', ar: 'التي تثق بها' },
   why_subtitle_highlight: { en: 'TRUSTS', ar: 'دبي' },
-  why_paragraph: { en: 'Four standards our customers name, unprompted, in their own words.', ar: 'أربعة معايير يذكرها عملاؤنا دائماً في تقييماتهم دون تردد.' },
-  why_sig1_title: { en: 'Flawless. Every Time.', ar: 'مثالية. في كل مرة.' },
-  why_sig1_body: { en: 'Cleaned and serviced before every handover. Reliable condition, without exception.', ar: 'يتم تنظيف وصيانة السيارات بالكامل قبل كل تسليم. حالة ممتازة وموثوقة بلا استثناء.' },
-  why_sig2_title: { en: 'People You Know', ar: 'أشخاص تعرفهم' },
-  why_sig2_body: { en: 'Ahmad and the team are named in hundreds of Google reviews. Real people, not a hotline.', ar: 'أحمد وفريق العمل مذكورون بالاسم في مئات التقييمات. أشخاص حقيقيون يهتمون بك، وليس مجرد هاتف مجيب.' },
-  why_sig3_title: { en: 'Price. Full Stop.', ar: 'سعر واضح. نقطة.' },
-  why_sig3_body: { en: 'The quote you receive is the total you pay. No line items added at handover.', ar: 'السعر الذي نرسله لك هو ما تدفعه بالضبط. لا رسوم خفية أو إضافات عند التسليم.' },
-  why_sig4_title: { en: 'Deposit Back Today', ar: 'استرداد التأمين اليوم' },
-  why_sig4_body: { en: 'Same-day deposit returns are the standard here. Renters name it specifically in their reviews.', ar: 'استرداد مبلغ التأمين في نفس يوم إرجاع السيارة هو المعيار لدينا، ويسعد عملاؤنا بكتابة ذلك في مراجعاتهم.' },
+  why_paragraph: { en: 'The four service standards our customers highlight most in their feedback.', ar: 'المعايير الأربعة الأساسية التي يذكرها عملاؤنا دائماً في مراجعاتهم.' },
+  why_sig1_title: { en: 'Fully Inspected & Serviced', ar: 'فحص وصيانة شاملة' },
+  why_sig1_body: { en: 'We perform a 50-point inspection and complete detail before every handover to ensure pristine mechanical condition.', ar: 'نخضع كل سيارة لفحص شامل من 50 نقطة وتنظيف كامل قبل التسليم لضمان حالتها الميكانيكية الممتازة.' },
+  why_sig2_title: { en: 'Direct Team Support', ar: 'دعم مباشر من فريقنا' },
+  why_sig2_body: { en: 'Communicate directly with Ahmad and our local Dubai team on WhatsApp for fast, personalized assistance.', ar: 'تواصل مباشرة مع أحمد وفريقنا المحلي في دبي عبر واتساب للحصول على خدمة سريعة ومخصصة.' },
+  why_sig3_title: { en: 'Transparent Pricing', ar: 'أسعار شفافة' },
+  why_sig3_body: { en: 'The rate confirmed in your WhatsApp conversation is exactly what you pay, inclusive of all standard fees.', ar: 'السعر المؤكد في محادثة واتساب هو ما تدفعه بالضبط، شاملاً جميع الرسوم القياسية.' },
+  why_sig4_title: { en: 'Prompt Deposit Returns', ar: 'إرجاع سريع للتأمين' },
+  why_sig4_body: { en: 'We process your security deposit release on the same day you return the vehicle, verified by bank receipt.', ar: 'نقوم بإلغاء حجز مبلغ التأمين في نفس يوم إرجاع السيارة، مع تزويدك بإيصال البنك فوراً.' },
 
   // Dubai Delivery Section
   deliv_title_1: { en: 'We Come', ar: 'نأتي إليك' },
   deliv_title_2: { en: 'To You', ar: 'أينما كنت' },
-  deliv_paragraph: { en: 'Across every district in Dubai, we deliver your chosen vehicle directly to your door. Tourists and residents alike: no queues, no counters, just your car exactly where you need it.', ar: 'في جميع أنحاء دبي، نقوم بتوصيل سيارتك المفضلة مباشرة إلى باب بيتك أو فندقك. للسياح والمقيمين: لا طوابير، لا مكاتب، فقط سيارتك جاهزة حيث تريدها.' },
+  deliv_paragraph: { en: 'We coordinate delivery to any hotel, residence, or airport terminal in Dubai. Skip the rental counter queues—your vehicle is delivered directly to your location, with handovers completed in under five minutes.', ar: 'ننسق توصيل السيارة إلى أي فندق، منزل، أو مبنى في المطار في دبي. تجنب طوابير مكاتب التأجير — نقوم بتسليم سيارتك مباشرة إلى موقعك، وتكتمل عملية التسليم في أقل من خمس دقائق.' },
   deliv_highlight1_title: { en: 'Free Delivery Across Dubai', ar: 'توصيل مجاني في دبي' },
-  deliv_highlight1_body: { en: 'Free delivery to any hotel, residence, or airport terminal.', ar: 'توصيل مجاني إلى أي فندق، منزل، أو مبنى في المطار.' },
-  deliv_highlight2_title: { en: 'On-Demand Handovers', ar: 'تسليم عند الطلب 24/7' },
-  deliv_highlight2_body: { en: 'Tracked and coordinated directly on WhatsApp.', ar: 'تنسيق مرن ومتابعة مباشرة وسهلة عبر الواتساب.' },
+  deliv_highlight1_body: { en: 'We offer complimentary delivery and pickup anywhere in Dubai, including DXB and DWC airports.', ar: 'نقدم خدمة التوصيل والاستلام مجاناً في أي مكان في دبي، بما في ذلك مطاري DXB و DWC.' },
+  deliv_highlight2_title: { en: '24/7 Flexible Coordination', ar: 'تنسيق مرن على مدار الساعة' },
+  deliv_highlight2_body: { en: 'Our team coordinates delivery times and location pins directly on WhatsApp for seamless drop-off.', ar: 'يقوم فريقنا بتنسيق أوقات التسليم وموقع الخدمة مباشرة عبر واتساب لتسليم مريح وسلس.' },
   deliv_active_badge: { en: 'Taking bookings now', ar: 'متاح للحجز الآن' },
   deliv_map_btn: { en: 'Open Interactive Map ↗', ar: 'افتح الخريطة التفاعلية ↗' },
   deliv_footer_text: { en: 'Custom Handovers in Sharjah, Abu Dhabi, and surrounding Emirates available on request.', ar: 'توصيل مخصص إلى الشارقة، أبوظبي، والإمارات الأخرى متاح عند الطلب.' },
@@ -83,11 +85,11 @@ export const translations: TranslationDict = {
   // Rental Process Section
   process_title: { en: 'Pick. Delivered.\nDrive.', ar: 'اختر. استلم.\nانطلق.' },
   process_step1_title: { en: 'Choose\nYour Car', ar: 'اختر\nسيارتك' },
-  process_step1_body: { en: 'Browse Lamborghinis, G-Wagons, McLarens. Pick the car. We confirm in minutes.', ar: 'تصفح تشكيلتنا من لامبورغيني، جي-واجن، ماكلارين. حدد سيارتك وسنؤكد حجزك في دقائق.' },
+  process_step1_body: { en: 'Select from our curated fleet of luxury SUVs, supercars, and sports sedans. We confirm availability in minutes.', ar: 'اختر من بين أسطولنا المنسق من سيارات الدفع الرباعي الفاخرة، السيارات الخارقة، وسيارات السيدان الرياضية. سنؤكد التوفر في دقائق.' },
   process_step2_title: { en: 'We Deliver\nTo You', ar: 'نوصّلها\nإليك' },
-  process_step2_body: { en: 'Send us a location. Your car arrives at your hotel, villa, or office anywhere in Dubai.', ar: 'أرسل لنا موقعك، وسنقوم بتوصيل السيارة مباشرة إلى فندقك، فيلتك، أو مكتبك في أي مكان في دبي.' },
+  process_step2_body: { en: 'Share your location on WhatsApp. We deliver the vehicle directly to your hotel, residence, or airport terminal in Dubai.', ar: 'شارك موقعك معنا عبر واتساب. سنقوم بتوصيل السيارة مباشرة إلى فندقك، منزلك، أو مبنى المطار في دبي.' },
   process_step3_title: { en: 'Drive\n& Enjoy', ar: 'انطلق\nواستمتع' },
-  process_step3_body: { en: 'Full tank. Clean car. We collect from your door. Deposit back the same day.', ar: 'خزان وقود ممتلئ، سيارة فائقة النظافة. نستلمها من باب بيتك، ونعيد لك مبلغ التأمين في نفس اليوم.' },
+  process_step3_body: { en: 'Enjoy a fully fueled, detailed vehicle. We collect it from your doorstep at the end of your rental and release the deposit immediately.', ar: 'استمتع بقيادة سيارة نظيفة وممتلئة بالوقود. سنستلمها من باب بيتك عند نهاية الإيجار ونعيد مبلغ التأمين فوراً.' },
 
   // Reviews Section
   reviews_title_1: { en: 'Loved by our', ar: 'ثقة ومحبة' },
@@ -101,12 +103,12 @@ export const translations: TranslationDict = {
   faq_paragraph: { en: 'What renters ask most before booking with Speed Switch.', ar: 'الإجابات عن الاستفسارات الأكثر شيوعاً قبل حجز سيارتك معنا.' },
 
   // Final CTA
-  cta_title_1: { en: 'YOUR CAR.', ar: 'سيارتك بانتظارك' },
-  cta_title_2: { en: 'TODAY.', ar: 'اليوم.' },
-  cta_paragraph: { en: 'Premium fleet. Same-day handover. No queues, no paperwork.', ar: 'أسطول راقٍ ومميز. تسليم في نفس اليوم. بلا طوابير أو معاملات ورقية معقدة.' },
+  cta_title_1: { en: 'BOOK YOUR DRIVE.', ar: 'احجز رحلتك.' },
+  cta_title_2: { en: 'ON WHATSAPP TODAY.', ar: 'عبر واتساب اليوم.' },
+  cta_paragraph: { en: 'Choose your vehicle and secure your booking on WhatsApp in minutes. Enjoy prompt delivery and transparent, all-inclusive rates.', ar: 'اختر سيارتك وأكد حجزك عبر واتساب في دقائق. استمتع بتوصيل سريع وأسعار شفافة وشاملة بالكامل.' },
 
   // Footer Section
-  footer_desc: { en: 'Experience the absolute pinnacle of luxury driving in Dubai. We deliver an immaculate fleet of high-end supercars and SUVs directly to your doorstep with guaranteed transparent pricing and 5-star service.', ar: 'عش التجربة الاستثنائية لقيادة السيارات الفاخرة في دبي. نوفر أسطولاً استثنائياً من السيارات الخارقة والرياضية إلى باب فندقك أو منزلك بأسعار شفافة وخدمة خمس نجوم.' },
+  footer_desc: { en: 'Speed Switch provides transparent, on-demand luxury car rentals across Dubai. With a curated fleet of pristine vehicles, hand-delivered to your door, we ensure a direct and reliable booking process with zero hidden fees.', ar: 'توفر سبيد سويتش خدمات تأجير السيارات الفاخرة عند الطلب وبأسعار شفافة في جميع أنحاء دبي. من خلال أسطول منسق من السيارات الممتازة التي يتم تسليمها إلى باب بيتك، نضمن لك عملية حجز مباشرة وموثوقة دون أي رسوم خفية.' },
   footer_explore: { en: 'Explore', ar: 'اكتشف المزيد' },
   footer_location: { en: 'HQ Location', ar: 'الموقع الرئيسي' },
   footer_office: { en: 'Office 3107, 31st Floor, Prime Tower,\nMarasi Drive, Business Bay, Dubai', ar: 'المكتب 3107، الطابق 31، برج برايم تاور،\nشارع مراسي درايف، الخليج التجاري، دبي' },
@@ -124,19 +126,22 @@ const LanguageContext = createContext<LanguageContextProps | undefined>(undefine
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>(() => {
+    if (typeof window === 'undefined') return 'en';
     const saved = localStorage.getItem('speed_switch_lang');
     return (saved === 'ar' ? 'ar' : 'en') as Language;
   });
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem('speed_switch_lang', lang);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('speed_switch_lang', lang);
+    }
   };
 
   useEffect(() => {
     const htmlEl = document.documentElement;
     htmlEl.lang = language;
-    htmlEl.dir = 'ltr';
+    htmlEl.dir = language === 'ar' ? 'rtl' : 'ltr';
   }, [language]);
 
   const t = (key: string): string => {

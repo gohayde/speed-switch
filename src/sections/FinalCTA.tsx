@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 
 const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
-const WA_NOW = 'https://wa.me/971521430808?text=Hi%2C%20I%20want%20to%20book%20a%20car';
+const WA_NOW = 'https://wa.me/971523660709?text=Hi%2C%20I%20want%20to%20book%20a%20car';
 const FLEET_LINK = '#vehicles';
 
 export default function FinalCTA() {
@@ -31,7 +31,7 @@ export default function FinalCTA() {
     <section
       className="relative flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: 'url("/assets/cta-bg.webp")',
+        backgroundImage: 'url("/assets/cta-bg-lamborghini.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -41,7 +41,7 @@ export default function FinalCTA() {
       }}
     >
       {/* Dark overlay to guarantee absolute text legibility while revealing the supercar background */}
-      <div className="absolute inset-0 bg-black/55 z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/70 z-0 pointer-events-none" />
 
       {/* Gold hairline separator at top */}
       <div

@@ -12,7 +12,7 @@ export default function BrandMarquee() {
   const doubled = [...brands, ...brands];
 
   return (
-    <section id="brands" className="relative overflow-hidden" style={{ background: '#F7BF35', zIndex: 20 }}>
+    <section id="brands" className="relative overflow-hidden" style={{ background: '#F7BF35', zIndex: 10 }}>
       <div className="relative overflow-hidden w-full pt-10 pb-10">
         <div className="absolute left-0 top-0 bottom-0 w-36 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #F7BF35, transparent)' }} />
         <div className="absolute right-0 top-0 bottom-0 w-36 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #F7BF35, transparent)' }} />

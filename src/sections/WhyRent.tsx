@@ -3,51 +3,15 @@ import { useLanguage } from '../LanguageContext';
 
 const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
-const getTranslatedSignals = (language: 'en' | 'ar') => {
-  if (language === 'ar') {
-    return [
-      {
-        title: 'مثالية. في كل مرة.',
-        body: 'يتم تنظيف وصيانة السيارات بالكامل قبل كل تسليم. حالة ممتازة وموثوقة بلا استثناء.',
-      },
-      {
-        title: 'أشخاص تعرفهم',
-        body: 'أحمد وفريق العمل مذكورون بالاسم في مئات التقييمات. أشخاص حقيقيون يهتمون بك، وليس مجرد هاتف مجيب.',
-      },
-      {
-        title: 'سعر واضح. نقطة.',
-        body: 'السعر الذي نرسله لك هو ما تدفعه بالضبط. لا رسوم خفية أو إضافات عند التسليم.',
-      },
-      {
-        title: 'استرداد التأمين اليوم',
-        body: 'استرداد مبلغ التأمين في نفس يوم إرجاع السيارة هو المعيار لدينا، ويسعد عملاؤنا بكتابة ذلك في مراجعاتهم.',
-      },
-    ];
-  }
-  return [
-    {
-      title: 'Flawless. Every Time.',
-      body: 'Cleaned and serviced before every handover. Reliable condition, without exception.',
-    },
-    {
-      title: 'People You Know',
-      body: 'Ahmad and the team are named in hundreds of Google reviews. Real people, not a hotline.',
-    },
-    {
-      title: 'Price. Full Stop.',
-      body: 'The quote you receive is the total you pay. No line items added at handover.',
-    },
-    {
-      title: 'Deposit Back Today',
-      body: 'Same-day deposit returns are the standard here. Renters name it specifically in their reviews.',
-    },
-  ];
-};
-
 export default function WhyRent() {
   const { language, t } = useLanguage();
   const reduce = useReducedMotion();
-  const signals = getTranslatedSignals(language);
+  const signals = [
+    { title: t('why_sig1_title'), body: t('why_sig1_body') },
+    { title: t('why_sig2_title'), body: t('why_sig2_body') },
+    { title: t('why_sig3_title'), body: t('why_sig3_body') },
+    { title: t('why_sig4_title'), body: t('why_sig4_body') },
+  ];
 
   return (
     <section
@@ -67,7 +31,7 @@ export default function WhyRent() {
           src="/assets/g63-brabus.webp"
           alt=""
           className="absolute bottom-0 w-[115%] max-w-none object-contain select-none"
-          style={{ left: '-6%', right: 'auto' }}
+          style={{ [language === 'ar' ? 'right' : 'left']: '-6%', [language === 'ar' ? 'left' : 'right']: 'auto' }}
           draggable={false}
           initial={reduce ? undefined : { scale: 1.04 }}
           whileInView={reduce ? undefined : { scale: 1 }}
@@ -93,7 +57,7 @@ export default function WhyRent() {
             src="/assets/g63-brabus.webp"
             alt=""
             className="absolute bottom-0 w-[88%] object-contain select-none max-[640px]:w-full"
-            style={{ left: '-8%', right: 'auto' }}
+            style={{ [language === 'ar' ? 'right' : 'left']: '-8%', [language === 'ar' ? 'left' : 'right']: 'auto' }}
             draggable={false}
           />
         </motion.div>

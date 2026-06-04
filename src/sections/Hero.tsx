@@ -6,7 +6,7 @@ import {
 import { ArrowRight, CalendarDays, CarFront, ChevronDown, MapPin, Check } from 'lucide-react';
 import { useLanguage, translations } from '../LanguageContext';
 
-const WHATSAPP_NUMBER = '971521430808';
+const WHATSAPP_NUMBER = '971523660709';
 const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C%20I%20want%20to%20book%20a%20car`;
 
 const carTypes = ['Luxury SUV', 'V12 Supercar', 'High-End Sports', 'Exotic Convertible'];
@@ -34,7 +34,7 @@ const translatedLocations: Record<string, { en: string; ar: string }> = {
 function Logo() {
   return (
     <a className="inline-flex min-h-11 items-center gap-[12px] group hero-logo" href="#home" aria-label="Speed Switch Home">
-      <svg className="w-[20px] h-[20px] text-[#111215] transition-colors duration-300 group-hover:text-[#F7BF35] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-180" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className="w-[20px] h-[20px] text-[#111215] transition-colors duration-300 group-hover:text-gold transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-180" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M7 17L12 12L17 17" stroke="currentColor" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M7 10L12 5L17 10" stroke="currentColor" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
@@ -93,7 +93,7 @@ function Nav() {
             <button
               type="button"
               onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
-              className="px-3.5 py-1.5 rounded-full border border-black/10 bg-white/60 hover:bg-[#F7BF35]/15 hover:border-[#F7BF35]/40 text-[10.5px] font-black tracking-widest transition-all cursor-pointer select-none active:scale-95 text-black"
+              className="px-3.5 py-1.5 rounded-full border border-black/10 bg-white/60 hover:bg-gold/15 hover:border-gold/40 text-[10.5px] font-black tracking-widest transition-all cursor-pointer select-none active:scale-95 text-black"
               aria-label={language === 'en' ? 'Switch to Arabic' : 'التغيير إلى الإنجليزية'}
             >
               {language === 'en' ? 'العربية' : 'EN'}
@@ -206,7 +206,7 @@ function SearchField({ icon: Icon, label, value, isOpen, onClick, showBorder = t
   );
 }
 
-function Dropdown({ children, className, title }: { children: React.ReactNode; className: string; title: string }) {
+function Dropdown({ children, className, title, role = 'listbox' }: { children: React.ReactNode; className: string; title: string; role?: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10, scale: 0.98 }}
@@ -214,7 +214,7 @@ function Dropdown({ children, className, title }: { children: React.ReactNode; c
       exit={{ opacity: 0, y: 10, scale: 0.98 }}
       transition={{ duration: 0.18, ease: 'easeOut' }}
       className={`hero-dropdown ${className}`}
-      role="listbox"
+      role={role}
     >
       <div className="hero-dropdown-title">{title}</div>
       {children}
@@ -230,6 +230,13 @@ function DropdownOption({ active, children, onClick }: { active: boolean; childr
     </button>
   );
 }
+
+const locationCoordinates: Record<string, [number, number]> = {
+  'Dubai Marina': [25.0784, 55.1408],
+  'Palm Jumeirah': [25.1124, 55.1390],
+  'Downtown Dubai': [25.1972, 55.2744],
+  'DXB Airport': [25.2532, 55.3657],
+};
 
 export default function Hero() {
   const { language, t } = useLanguage();
@@ -247,13 +254,212 @@ export default function Hero() {
   const [selectedCarType, setSelectedCarType] = useState('Luxury SUV');
   const [selectedLocation, setSelectedLocation] = useState('Dubai Marina');
 
+  const [leafletLoaded, setLeafletLoaded] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchError, setSearchError] = useState<string | null>(null);
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+  const mapInstanceRef = useRef<any>(null);
+  const markerRef = useRef<any>(null);
+  const searchTimeoutRef = useRef<any>(null);
+
+  // Load Leaflet dynamically
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if ((window as any).L) {
+      setLeafletLoaded(true);
+      return;
+    }
+
+    const cssLink = document.createElement('link');
+    cssLink.rel = 'stylesheet';
+    cssLink.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(cssLink);
+
+    const jsScript = document.createElement('script');
+    jsScript.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    jsScript.async = true;
+    jsScript.onload = () => {
+      setLeafletLoaded(true);
+    };
+    document.head.appendChild(jsScript);
+  }, []);
+
+  const handleMapPinChange = async (lat: number, lng: number) => {
+    setIsSearching(true);
+    setSearchError(null);
+    try {
+      const res = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&addressdetails=1`,
+        {
+          headers: {
+            'User-Agent': 'SpeedSwitch-Car-Rental-Dubai/1.0 (contact@speedswitch.ae)'
+          }
+        }
+      );
+      if (!res.ok) throw new Error("Reverse geocoding failed");
+      const data = await res.json();
+      if (data && data.address) {
+        const addr = data.address;
+        const name = addr.tourism || addr.amenity || addr.building || addr.suburb || addr.neighbourhood || addr.city_district || addr.road || addr.city || 'Dubai Custom Location';
+        setSelectedLocation(name);
+        setSearchQuery(name);
+      }
+    } catch (err) {
+      console.error("Error geocoding pin coordinate:", err);
+      setSearchError(language === 'ar' ? 'فشل استرجاع العنوان من الخريطة.' : 'Failed to retrieve address from map coordinates.');
+    } finally {
+      setIsSearching(false);
+    }
+  };
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    setSearchError(null);
+    setSearchResults([]);
+
+    if (searchTimeoutRef.current) {
+      clearTimeout(searchTimeoutRef.current);
+    }
+
+    if (query.trim().length < 3) {
+      setIsSearching(false);
+      return;
+    }
+
+    setIsSearching(true);
+    searchTimeoutRef.current = setTimeout(async () => {
+      try {
+        const searchQ = query.toLowerCase().includes('dubai') ? query : `${query}, Dubai`;
+        const res = await fetch(
+          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchQ)}&limit=5&addressdetails=1`,
+          {
+            headers: {
+              'User-Agent': 'SpeedSwitch-Car-Rental-Dubai/1.0 (contact@speedswitch.ae)'
+            }
+          }
+        );
+        if (!res.ok) throw new Error("Search request failed");
+        const data = await res.json();
+        if (data && data.length === 0) {
+          setSearchError(language === 'ar' ? 'لم يتم العثور على نتائج.' : 'No results found.');
+        }
+        setSearchResults(data || []);
+      } catch (err) {
+        console.error("Error searching location:", err);
+        setSearchError(language === 'ar' ? 'فشل الاتصال بخدمة الخرائط. يرجى إدخال الموقع يدوياً.' : 'Map service unavailable. Please enter manually.');
+        setSearchResults([]);
+      } finally {
+        setIsSearching(false);
+      }
+    }, 450);
+  };
+
+  const handleSelectResult = (result: any) => {
+    const lat = parseFloat(result.lat);
+    const lon = parseFloat(result.lon);
+    const addr = result.address;
+    const name = result.name || addr.tourism || addr.amenity || addr.building || addr.suburb || addr.neighbourhood || addr.city_district || addr.road || addr.city || result.display_name;
+
+    setSelectedLocation(name);
+    setSearchQuery(name);
+    setSearchResults([]);
+
+    if (mapInstanceRef.current && markerRef.current) {
+      mapInstanceRef.current.flyTo([lat, lon], 14);
+      markerRef.current.setLatLng([lat, lon]);
+    }
+  };
+
+  const handleQuickSelectLocation = (name: string) => {
+    setSelectedLocation(name);
+    setSearchQuery(name);
+    const coords = locationCoordinates[name];
+    if (coords && mapInstanceRef.current && markerRef.current) {
+      mapInstanceRef.current.flyTo(coords, 14);
+      markerRef.current.setLatLng(coords);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (searchTimeoutRef.current) {
+        clearTimeout(searchTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (activeField !== 'location' || !leafletLoaded || !mapContainerRef.current) {
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.remove();
+        mapInstanceRef.current = null;
+        markerRef.current = null;
+      }
+      return;
+    }
+
+    const L = (window as any).L;
+    if (!L) return;
+
+    const initialCoords = locationCoordinates[selectedLocation] || [25.1972, 55.2744];
+
+    const map = L.map(mapContainerRef.current, {
+      zoomControl: false,
+      attributionControl: false
+    }).setView(initialCoords, 13);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19
+    }).addTo(map);
+
+    const customIcon = L.divIcon({
+      html: `<div class="w-8 h-8 -translate-x-1/2 -translate-y-full flex items-center justify-center pointer-events-none">
+        <svg class="w-8 h-8 text-[#111215] drop-shadow-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" fill="var(--color-gold)"/>
+          <circle cx="12" cy="10" r="3" fill="#111215"/>
+        </svg>
+      </div>`,
+      className: 'custom-pin-icon',
+      iconSize: [32, 32],
+      iconAnchor: [16, 32]
+    });
+
+    const marker = L.marker(initialCoords, {
+      icon: customIcon,
+      draggable: true
+    }).addTo(map);
+
+    markerRef.current = marker;
+    mapInstanceRef.current = map;
+
+    map.on('click', (e: any) => {
+      const { lat, lng } = e.latlng;
+      marker.setLatLng([lat, lng]);
+      handleMapPinChange(lat, lng);
+    });
+
+    marker.on('dragend', () => {
+      const { lat, lng } = marker.getLatLng();
+      handleMapPinChange(lat, lng);
+    });
+
+    return () => {
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.remove();
+        mapInstanceRef.current = null;
+        markerRef.current = null;
+      }
+    };
+  }, [activeField, leafletLoaded, selectedLocation]);
+
   const today = useRef(new Date()).current;
   const thisMonthDate = useRef(new Date(today.getFullYear(), today.getMonth(), 1)).current;
   const nextMonthDate = useRef(new Date(today.getFullYear(), today.getMonth() + 1, 1)).current;
 
   // Calculate default start (3 days from now) and end (6 days from now) dates
   const dStart = useRef(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 3)).current;
-  const dEnd = useRef(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 6)).current;
 
   // Default to next month if the start date spills over the current month
   const defaultShowNextMonth = dStart.getMonth() !== today.getMonth();
@@ -262,19 +468,29 @@ export default function Hero() {
     defaultShowNextMonth ? nextMonthDate : thisMonthDate
   );
 
-  const initialStartDay = dStart.getDate();
-  const initialEndDay = dEnd.getMonth() === dStart.getMonth() ? dEnd.getDate() : new Date(dStart.getFullYear(), dStart.getMonth() + 1, 0).getDate();
+  const [startDate, setStartDate] = useState<Date | null>(() => {
+    return new Date(today.getFullYear(), today.getMonth(), today.getDate() + 3);
+  });
+  const [endDate, setEndDate] = useState<Date | null>(() => {
+    return new Date(today.getFullYear(), today.getMonth(), today.getDate() + 6);
+  });
 
-  const startMonthName = dStart.toLocaleString(language === 'ar' ? 'ar-EG' : 'default', { month: 'short' });
-  const endMonthName = dEnd.getMonth() === dStart.getMonth() ? dEnd.toLocaleString(language === 'ar' ? 'ar-EG' : 'default', { month: 'short' }) : startMonthName;
+  const formatDateRange = (start: Date | null, end: Date | null, lang: 'en' | 'ar') => {
+    if (!start) return lang === 'ar' ? 'اختر التواريخ' : 'Select dates';
+    const startDayNum = start.getDate();
+    const startMonth = start.toLocaleString(lang === 'ar' ? 'ar-EG' : 'default', { month: 'short' });
+    
+    if (!end) {
+      return `${startMonth} ${startDayNum}`;
+    }
+    
+    const endDayNum = end.getDate();
+    const endMonth = end.toLocaleString(lang === 'ar' ? 'ar-EG' : 'default', { month: 'short' });
+    
+    return `${startMonth} ${startDayNum} – ${endMonth} ${endDayNum}`;
+  };
 
-  const [selectedDate, setSelectedDate] = useState(
-    language === 'ar'
-      ? `${startMonthName} ${initialStartDay} – ${endMonthName} ${initialEndDay}`
-      : `${startMonthName} ${initialStartDay} – ${endMonthName} ${initialEndDay}`
-  );
-  const [startDay, setStartDay] = useState<number | null>(initialStartDay);
-  const [endDay, setEndDay] = useState<number | null>(initialEndDay);
+  const selectedDate = formatDateRange(startDate, endDate, language);
 
   const daysInMonth = new Date(activeMonthDate.getFullYear(), activeMonthDate.getMonth() + 1, 0).getDate();
   const dayOfWeek = activeMonthDate.getDay(); // 0 is Sunday, 1 is Monday, etc.
@@ -348,7 +564,7 @@ export default function Hero() {
           >
             <h1 id="hero-title" className="text-[#111215]">
               <span>{t('hero_title_1')}</span>
-              <span className="bg-[#111215] text-[#F7BF35] px-8 py-3.5 mt-4 inline-block tracking-tight select-none rounded-2xl">
+              <span className="bg-dark text-gold px-8 py-3.5 mt-4 inline-block tracking-tight select-none rounded-2xl">
                 {t('hero_title_2')}
               </span>
             </h1>
@@ -407,148 +623,93 @@ export default function Hero() {
                 </Dropdown>
               )}
               {activeField === 'location' && (
-                <Dropdown className="dropdown-location w-full max-w-[360px] md:max-w-[380px]" title={t('hero_dropdown_loc_title')}>
-                  <div className="relative p-2 bg-black/[0.015] rounded-xl border border-black/[0.03] overflow-hidden select-none">
-                    {/* SVG Map of Dubai Coastal Area */}
-                    <svg viewBox="0 0 340 220" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
-                      {/* Grid background pattern */}
-                      <defs>
-                        <pattern id="mapGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-                          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0,0,0,0.03)" strokeWidth="0.5" />
-                        </pattern>
-                      </defs>
-                      <rect width="100%" height="100%" fill="url(#mapGrid)" rx="8" />
-
-                      {/* Dubai Coastline path */}
-                      <path
-                        d="M -20 185 Q 70 170 140 120 T 360 45"
-                        fill="none"
-                        stroke="rgba(0, 0, 0, 0.05)"
-                        strokeWidth="5"
-                        strokeLinecap="round"
+                <Dropdown className="dropdown-location w-full max-w-[380px] md:max-w-[400px]" title={t('hero_dropdown_loc_title')} role="dialog">
+                  <div className="relative flex flex-col gap-2 p-2 bg-black/[0.015] rounded-xl border border-black/[0.03] overflow-visible">
+                    {/* Search Input Bar */}
+                    <div className="relative w-full">
+                      <input
+                        type="text"
+                        aria-label={language === 'ar' ? 'ابحث عن موقع في دبي' : 'Search location in Dubai'}
+                        placeholder={language === 'ar' ? 'ابحث عن موقع في دبي...' : 'Search location in Dubai...'}
+                        value={searchQuery}
+                        onChange={(e) => handleSearch(e.target.value)}
+                        className="w-full h-10 pl-3 pr-8 text-xs bg-white border border-black/10 rounded-lg focus:outline-none focus:border-gold text-black font-semibold"
+                        style={{ paddingLeft: '12px', paddingRight: '32px' }}
                       />
-                      <path
-                        d="M -20 185 Q 70 170 140 120 T 360 45"
-                        fill="none"
-                        stroke="rgba(247, 191, 53, 0.15)"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeDasharray="4,4"
-                      />
+                      {isSearching ? (
+                        <div className="absolute right-3 top-3 w-4 h-4 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+                      ) : searchQuery ? (
+                        <button
+                          type="button"
+                          onClick={() => { setSearchQuery(''); setSearchResults([]); }}
+                          className="absolute right-3 top-2.5 text-black/40 hover:text-black font-bold text-sm cursor-pointer"
+                        >
+                          ×
+                        </button>
+                      ) : null}
 
-                      {/* Palm Jumeirah Stylized Outline */}
-                      <g transform="translate(10, 0)">
-                        {/* Trunk */}
-                        <path d="M 105 142 L 105 122" stroke="#F7BF35" strokeWidth="5.5" strokeLinecap="round" opacity="0.6" />
-                        {/* Crescent Outer Protection Ring */}
-                        <path d="M 70 112 A 36 36 0 0 1 140 112" fill="none" stroke="rgba(247, 191, 53, 0.3)" strokeWidth="2" strokeDasharray="3,3" />
-                        {/* Fronds */}
-                        <path d="M 85 127 Q 75 122 70 127 M 90 122 Q 75 115 68 120 M 95 117 Q 95 102 95 98 M 100 117 Q 115 102 115 98 M 105 122 Q 120 115 127 120 M 110 127 Q 120 122 125 127" fill="none" stroke="#F7BF35" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
-                      </g>
-
-                      {/* Pulse Animations and Interactive Pins */}
-                      {mapPins.map((pin) => {
-                        const isActive = selectedLocation === pin.name;
-                        return (
-                          <g
-                            key={pin.name}
-                            className="cursor-pointer group/pin"
-                            onClick={() => {
-                              setSelectedLocation(pin.name);
-                              setActiveField(null);
-                            }}
-                          >
-                            {/* Outer pulsing ring for active pin */}
-                            {isActive && (
-                              <circle
-                                cx={pin.x}
-                                cy={pin.y}
-                                r="12"
-                                fill="none"
-                                stroke="#F7BF35"
-                                strokeWidth="1.5"
-                                opacity="0.8"
-                              >
-                                <animate
-                                  attributeName="r"
-                                  values="6;16;6"
-                                  dur="2s"
-                                  repeatCount="indefinite"
-                                />
-                                <animate
-                                  attributeName="opacity"
-                                  values="0.8;0;0.8"
-                                  dur="2s"
-                                  repeatCount="indefinite"
-                                />
-                              </circle>
-                            )}
-
-                            {/* Hover effect glowing target */}
-                            <circle
-                              cx={pin.x}
-                              cy={pin.y}
-                              r="16"
-                              fill="rgba(247, 191, 53, 0)"
-                              className="transition-all duration-300 group-hover/pin:fill-rgba(247,191,53,0.06)"
-                            />
-
-                            {/* Solid pin core */}
-                            <circle
-                              cx={pin.x}
-                              cy={pin.y}
-                              r={isActive ? "6" : "4.5"}
-                              fill={isActive ? "#F7BF35" : "#111215"}
-                              stroke={isActive ? "#ffffff" : "#F7BF35"}
-                              strokeWidth="1.5"
-                              className="transition-all duration-300 group-hover/pin:scale-125"
-                              style={{ transformOrigin: `${pin.x}px ${pin.y}px` }}
-                            />
-
-                            {/* Tooltip background & text */}
-                            <g
-                              transform={`translate(${pin.x}, ${pin.y - 16})`}
-                              className="opacity-0 pointer-events-none transition-all duration-300 group-hover/pin:opacity-100"
+                      {/* Autocomplete Results list */}
+                      {(searchResults.length > 0 || searchQuery.trim().length > 0) && (
+                        <div className="absolute left-0 right-0 z-[100] mt-1 bg-white border border-black/10 rounded-lg shadow-lg max-h-40 overflow-y-auto">
+                          {searchQuery.trim().length > 0 && (
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setSelectedLocation(searchQuery);
+                                setSearchResults([]);
+                                setActiveField(null);
+                              }}
+                              className="w-full text-left px-3 py-2 text-[11px] hover:bg-gold/10 border-b border-black/[0.03] font-bold text-gold flex items-center gap-1.5 cursor-pointer"
                             >
-                              <rect
-                                x="-45"
-                                y="-20"
-                                width="90"
-                                height="20"
-                                rx="4"
-                                fill="#111215"
-                                filter="drop-shadow(0 4px 6px rgba(0,0,0,0.15))"
-                              />
-                              <text
-                                x="0"
-                                y="-7"
-                                fill="#ffffff"
-                                fontSize="9"
-                                fontWeight="800"
-                                textAnchor="middle"
-                                className="font-sans tracking-wide uppercase"
-                              >
-                                {translatedLocations[pin.name]?.[language] || pin.name}
-                              </text>
-                            </g>
-                          </g>
-                        );
-                      })}
-                    </svg>
+                              <Check size={10} className="text-gold shrink-0" />
+                              <span className="truncate">
+                                {language === 'ar' ? `استخدام: "${searchQuery}"` : `Use: "${searchQuery}"`}
+                              </span>
+                            </button>
+                          )}
+                          {searchResults.map((result: any) => (
+                            <button
+                              key={result.place_id}
+                              type="button"
+                              onClick={() => handleSelectResult(result)}
+                              className="w-full text-left px-3 py-2 text-[11px] hover:bg-gold/10 border-b border-black/[0.03] last:border-0 font-bold text-black/80 flex items-center gap-1.5 cursor-pointer"
+                            >
+                              <MapPin size={10} className="text-gold shrink-0" />
+                              <span className="truncate">{result.display_name}</span>
+                            </button>
+                          ))}
+                        </div>
+                      )}
 
-                    {/* Quick select text list at bottom */}
-                    <div className="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-black/5">
+                      {/* Geocoding & search error status indicator */}
+                      {searchError && (
+                        <div className="absolute left-0 right-0 z-[100] mt-1 bg-white border border-red-200 text-red-600 rounded-lg shadow-lg p-2.5 text-[10.5px] font-bold text-center">
+                          {searchError}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Leaflet Map Frame */}
+                    <div className="relative w-full h-[200px] rounded-lg overflow-hidden border border-black/5 bg-black/[0.02]" style={{ zIndex: 1 }}>
+                      <div ref={mapContainerRef} className="w-full h-full" />
+                      
+                      {!leafletLoaded && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-white/80 z-[10]">
+                          <div className="w-6 h-6 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Quick Select Buttons */}
+                    <div className="flex flex-wrap gap-1.5 mt-1 pt-2 border-t border-black/5">
                       {mapPins.map((pin) => (
                         <button
                           key={pin.name}
                           type="button"
-                          onClick={() => {
-                            setSelectedLocation(pin.name);
-                            setActiveField(null);
-                          }}
-                          className={`px-3 py-1.5 text-[11px] font-bold rounded-lg border transition-all duration-200 ${
+                          onClick={() => handleQuickSelectLocation(pin.name)}
+                          className={`px-2.5 py-1.5 text-[10px] font-extrabold rounded-lg border transition-all duration-200 cursor-pointer ${
                             selectedLocation === pin.name
-                              ? 'bg-[#F7BF35]/10 border-[#F7BF35] text-[#111215]'
+                              ? 'bg-gold/15 border-gold text-[#111215]'
                               : 'bg-white border-black/5 hover:border-black/15 text-black/55'
                           }`}
                         >
@@ -560,18 +721,16 @@ export default function Hero() {
                 </Dropdown>
               )}
               {activeField === 'date' && (
-                <Dropdown className="dropdown-date" title={t('hero_dropdown_date_title')}>
+                <Dropdown className="dropdown-date" title={t('hero_dropdown_date_title')} role="dialog">
                   <div className="hero-calendar">
                     <div className="hero-calendar-header">
                       <button
                         type="button"
                         onClick={() => {
                           setActiveMonthDate(activeMonthDate.getTime() === thisMonthDate.getTime() ? nextMonthDate : thisMonthDate);
-                          setStartDay(null);
-                          setEndDay(null);
                         }}
                         className="month-nav-btn"
-                        aria-label="Previous month"
+                        aria-label={language === 'ar' ? 'الشهر السابق' : 'Previous month'}
                       >
                         ‹
                       </button>
@@ -582,11 +741,9 @@ export default function Hero() {
                         type="button"
                         onClick={() => {
                           setActiveMonthDate(activeMonthDate.getTime() === thisMonthDate.getTime() ? nextMonthDate : thisMonthDate);
-                          setStartDay(null);
-                          setEndDay(null);
                         }}
                         className="month-nav-btn"
-                        aria-label="Next month"
+                        aria-label={language === 'ar' ? 'الشهر التالي' : 'Next month'}
                       >
                         ›
                       </button>
@@ -594,45 +751,58 @@ export default function Hero() {
                     <div className="calendar-weekdays" role="row">
                       {(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as const).map((day) => (
                         <abbr key={day} title={day} aria-label={day} style={{ textDecoration: 'none' }}>
-                          {t(`hero_calendar_${day.toLowerCase()}`).slice(0, 3)}
+                          {language === 'ar'
+                            ? t(`hero_calendar_${day.toLowerCase()}`)
+                            : t(`hero_calendar_${day.toLowerCase()}`).slice(0, 3)}
                         </abbr>
                       ))}
                     </div>
                     <div className="calendar-days">
                       {spacers.map((s) => <span key={`spacer-${s}`} className="calendar-spacer" />)}
                       {days.map((d) => {
-                        const isSelectedStart = startDay === d;
-                        const isSelectedEnd   = endDay === d;
-                        const isInRange       = startDay !== null && endDay !== null && d > startDay && d < endDay;
-                        const isSelected      = isSelectedStart || isSelectedEnd;
+                        const currentDayDate = new Date(activeMonthDate.getFullYear(), activeMonthDate.getMonth(), d);
+                        const isSelectedStart = startDate !== null && 
+                          startDate.getFullYear() === currentDayDate.getFullYear() &&
+                          startDate.getMonth() === currentDayDate.getMonth() &&
+                          startDate.getDate() === currentDayDate.getDate();
+
+                        const isSelectedEnd = endDate !== null && 
+                          endDate.getFullYear() === currentDayDate.getFullYear() &&
+                          endDate.getMonth() === currentDayDate.getMonth() &&
+                          endDate.getDate() === currentDayDate.getDate();
+
+                        const isSelected = isSelectedStart || isSelectedEnd;
+
+                        const isInRange = startDate !== null && endDate !== null &&
+                          currentDayDate.getTime() > startDate.getTime() &&
+                          currentDayDate.getTime() < endDate.getTime();
+
                         const monthShort = activeMonthDate.toLocaleString(language === 'ar' ? 'ar-EG' : 'default', { month: 'short' });
 
-                        // Hardening Constraint: Disable past days in the current month
-                        const isPastDay = activeMonthDate.getFullYear() < today.getFullYear() ||
-                          (activeMonthDate.getFullYear() === today.getFullYear() && activeMonthDate.getMonth() < today.getMonth()) ||
-                          (activeMonthDate.getFullYear() === today.getFullYear() && activeMonthDate.getMonth() === today.getMonth() && d < today.getDate());
+                        const compareToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+                        const isPastDay = currentDayDate.getTime() < compareToday.getTime();
 
                         return (
                           <button
                             key={d}
                             type="button"
                             disabled={isPastDay}
+                            aria-selected={isSelected}
+                            aria-pressed={isSelected}
+                            aria-label={language === 'ar' ? `${d} ${monthShort}` : `${monthShort} ${d}`}
                             style={isPastDay ? { opacity: 0.28, pointerEvents: 'none', cursor: 'not-allowed', textDecoration: 'line-through' } : undefined}
                             className={`calendar-day-btn ${isSelectedStart ? 'start-day' : ''} ${isSelectedEnd ? 'end-day' : ''} ${isInRange ? 'in-range' : ''} ${isSelected ? 'selected' : ''}`}
                             onClick={() => {
                               if (isPastDay) return;
-                              if (startDay === null || (startDay !== null && endDay !== null)) {
-                                setStartDay(d);
-                                setEndDay(null);
-                                setSelectedDate(`${monthShort} ${d}`);
+                              if (startDate === null || (startDate !== null && endDate !== null)) {
+                                setStartDate(currentDayDate);
+                                setEndDate(null);
                               } else {
-                                if (d >= startDay) {
-                                  setEndDay(d);
-                                  setSelectedDate(`${monthShort} ${startDay} – ${monthShort} ${d}`);
+                                if (currentDayDate.getTime() >= startDate.getTime()) {
+                                  setEndDate(currentDayDate);
                                   setActiveField(null);
                                 } else {
-                                  setStartDay(d);
-                                  setSelectedDate(`${monthShort} ${d}`);
+                                  setStartDate(currentDayDate);
                                 }
                               }
                             }}
@@ -650,20 +820,23 @@ export default function Hero() {
         </div>
 
         {/* Car: entrance spring + scroll parallax + mouse parallax, all combined */}
-        <motion.div
-          className="hero-car-stage"
-          style={{
-            opacity: entranceOpacity,
-            x: carMX,
-            y: combinedCarY,
-          }}
-        >
-          <img
-            src="/assets/hero-car.webp"
-            alt="Premium yellow luxury SUV"
-            className="hero-car-inner"
-          />
-        </motion.div>
+        {/* Wrapped in a dedicated clipping container so the car stays inside the hero, while dropdowns can overflow */}
+        <div className="hero-car-wrapper" style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 10 }}>
+          <motion.div
+            className="hero-car-stage"
+            style={{
+              opacity: entranceOpacity,
+              x: carMX,
+              y: combinedCarY,
+            }}
+          >
+            <img
+              src="/assets/hero-car.webp"
+              alt="Premium yellow luxury SUV"
+              className="hero-car-inner"
+            />
+          </motion.div>
+        </div>
       </div>
     </main>
   );

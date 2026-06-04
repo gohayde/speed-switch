@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 
-const WA_DELIVERY = 'https://wa.me/971521430808?text=Hi%2C%20I%20would%20like%20to%20request%20delivery';
+const WA_DELIVERY = 'https://wa.me/971523660709?text=Hi%2C%20I%20would%20like%20to%20request%20delivery';
 const GOOGLE_MAPS_DUBAI = 'https://maps.app.goo.gl/mTcn8Ai2dpDmYAhCA';
 
 export default function DubaiDelivery() {
@@ -12,9 +12,9 @@ export default function DubaiDelivery() {
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="delivery" className="py-20 px-6 overflow-hidden relative max-[900px]:py-16 max-[640px]:py-12" style={{ background: 'oklch(99% 0.003 82)' }}>
+    <section id="delivery" className="py-20 px-6 overflow-hidden relative max-[900px]:py-16 max-[640px]:py-12" style={{ background: 'oklch(12% 0.007 82)' }}>
       {/* Top golden hairline rule */}
-      <div className="absolute top-0 inset-x-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(247,191,53,0.18) 30%, rgba(247,191,53,0.18) 70%, transparent)' }} />
+      <div className="absolute top-0 inset-x-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(247,191,53,0.3) 30%, rgba(247,191,53,0.3) 70%, transparent)' }} />
 
       <div ref={ref} className="max-w-[1160px] mx-auto relative z-10">
         <div className="grid grid-cols-12 gap-16 items-center max-[900px]:grid-cols-1 max-[900px]:gap-14">
@@ -27,39 +27,39 @@ export default function DubaiDelivery() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
             
             <h2
-              className="font-black uppercase text-[#111215] leading-[0.88] m-0 mb-6 font-display mt-2 flex flex-col items-start rtl:items-end"
+              className="font-black uppercase text-white leading-[0.88] m-0 mb-6 font-display mt-2 flex flex-col items-start rtl:items-end"
               style={{ fontSize: 'clamp(44px, 4.8vw, 72px)', letterSpacing: '-0.022em' }}>
               <span>{t('deliv_title_1')}</span>
-              <span className="bg-[#111215] text-[#F7BF35] px-5 py-2.5 mt-3 inline-block select-none rounded-2xl font-display font-black leading-none">
+              <span className="bg-[#F7BF35] text-[#111215] px-5 py-2.5 mt-3 inline-block select-none rounded-2xl font-display font-black leading-none shadow-[0_8px_24px_rgba(247,191,53,0.25)]">
                 {t('deliv_title_2')}
               </span>
             </h2>
             
-            <p className="text-[#111215]/80 font-semibold text-[15px] leading-relaxed mb-8 max-w-[42ch]">
+            <p className="text-white/70 font-semibold text-[15px] leading-relaxed mb-8 max-w-[42ch]">
               {t('deliv_paragraph')}
             </p>
 
             {/* Premium Highlights */}
             <div className="flex flex-col gap-5 mb-10">
               <div className="flex items-start gap-4 rtl:flex-row-reverse">
-                <div className="w-9 h-9 rounded-full bg-[#F7BF35]/[0.05] border border-[#F7BF35]/18 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <div className="w-9 h-9 rounded-full bg-[#F7BF35]/10 border border-[#F7BF35]/30 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                   <MapPin size={15} className="text-[#F7BF35]" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="text-[#111215] font-semibold text-[14px] leading-tight">{t('deliv_highlight1_title')}</h3>
-                  <p className="text-black/55 text-[12.5px] mt-1.5 leading-relaxed">{t('deliv_highlight1_body')}</p>
+                  <h3 className="text-white font-semibold text-[14px] leading-tight">{t('deliv_highlight1_title')}</h3>
+                  <p className="text-white/50 text-[12.5px] mt-1.5 leading-relaxed">{t('deliv_highlight1_body')}</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4 rtl:flex-row-reverse">
-                <div className="w-9 h-9 rounded-full bg-[#F7BF35]/[0.05] border border-[#F7BF35]/18 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <div className="w-9 h-9 rounded-full bg-[#F7BF35]/10 border border-[#F7BF35]/30 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-4 h-4 text-[#F7BF35]" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[#111215] font-semibold text-[14px] leading-tight">{t('deliv_highlight2_title')}</h3>
-                  <p className="text-black/55 text-[12.5px] mt-1.5 leading-relaxed">{t('deliv_highlight2_body')}</p>
+                  <h3 className="text-white font-semibold text-[14px] leading-tight">{t('deliv_highlight2_title')}</h3>
+                  <p className="text-white/50 text-[12.5px] mt-1.5 leading-relaxed">{t('deliv_highlight2_body')}</p>
                 </div>
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function DubaiDelivery() {
             transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}>
             
             {/* Double Bezel Console Frame */}
-            <div className="p-2 rounded-[20px] bg-gradient-to-b from-black/5 to-black/[0.01] border border-black/5 relative group shadow-[0_20px_50px_rgba(0,0,0,0.03)]">
+            <div className="p-2 rounded-[20px] bg-gradient-to-b from-white/5 to-white/[0.01] border border-white/10 relative group shadow-[0_20px_50px_rgba(0,0,0,0.15)]">
 
               {/* Inner Screen Case */}
               <div className="rounded-[14px] overflow-hidden relative aspect-[4/3] bg-black/5">
@@ -123,7 +123,7 @@ export default function DubaiDelivery() {
 
             </div>
 
-            <p className="text-black/40 text-[11px] mt-4 leading-relaxed text-left rtl:text-right pl-2 pr-2 select-none">
+            <p className="text-white/40 text-[11px] mt-4 leading-relaxed text-left rtl:text-right pl-2 pr-2 select-none">
               {t('deliv_footer_text')}
             </p>
 

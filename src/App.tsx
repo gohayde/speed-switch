@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect } from 'react';
 import Lenis from 'lenis';
 import { LanguageProvider } from './LanguageContext';
@@ -38,4 +40,3 @@ export default function App() {
     </LanguageProvider>
   );
 }
-
