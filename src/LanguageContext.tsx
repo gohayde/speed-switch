@@ -104,7 +104,7 @@ export const translations: TranslationDict = {
 
   // Final CTA
   cta_title_1: { en: 'BOOK YOUR DRIVE.', ar: 'احجز رحلتك.' },
-  cta_title_2: { en: 'ON WHATSAPP TODAY.', ar: 'عبر واتساب اليوم.' },
+  cta_title_2: { en: 'TODAY.', ar: 'اليوم.' },
   cta_paragraph: { en: 'Choose your vehicle and secure your booking on WhatsApp in minutes. Enjoy prompt delivery and transparent, all-inclusive rates.', ar: 'اختر سيارتك وأكد حجزك عبر واتساب في دقائق. استمتع بتوصيل سريع وأسعار شفافة وشاملة بالكامل.' },
 
   // Footer Section
