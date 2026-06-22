@@ -478,7 +478,7 @@ export default function PickYourCar() {
                   }`}
                 >
                   <div className="text-[#111215]">{icon}</div>
-                  <span className="text-[10px] sm:text-[13px] font-extrabold text-[#111215] leading-tight text-center">{value}</span>
+                  <span className="text-[11px] sm:text-[13px] font-extrabold text-[#111215] leading-tight text-center px-1">{value}</span>
                 </div>
               ))}
             </motion.div>
